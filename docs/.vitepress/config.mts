@@ -44,6 +44,7 @@ export default defineConfig({
           { text: "📦 Movable chest", link:'/FiveM/movable-chest'},
           { text: "⛓️ Tow Truck with WINCH", link:'/FiveM/tow-truck-with-winch'},
           { text: "🪝 Vehicle WINCH", link:'/FiveM/vehicle-winch'},
+          { text: "🚙 Wheel lock", link:'/FiveM/wheel-lock'},
         ]
       },
       {
