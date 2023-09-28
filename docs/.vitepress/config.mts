@@ -61,6 +61,7 @@ export default defineConfig({
           { text: "🐴 Horse and Wagon sharing", link:'/RedM/horse-and-wagon-sharing'},
           { text: "🦌 Hunting wagon Storage", link:'/RedM/hunting-wagon-storage'},
           { text: "🔪 Knife game", link:'/RedM/knife-game'},
+          { text: "🖱️ Mouse selection", link:'/RedM/mouse-selection'},
         ]
       }
     ],
