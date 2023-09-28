@@ -1,6 +1,3 @@
 # Documentation
 
-```lua
---@param test is test
-Config.function = function(test)
-end
+> This is the repo for Kad Darem documentation and website !
