@@ -59,6 +59,7 @@ export default defineConfig({
           { text: "⚔️ Duel Gun", link:'/RedM/duel-gun'},
           { text: "✂️ Hairdresser", link:'/RedM/hairdresser'},
           { text: "🐴 Horse and Wagon sharing", link:'/RedM/horse-and-wagon-sharing'},
+          { text: "🦌 Hunting wagon Storage", link:'/RedM/hunting-wagon-storage'},
         ]
       }
     ],
