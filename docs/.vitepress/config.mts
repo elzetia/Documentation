@@ -40,6 +40,7 @@ export default defineConfig({
           { text: "🚗 Car door Icon", link:'/FiveM/car-door-icon'},
           { text: "🚚 Car shop delivery", link:'/FiveM/car-shop-delivery'},
           { text: "🎣 Fishing", link:'/FiveM/fishing'},
+          { text: "⛏️ Mining job", link:'/FiveM/mining-job'},
         ]
       },
       {
