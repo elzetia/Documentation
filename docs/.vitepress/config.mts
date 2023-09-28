@@ -16,7 +16,7 @@ export default defineConfig({
   head: [
     [
       "link",
-      { rel: "icon", href: "/logo.png" },
+      { rel: "icon", href: "https://raw.githubusercontent.com/kaddarem-tebex/Documentation/main/docs/public/logo.png" },
     ],
   ],
   themeConfig: {
