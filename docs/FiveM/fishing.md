@@ -31,7 +31,7 @@ TriggerEvent('fish', <level> )
 ```
 You can add custom level in the config file.
 
-### 3. Config.lua
+## 3. Config.lua
 ```lua
 ------------------------------------
 --- COMMAND TO TEST THE SCRIPT

@@ -43,6 +43,7 @@ export default defineConfig({
           { text: "⛏️ Mining job", link:'/FiveM/mining-job'},
           { text: "📦 Movable chest", link:'/FiveM/movable-chest'},
           { text: "⛓️ Tow Truck with WINCH", link:'/FiveM/tow-truck-with-winch'},
+          { text: "🪝 Vehicle WINCH", link:'/FiveM/vehicle-winch'},
         ]
       },
       {

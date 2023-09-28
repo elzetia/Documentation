@@ -35,7 +35,7 @@ A help message with key will appears at the top left of your screen every time a
 6. Once the car on the bed. You have the possibility to attach the car on it. Go near the rear wheel of the truck to have this option. It will automatically store the winch if you didn't do it before. 
 7. Enter the truck to upper the bed.
 
-## 3. Config.lua file
+## 3. Config.lua
 ```lua
 Config = {}
 
@@ -83,7 +83,7 @@ Config.VehAttachBone = {
   [`adder`] = "engine"
 }
 ```
-# 4. Add new vehicle
+## 4. Add new vehicle
 
 **All tow trucks with movable bed are compatible with the script.**
 
@@ -116,7 +116,7 @@ Config.ValidModel = {
   },
 }
 ```
-# 4. For developer
+## 5. For developer
 You can turn off the script for a specific player by using this client event
 ```lua
 TriggerClientEvent('kd_towtruck:CanUse', source, false)
