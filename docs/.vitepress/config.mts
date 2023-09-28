@@ -53,6 +53,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: "⛺ Camp builder", link:'/RedM/camp-builder'},
+          { text: "💰 Cash register Robbery", link:'/RedM/cash-register-robbery'},
         ]
       }
     ],
