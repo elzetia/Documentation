@@ -1,8 +1,27 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPDocOutlineItem\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/VPDocOutlineItem.vue', import.meta.url)
+          )
+        },
+        {
+          find: /^.*\/outline$/,
+          replacement: fileURLToPath(
+            new URL('./composables/outline.ts', import.meta.url)
+          )
+        }
+      ]
+    }
+  },
   markdown: {
     config(md) {
       md.use(tabsMarkdownPlugin)
@@ -24,8 +43,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     outline: {
       level: 'deep',
-      label: 'On this page'
+      label: 'On this page',
     },
+    outlineBadges: true,
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Store', link: 'https://store.kaddarem.com',target: '_target',rel: 'external' }
@@ -58,10 +78,11 @@ export default defineConfig({
           { text: "👔 Clothing Store", link:'/RedM/clothing-store'},
           { text: "⚔️ Duel Gun", link:'/RedM/duel-gun'},
           { text: "✂️ Hairdresser", link:'/RedM/hairdresser'},
-          { text: "🐴 Horse and Wagon sharing", link:'/RedM/horse-and-wagon-sharing'},
+          { text: "🐎 Horse and Wagon sharing", link:'/RedM/horse-and-wagon-sharing'},
           { text: "🦌 Hunting wagon Storage", link:'/RedM/hunting-wagon-storage'},
           { text: "🔪 Knife game", link:'/RedM/knife-game'},
           { text: "🖱️ Mouse selection", link:'/RedM/mouse-selection'},
+          { text: "🐴 Stable", link:'/RedM/stable'},
         ]
       }
     ],

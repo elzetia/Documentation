@@ -1,4 +1,4 @@
-# :horse: Horse and Wagon sharing
+# :racehorse: Horse and Wagon sharing
 Documentation relating to the kd_horse_sharing.
 
 :::tabs

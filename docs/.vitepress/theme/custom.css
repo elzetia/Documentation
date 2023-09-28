@@ -5,3 +5,22 @@
 .content-container {
     max-width: 100% !important;
 }
+.aside {
+  max-width: 350px !important;
+}
+.aside-container {
+  width: fit-content !important;
+}
+
+.VPBadge.server {
+  background-color: #f8d094;
+}
+.VPBadge.client {
+  background-color: #94f8b2;
+}
+
+.outline-link .VPBadge {
+  line-height: 16px;
+  padding: 0 6px;
+  transform: translateY(0px);
+}
