@@ -42,6 +42,7 @@ export default defineConfig({
           { text: "🎣 Fishing", link:'/FiveM/fishing'},
           { text: "⛏️ Mining job", link:'/FiveM/mining-job'},
           { text: "📦 Movable chest", link:'/FiveM/movable-chest'},
+          { text: "⛓️ Tow Truck with WINCH", link:'/FiveM/tow-truck-with-winch'},
         ]
       },
       {
