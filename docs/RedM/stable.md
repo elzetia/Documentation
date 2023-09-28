@@ -78,7 +78,6 @@ trainingTracks = {
 If you need to overwrite a native function liked to the framework (custom inventory for example), you can overwrite my functions by added them in the config file.
 You don't need to use all functions.
 
-### • Client side
 #### <Badge type="client" text="Client" /> Initialize the framework
 ```lua
 -- Function to init your framework
@@ -109,8 +108,12 @@ Config.CanAccessToStable= function(stableID)
     return true
 end
 ```
+#### <Badge type="client" text="Client" /> Stop saddlebag animation {badge=Badge personnalisé}
+```lua
+--Client event to stop the saddlebag animation
+'kd_stable:client:closeSaddleBag'
+```
 
-### •  Server side
 #### <Badge type="server" text="Server" /> Initialize the framework
 ```lua
 -- Function to init your framework
@@ -259,13 +262,5 @@ end
 Config.restrictWagonBuying(source,wagonID)
     return true
 end
-```
-
-### • Events
-
-#### <Badge type="server" text="Server" /> Stop saddlebag animation {badge=Badge personnalisé}
-```lua
---Client event to stop the saddlebag animation
-TriggerClientEvent('kd_stable:client:closeSaddleBag',source)
 ```
 
