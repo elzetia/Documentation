@@ -8,6 +8,7 @@ export default defineConfig({
       md.use(tabsMarkdownPlugin)
     }
   },
+  base: "/Documentation/",
   title: "KadDarem Docs",
   description: "KadDarem Documentation",
   lastUpdated: true,
