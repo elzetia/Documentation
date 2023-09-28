@@ -1,28 +1,64 @@
 import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "KadDarem Documentation",
-  description: "Documentation for store.kaddarem.com",
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin)
+    }
+  },
+  title: "KadDarem Docs",
+  description: "KadDarem Documentation",
+  lastUpdated: true,
+  cleanUrls: true,
+  head: [
+    [
+      "link",
+      { rel: "icon", href: "/logo.png" },
+    ],
+  ],
   themeConfig: {
+    logo: "/logo.png",
     // https://vitepress.dev/reference/default-theme-config
+    outline: {
+      level: 'deep',
+      label: 'On this page'
+    },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Store', link: 'https://store.kaddarem.com',target: '_target',rel: 'external' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'FiveM',
+        collapsed: true,
+
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: "🔫 Airsoft", link:'/FiveM/airsoft'},
+          { text: "🚗 Car door Icon", link:'/FiveM/car-door-icon'},
+        ]
+      },
+      {
+        text: 'RedM',
+        collapsed: true,
+        items: [
+          { text: "Test", link:'/RedM/test'}
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/kaddarem-tebex' },
+      { icon: 'discord', link: 'https://discord.com/invite/8rqVHnSb2K' },
+    ],
+    footer : {
+      copyright: 'Copyright © 2023 Kad Darem'
+    },
+    docFooter: {
+      prev: false,
+      next: false
+    }
   }
 })

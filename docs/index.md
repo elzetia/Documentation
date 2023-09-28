@@ -1,25 +1,10 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
-layout: home
-
-hero:
-  name: "KadDarem Documentation"
-  text: "Documentation for store.kaddarem.com"
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+prev: false
+next: false
 ---
 
+# Welcome
+
+Welcome to the Kad Darem scripts knowledge base. 
+
+Here you will find useful informations relating to my scripts. If you still need help after reading, please contact me in my [discord](https://discord.com/invite/8rqVHnSb2K).
