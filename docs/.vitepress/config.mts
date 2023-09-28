@@ -56,6 +56,7 @@ export default defineConfig({
           { text: "💰 Cash register Robbery", link:'/RedM/cash-register-robbery'},
           { text: "🎩 Clothes Wheel", link:'/RedM/clothes-wheel'},
           { text: "👔 Clothing Store", link:'/RedM/clothing-store'},
+          { text: "⚔️ Duel Gun", link:'/RedM/duel-gun'},
         ]
       }
     ],
