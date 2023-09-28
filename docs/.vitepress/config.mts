@@ -39,6 +39,7 @@ export default defineConfig({
           { text: "🔫 Airsoft", link:'/FiveM/airsoft'},
           { text: "🚗 Car door Icon", link:'/FiveM/car-door-icon'},
           { text: "🚚 Car shop delivery", link:'/FiveM/car-shop-delivery'},
+          { text: "🎣 Fishing", link:'/FiveM/fishing'},
         ]
       },
       {
