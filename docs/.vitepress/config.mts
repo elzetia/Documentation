@@ -41,6 +41,7 @@ export default defineConfig({
           { text: "🚚 Car shop delivery", link:'/FiveM/car-shop-delivery'},
           { text: "🎣 Fishing", link:'/FiveM/fishing'},
           { text: "⛏️ Mining job", link:'/FiveM/mining-job'},
+          { text: "📦 Movable chest", link:'/FiveM/movable-chest'},
         ]
       },
       {
