@@ -52,8 +52,7 @@ export default defineConfig({
         text: 'RedM',
         collapsed: true,
         items: [
-          { text: "Test", link:'/RedM/test'},
-          { text: "Test", link:'/RedM/test'},
+          { text: "⛺ Camp builder", link:'/RedM/camp-builder'},
         ]
       }
     ],
