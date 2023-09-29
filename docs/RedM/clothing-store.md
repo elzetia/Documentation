@@ -192,17 +192,60 @@ end
 ```
 :::
 
-## 4. Custom Framework
-⚠ Scripting skills are required to configure the script for custom framework ⚠
+## 4. For developers
 
-To use the script with a custom framework, you have to add some variables in the config file :
+### Functions
+If you need to overwrite a native function linked to the framework (custom inventory for example), you can overwrite my functions by added them in the config file.
+You don't need to use all functions.
+#### <Badge type="client" text="Client" /> Initialize the framework
+Function to init your framework
 ```lua
-Config.Framework = "Custom" --Needed to unlock the custom framework feature
-
--------------------------
---- SERVER SIDE
--------------------------
---Function to get the identifier of player
+-- variable "Core" - global variable for core script
+-- variable "CoreInv" - global variable for inventory scriot
+Config.InitFramework = function()
+end
+```
+#### <Badge type="server" text="Server" /> Apply new Outfit
+Function fires when a player selects an outfit
+```lua
+--@param source is the serverID of the player
+--@param clothes in the table with category in key and hash in value of the outfit
+Config.ApplyNewOutfit = function(source,clothes)
+end
+```
+#### <Badge type="server" text="Server" /> Check money
+Function to check if the player has enough money
+```lua
+--@param source is the serverID of the player
+--@param price is the price of the cloth
+--@param moneyType is the devise of the price : 0 for normal & 1 for gold
+--@return true/false to accept/deny the purchase
+Config.CanBuy = function(source,price, moneyType)
+  return true
+end
+```
+#### <Badge type="server" text="Server" /> Initialize the framework
+Function to init your framework
+```lua
+-- variable "Core" - global variable for core script
+-- variable "CoreInv" - global variable for inventory scriot
+Config.InitFramework = function()
+end
+```
+#### <Badge type="server" text="Server" /> Get Clothes
+Function to get the player's clothes
+```lua
+--@param source is the serverID of the player
+--clothes is a table with clothing category in key and hash of cloth in value.
+--clothes can be a json array
+Config.GetClothes = function(source)
+    local clothes = {}
+    return clothes
+end
+```
+#### <Badge type="server" text="Server" /> Get Identifier
+Function to get the player identifier
+```lua
 --@param source is the serverID of the player
 --@return array with identifier and charid key
 Config.GetIdentifier = function(source)
@@ -212,93 +255,97 @@ Config.GetIdentifier = function(source)
     }
     return player
 end
-
---Function to check if the player has enough money to buy the cloth
---@param source is the serverID of the player
---@param price is the price of the cloth
---@param moneyType is the devise of the price : 0 for normal & 1 for gold
---@return true/false to accept/deny the purchase
-Config.CanBuy = function(source,price, moneyType)
-    return true
-end
-
---Function to get the player's clothes
---@param source is the serverID of the player
---clothes is a table with clothing category in key and hash of cloth in value.
---clothes can be a json array
-Config.GetClothes = function(source)
-    local clothes = {}
-    return clothes
-end
-
---Function to get the player's skin
+```
+#### <Badge type="server" text="Server" /> Get Skin
+Function to get the player's skin
+```lua
 --@param source is the serverID of the player
 --skin is a table with category in key and data in value.
 Config.GetSkin = function(source)
     local skin = {}
     return skin
 end
-
---Function fire to save the new cloth in the DB
---@param source is the serverID of the player
---@param dataPreview is a table with the new cloth data :
--- dataPreview.menu is the category of cloth
--- dataPreview.hash is the hash of cloth
-Config.SaveNewCloth = function(source,dataPreview)
-end
-
---Function fire when player select Outfit
---@param source is the serverID of the player
---@param clothes in the table with category in key and hash in value of the outfit
-Config.ApplyNewOutfit = function(source,clothes)
-end
-
---Function to send notification to player from serverside
---@param source is the serverID of the player
---@param text is the text to be sent to the player
-Config.Notify = function(source, text)
-end
-
---Function to send notification to player from serverside
---@param source is the serverID of the player
---@param amount is the amount of money to be sent to the player
-Config.GiveMoney = function(source, amount)
-end
-
---Function to give item from serverside
+```
+#### <Badge type="server" text="Server" /> Give Item
+Function to give item to player
+```lua
 --@param source is the serverID of the player
 --@param item is the item name
 --@param quantity is the quantity of item
 --@param meta is the meta of the item
 Config.GiveItem= function(source,item,quantity,meta)
 end
-
---Function to register a usable item from serverside
+```
+#### <Badge type="server" text="Server" /> Give Money
+Function to give money to player
+```lua
+--@param source is the serverID of the player
+--@param amount is the amount of money to be sent to the player
+Config.GiveMoney = function(source, amount)
+end
+```
+#### <Badge type="server" text="Server" /> Notify
+Function to send notification to player from serverside
+```lua
+--@param source is the serverID of the player
+--@param text is the text to be sent to the player
+Config.Notify = function(source, text)
+end
+```
+#### <Badge type="server" text="Server" /> Register an Item
+Function to register as usable an item
+```lua
 --@param item is the item name
 --@param callback is the callback event with two arguments :
 --callback(source,{hash = clothesHash})
 Config.RegisterUseItem = function(item,callback)
 end
 ```
-## 5. For developers
-You can open the wardrobe with this client event :
+#### <Badge type="server" text="Server" /> Remove money
+Function to register as usable an item
 ```lua
---@param needInstance = true/false : Define if the wardrobe need personnal instance
-TriggerEvent('kd_clothingstore:openWardrobe', needInstance)
+--@param source is the serverID of the player
+--@param price is the price of the cloth
+--@param moneyType is the devise of the price : 0 for normal & 1 for gold
+Config.RemoveMoney = function(source,price, moneyType)
+end
 ```
-You can apply an outfit from his id to a player by trigger this server event (from client) :
+#### <Badge type="server" text="Server" /> Save new clothes
+Function to save the new clothe in the database
 ```lua
-TriggerServerEvent('kd_clothingstore:useOutfitId',id)
+--@param source is the serverID of the player
+--@param dataPreview is a table with the new cloth data :
+-- dataPreview.menu is the category of cloth
+-- dataPreview.hash is the hash of cloth
+Config.SaveNewCloth = function(source,dataPreview)
+end
 ```
-You can remove all clothes with this client event :
-```lua
-TriggerEvent('kd_clothingstore:removeAllClothes')
-```
+
+### Events
+#### <Badge type="client" text="Client" /> Equip all clothes
 You can equip all clothes with this client event :
 ```lua
 TriggerEvent('kd_clothingstore:resetClothes')
 ```
+#### <Badge type="client" text="Client" /> Listen the closing of menu
 You can grab the closing of the menu after the ped creation with this client event :
 ```lua
-kd_clothingstore:client:endCreation
+RegisterNetEvent('kd_clothingstore:client:endCreation', function()
+end)
+```
+#### <Badge type="client" text="Client" /> Open the wardrobe
+Event to open the wardrobe
+```lua
+--@param needInstance = true/false : Define if the wardrobe need personnal instance
+TriggerEvent('kd_clothingstore:openWardrobe', needInstance)
+```
+#### <Badge type="client" text="Client" /> Remove all clothes
+You can remove all clothes with this client event :
+```lua
+TriggerEvent('kd_clothingstore:removeAllClothes')
+```
+#### <Badge type="client" text="Client" /> Use outfit
+You can apply an outfit from his id to a player by trigger this server event (from client) :
+```lua
+TriggerServerEvent('kd_clothingstore:useOutfitId',id)
 ```

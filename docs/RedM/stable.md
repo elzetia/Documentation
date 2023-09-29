@@ -77,20 +77,20 @@ trainingTracks = {
 
 ### Functions
 
-If you need to overwrite a native function liked to the framework (custom inventory for example), you can overwrite my functions by added them in the config file.
+If you need to overwrite a native function linked to the framework (custom inventory for example), you can overwrite my functions by added them in the config file.
 You don't need to use all functions.
 
 #### <Badge type="client" text="Client" /> Initialize the framework
+Function to init your framework
 ```lua
--- Function to init your framework
 -- variable "Core" - global variable for core script
 -- variable "CoreInv" - global variable for inventory scriot
 Config.InitFramework = function()
 end
 ```
 #### <Badge type="client" text="Client" /> Restrict the access to specific stable
+Function to restrict the access to a specific stable
 ```lua
---Function to restrict the access to a specific stable
 -- @param stableID - ID of stable
 --@return false to cancel the access to the stable
 Config.CanAccessToStable= function(stableID)
@@ -98,8 +98,8 @@ Config.CanAccessToStable= function(stableID)
 end
 ```
 #### <Badge type="client" text="Client" /> Restrict the color palette
+Function to restrict the color palette
 ```lua
---Function to restrict the color palette
 -- @param typeItem = 'horse' or 'component'
 --@return false if the player can't open the color palette
 --@return true if the player can open the color palette
@@ -108,8 +108,8 @@ Config.CanOpenColorPalette = function(typeItem)
 end
 ```
 #### <Badge type="server" text="Server" /> Check money
+Function to check if the player has enough money to buy something
 ```lua
---Function to check if the player has enough money to buy the cloth
 -- @param source - serverID of the player
 -- @param price - price of the cloth
 -- @param moneyType - devise of the price : 0 for normal & 1 for gold
@@ -118,8 +118,8 @@ Config.CanBuy = function(source,price,moneyType)
 end
 ```
 #### <Badge type="server" text="Server" /> Get Identifier
+Function to get the identifier of player
 ```lua
---Function to get the identifier of player
 -- @param source - serverID of the player
 --@return array with identifier and charid key
 Config.GetIdentifier = function(source)
@@ -131,64 +131,64 @@ Config.GetIdentifier = function(source)
 end
 ```
 #### <Badge type="server" text="Server" /> Get Job
+Function to get the player's job
 ```lua
---Function to get the player's job
 -- @param source - serverID of the player
 --@return the job name
 Config.GetJob = function(source)
 end
 ```
 #### <Badge type="server" text="Server" /> Get RP Name
+Function to get the player's job
 ```lua
---Function to get the player's job
 -- @param source - serverID of the player
 --@return the player name
 Config.GetRPName = function(source)
 end
 ```
 #### <Badge type="server" text="Server" /> Give money
+Function to give money to player
 ```lua
---Function to give money to player
 -- @param source - serverID of the player
 -- @param amount - money amount
 Config.GiveMoney = function(source,amount)
 end
 ```
 #### <Badge type="server" text="Server" /> Initialize the framework
+Function to init your framework
 ```lua
--- Function to init your framework
 -- variable "Core" - global variable for core script
 -- variable "CoreInv" - global variable for inventory scriot
 Config.InitFramework = function()
 end
 ```
 #### <Badge type="server" text="Server" /> Notification
+Function to send notification to player
 ```lua
---Function to send notification to player
 -- @param source - serverID of the player
 -- @param text - text of notification
 Config.Notify = function(source,text)
 end
 ```
 #### <Badge type="server" text="Server" /> Open saddlebag
+Function to open saddlebag
 ```lua
---Function to open saddlebag
 -- @param source - serverID of the player
 -- @param saddlebagID - ID of container
 Config.OpenSaddlebag = function(source,saddlebagID)
 end
 ```
 #### <Badge type="server" text="Server" /> Open wagon locker
+Function to open wagon locker
 ```lua
---Function to open wagon locker
 -- @param source - serverID of the player
 -- @param wagonID - ID of container
 Config.OpenWagonLocker = function(source,wagonID)
 end
 ```
 #### <Badge type="server" text="Server" /> Overwrite horse slot
+Function to overwrite the number of horse the player can buy
 ```lua
---Function to overwrite the number of horse the player can buy
 -- @param typeOrder - type of order : 'horse' or 'wagon'
 -- @param source - serverID of the player
 Config.overwriteMaxSlot = function(typeOrder,source)
@@ -196,8 +196,8 @@ end
 ```
 
 #### <Badge type="server" text="Server" /> Overwrite price
+Function to overwrite order price
 ```lua
---Function to overwrite order price
 -- @param source - serverID of the player
 -- @param typeOrder = 'horse' or 'component' or 'wagon' or 'reviveHorse'
 -- @param data - identifiant of item
@@ -212,8 +212,8 @@ Config.overwritePrice = function(source,typeOrder, data, price)
 end
 ```
 #### <Badge type="server" text="Server" /> Use Item
+Function to use an item
 ```lua
---Function to use an item
 -- @param source - serverID of the player
 -- @param item - item name
 -- @param amount - amount used
@@ -225,8 +225,8 @@ end
 ```
 
 #### <Badge type="server" text="Server" /> Restrict horse buying
+Function to restrict specific horse buying
 ```lua
---Function to restrict specific horse buying
 -- @param source - serverID of the player
 -- @param horseID - ID of wagon in Config.horses list
 --@return false to cancel the order
@@ -235,8 +235,8 @@ Config.restrictHorseBuying(source,horseID)
 end
 ```
 #### <Badge type="server" text="Server" /> Restrict wagon buying
+Function to restrict specific wagon buying
 ```lua
---Function to restrict specific wagon buying
 -- @param source - serverID of the player
 -- @param wagonID - ID of wagon in Config.wagons list
 --@return false to cancel the order
@@ -247,8 +247,8 @@ end
 ### Events
 
 #### <Badge type="client" text="Client" /> Stop saddlebag animation {badge=Badge personnalisé}
+Client event to stop the saddlebag animation
 ```lua
---Client event to stop the saddlebag animation
 'kd_stable:client:closeSaddleBag'
 ```
 
