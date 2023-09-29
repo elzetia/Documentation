@@ -14,9 +14,11 @@
 
 .VPBadge.server {
   background-color: #f8d094;
+  color: rgba(60, 60, 67, 0.78);
 }
 .VPBadge.client {
   background-color: #94f8b2;
+  color: rgba(60, 60, 67, 0.78);
 }
 
 .outline-link .VPBadge {
