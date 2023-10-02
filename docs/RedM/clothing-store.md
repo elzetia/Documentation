@@ -9,7 +9,7 @@ Documentation relating to the kd_clothingstore.
 :::
 
 ## 1. Installation
-kd_clothingstore works with VORP & RedEM:RP (2023 & old) frameworks. 
+kd_clothingstore works with VORP, RedEM:RP (2023 & old), QR Core, RSG Core & RPX frameworks. 
 
 To install kd_clothingstore:
 - Drag and drop the resource into your resources folder
