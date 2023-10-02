@@ -464,9 +464,9 @@ end
 Function to restrict specific horse buying
 ```lua
 -- @param source - serverID of the player
--- @param horseID - ID of wagon in Config.horses list
+-- @param horseKey - key of Horse in Config.horses list
 --@return false to cancel the order
-Config.restrictHorseBuying(source,horseID)
+Config.restrictHorseBuying(source,horseKey)
     return true
 end
 ```
@@ -474,9 +474,9 @@ end
 Function to restrict specific wagon buying
 ```lua
 -- @param source - serverID of the player
--- @param wagonID - ID of wagon in Config.wagons list
+-- @param wagonKey - key of wagon in Config.wagons list
 --@return false to cancel the order
-Config.restrictWagonBuying(source,wagonID)
+Config.restrictWagonBuying(source,wagonKey)
     return true
 end
 ```
