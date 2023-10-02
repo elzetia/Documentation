@@ -367,6 +367,12 @@ Fires when a horse is dying
 RegisterAction('horseDying', function(horseID)
 end)
 ```
+#### <Badge type="server" text="Server" /> horsesLoaded
+Fires when the list of horses is loaded
+```lua
+RegisterAction('horsesLoaded', function()
+end)
+```
 #### <Badge type="server" text="Server" /> initMySQL
 Fires when the MySQL is initilized
 ```lua
