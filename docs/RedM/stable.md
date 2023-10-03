@@ -528,6 +528,12 @@ Fires when the player targets a registered horse
 RegisterAction('loopTargeting', function(target,distance)
 end)
 ```
+#### <Badge type="server" text="Server" /> horsesLoaded
+Fires when the list of horses is fully loaded from the database
+```lua
+RegisterAction('horsesLoaded', function()
+end)
+```
 #### <Badge type="server" text="Server" /> bequeathHorse
 Fires when the player bequeaths the horse to another player
 ```lua
@@ -703,4 +709,9 @@ Fires when the player takes a saddlebag off a horse
 RegisterAction('takeSaddlebag', function(source,horseID,saddleID)
 end)
 ```
-
+#### <Badge type="server" text="Server" /> wagonsLoaded
+Fires when the list of wagons is fully loaded from the database
+```lua
+RegisterAction('wagonsLoaded', function()
+end)
+```
