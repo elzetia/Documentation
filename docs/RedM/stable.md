@@ -328,7 +328,7 @@ end
 Function to restrict the access to a specific stable
 ```lua
 -- @param stableID - ID of stable
---@return false to cancel the access to the stable
+-- @return false to cancel the access to the stable
 Config.CanAccessToStable= function(stableID)
     return true
 end
@@ -337,8 +337,8 @@ end
 Function to restrict the color palette
 ```lua
 -- @param typeItem = 'horse' or 'component'
---@return false if the player can't open the color palette
---@return true if the player can open the color palette
+-- @return false if the player can't open the color palette
+-- @return true if the player can open the color palette
 Config.CanOpenColorPalette = function(typeItem)
     return true
 end
@@ -349,7 +349,7 @@ Function to check if the player has enough money to buy something
 -- @param source - serverID of the player
 -- @param price - price of the cloth
 -- @param moneyType - devise of the price : 0 for normal & 1 for gold
---@return true/false to accept/deny the purchase
+-- @return true/false to accept/deny the purchase
 Config.CanBuy = function(source,price,moneyType)
 end
 ```
@@ -357,7 +357,7 @@ end
 Function to get the identifier of player
 ```lua
 -- @param source - serverID of the player
---@return array with identifier and charid key
+-- @return array with identifier and charid key
 Config.GetIdentifier = function(source)
     local player = {
         identifier = identifier, --the identifier of player
@@ -370,7 +370,7 @@ end
 Function to get the player's job
 ```lua
 -- @param source - serverID of the player
---@return the job name
+-- @return the job name
 Config.GetJob = function(source)
 end
 ```
@@ -378,7 +378,7 @@ end
 Function to get the player's job
 ```lua
 -- @param source - serverID of the player
---@return the player name
+-- @return the player name
 Config.GetRPName = function(source)
 end
 ```
@@ -442,7 +442,7 @@ Function to overwrite order price
 --       category for 'component'
 --       wagonID for 'wagon'
 -- @param price - default price of order
---@return price with the price format
+-- @return price with the price format
 Config.overwritePrice = function(source,typeOrder, data, price)
     return true
 end
@@ -455,7 +455,7 @@ Function to use an item
 -- @param amount - amount used
 -- @param meta - meta of item
 -- @param remove - if the item have to be removed or not
---@return true if the item is used
+-- @return true if the item is used
 Config.UseItem = function(source,item,amount,meta,remove)
 end
 ```
@@ -465,7 +465,7 @@ Function to restrict specific horse buying
 ```lua
 -- @param source - serverID of the player
 -- @param horseKey - key of Horse in Config.horses list
---@return false to cancel the order
+-- @return false to cancel the order
 Config.restrictHorseBuying(source,horseKey)
     return true
 end
@@ -475,7 +475,7 @@ Function to restrict specific wagon buying
 ```lua
 -- @param source - serverID of the player
 -- @param wagonKey - key of wagon in Config.wagons list
---@return false to cancel the order
+-- @return false to cancel the order
 Config.restrictWagonBuying(source,wagonKey)
     return true
 end

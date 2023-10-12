@@ -219,7 +219,7 @@ Function to check if the player has enough money
 --@param source is the serverID of the player
 --@param price is the price of the cloth
 --@param moneyType is the devise of the price : 0 for normal & 1 for gold
---@return true/false to accept/deny the purchase
+-- @return true/false to accept/deny the purchase
 Config.CanBuy = function(source,price, moneyType)
   return true
 end
@@ -247,7 +247,7 @@ end
 Function to get the player identifier
 ```lua
 --@param source is the serverID of the player
---@return array with identifier and charid key
+-- @return array with identifier and charid key
 Config.GetIdentifier = function(source)
     local player = {
         identifier = identifier, --the identifier of player
