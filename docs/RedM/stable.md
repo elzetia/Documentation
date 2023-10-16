@@ -543,6 +543,15 @@ Fires when the player bequeaths the horse to another player
 RegisterAction('bequeathHorse', function(source,horseID,targetID)
 end)
 ```
+#### <Badge type="server" text="Server" /> bequeatWagon
+Fires when the player bequeaths the wagon to another player
+```lua
+-- @param source - serverID of the player
+-- @param wagonID - ID of the horse
+-- @param targetID - serverID of the player targeted
+RegisterAction('bequeathWagon', function(source,wagonID,targetID)
+end)
+```
 #### <Badge type="server" text="Server" /> buyComponent
 Fires when the player buy a new component
 ```lua
