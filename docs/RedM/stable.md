@@ -602,6 +602,14 @@ Fires when the player deletes a horse
 RegisterAction('deleteHorse', function(source,horseID)
 end)
 ```
+#### <Badge type="server" text="Server" /> deleteWagon
+Fires when the player deletes a wagon
+```lua
+-- @param source - serverID of the player
+-- @param wagonID - ID of the wagon
+RegisterAction('deleteWagon', function(source,wagonID)
+end)
+```
 #### <Badge type="server" text="Server" /> horseDying
 Fires when a horse is dying
 ```lua
