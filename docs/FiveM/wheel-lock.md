@@ -100,13 +100,14 @@ end
 ## 4. For developer
 Spawn the wheel lock on car without player animation :
 ```lua
-@param vehNet : Server ID of the vehicle
-@param boneName : Name of the bone where the wheel lock is
-TriggerServerEvent("kd_wheellock:addLockedCars", vehNet, 0, boneName)
+-- @param vehNet : Server ID of the vehicle
+-- @param boneName : Name of the bone where the wheel lock is
+-- @side : Client side
+TriggerEvent("kd_wheellock:addLockedCars", vehNet, 0, boneName)
 ```
 Use event to put/remove the wheel lock :
 ```lua
--- Client side :
+-- @side : Client side
 TriggerEvent('kd_wheellock:action') -- Put or remove the wheel lock
 TriggerEvent('kd_wheellock:actionPut') -- Only Put the wheel lock
 TriggerEvent('kd_wheellock:actionRemove') -- Only Remove the wheel lock

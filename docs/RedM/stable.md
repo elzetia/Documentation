@@ -520,6 +520,13 @@ Fires when the horse prompt is initialized
 RegisterAction('initHorsePrompt', function(promptGroupId,entity)
 end)
 ```
+#### <Badge type="client" text="Client" /> letterBox
+Fires when the letter box state switch
+```lua
+-- @param show - state of letter box: true/false
+RegisterAction('letterBox', function(show)
+end)
+```
 #### <Badge type="client" text="Client" /> loopTargeting
 Fires when the player targets a registered horse
 ```lua
