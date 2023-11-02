@@ -84,6 +84,19 @@ export default defineConfig({
           { text: "🖱️ Mouse selection", link:'/RedM/mouse-selection'},
           { text: "🐴 Stable", link:'/RedM/stable'},
         ]
+      },
+      {
+        text: 'Developer Resources',
+        collapsed: true,
+        items: [
+          { text: 'Hooks',
+            link: '/DeveloperResources/hooks',
+            items: [
+              { text: 'Actions', link: '/DeveloperResources/actions' },
+              { text: 'Filters', link: '/DeveloperResources/filters' },
+            ]
+          }
+        ]
       }
     ],
 
