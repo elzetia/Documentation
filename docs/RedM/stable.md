@@ -688,13 +688,13 @@ Fires when the player revives a horse
 RegisterAction('putSaddlebag', function(source,horseID,price,moneyType)
 end)
 ```
-#### <Badge type="server" text="Server" /> spawnHorse
-Fires when the player spawns a horse
+#### <Badge type="server" text="Server" /> outHorse
+Fires when the player get out a horse
 ```lua
 -- @param source - serverID of the player
 -- @param horse - entity ID of the horse (server entity)
 -- @param horseID - ID of the horse
-RegisterAction('spawnHorse', function(source,horse,horseID)
+RegisterAction('outHorse', function(source,horse,horseID)
 end)
 ```
 #### <Badge type="server" text="Server" /> spawnWagon
