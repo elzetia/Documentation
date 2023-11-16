@@ -493,7 +493,7 @@ Client event to stop the saddlebag animation
 
 ### Actions
 
-Actions are the new way to modify how the script works or add new features added in the `v1.1.0`. These actions are event that occurs at a specific point in time during the execution of the script. But contrary to events, actions are **synchronous**. 
+[Actions](/DeveloperResources/actions) are the new way to modify how the script works or add new features added in the `v1.1.0`. These actions are event that occurs at a specific point in time during the execution of the script. But contrary to events, actions are **synchronous**. 
 
 - Syntax: 
 ```lua
