@@ -68,6 +68,7 @@ Config.usePromptHorseStatistics = true --turn off the prompt to display horses s
 Config.maxDistanceWithHorseshoes = 100 --in kilometers
 Config.warningMessageHorseshoePercent = 20 --display a warning message when the horseshoes is under this value
 Config.stopRunHorseshoesPercent = 10 --disable horse run when horseshoes is under this value
+Config.useHorseHolster = true --false to disable the horse holster
 Config.winExpByWalk = { --horse exp win by walking
 	distance = 200, --distance to earn new points (in meters)
 	point = 1 --amount earn by each distance
@@ -218,6 +219,7 @@ Config.prices = {
 	vehicle_liveries = 10,
 	vehicle_lantern_propsets = 10,
 	vehicle_extras = 10,
+	horse_outfits = 10,
 	reviveHorse = {money=100, gold = 23} --set false to disable the revive of horse
 }
 
@@ -235,6 +237,7 @@ Config.horses = {
 	[1] = {
 		price = {money=2.75,gold = 2},
 		name = "New name",
+		age = 5, --Age of the horse if 'Horse Aging' add-ons is loaded
 		variations = {
 			"A_C_Horse_AmericanPaint_Greyovero",
 			"A_C_Horse_AmericanPaint_Overo",
