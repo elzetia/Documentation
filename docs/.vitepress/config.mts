@@ -82,7 +82,10 @@ export default defineConfig({
           { text: "🦌 Hunting wagon Storage", link:'/RedM/hunting-wagon-storage'},
           { text: "🔪 Knife game", link:'/RedM/knife-game'},
           { text: "🖱️ Mouse selection", link:'/RedM/mouse-selection'},
-          { text: "🐴 Stable", link:'/RedM/stable'},
+          { text: "🐴 Stable", link:'/RedM/stable', items: [
+            { text: 'Main script', link: '/RedM/stable'},
+            { text: 'Horse Aging', link: '/RedM/stable-horseaging'}
+          ]},
         ]
       },
       {

@@ -30,3 +30,19 @@
 .vp-doc ol,.vp-doc ul {
   padding-left: 2.25rem;
 }
+
+.preview-img {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+  img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1110px){
+  .preview-img {
+      display: flex;
+      flex-direction: column;
+  }
+}
