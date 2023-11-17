@@ -849,7 +849,8 @@ Fires when player buy a new horse, just before the 'buyHorse' aciton
 ```lua
 -- @param horseData - horse's datas filtered
 -- @param horseID - horse ID in Config.horses table
-exports.kd_stable:RegisterAction('buyHorse', function(horseData,horseID)
+-- @param source - serverID of the player
+exports.kd_stable:RegisterAction('buyHorse', function(horseData,horseID,source)
 	return horseData
 end)
 ```
@@ -869,7 +870,8 @@ Fires when player open a saddlebag
 -- saddlebagConfig.maxSlots
 -- saddlebagConfig.maxWeight
 -- @param hash - saddlebag component hash
-exports.kd_stable:RegisterAction('updateSaddlebagConfig', function(saddlebagConfig,hash)
+-- @param source - serverID of the player
+exports.kd_stable:RegisterAction('updateSaddlebagConfig', function(saddlebagConfig,hash,source)
 	return saddlebagConfig
 end)
 ```
