@@ -784,7 +784,7 @@ end)
 Fires before generate horse item in menu
 ```lua
 -- @param horseData - horse's datas
-exports.kd_stable:RegisterAction('filterHorseData', function(horseData)
+exports.kd_stable:RegisterFilter('filterHorseData', function(horseData)
 	return horseData
 end)
 ```
@@ -793,7 +793,7 @@ Fires after generated horse item in menu
 ```lua
 -- @param item - menu item
 -- @param horseData - horse's datas
-exports.kd_stable:RegisterAction('filterYourHorseLine', function(item,horseData)
+exports.kd_stable:RegisterFilter('filterYourHorseLine', function(item,horseData)
 	return item
 end)
 ```
@@ -802,7 +802,7 @@ Fires before display horse statistics in the menu
 ```lua
 -- @param stats - table of horse's statistics 
 -- @param horseData - horse's datas
-exports.kd_stable:RegisterAction('generateHorseStatisticsForMenu', function(stats,horseData)
+exports.kd_stable:RegisterFilter('generateHorseStatisticsForMenu', function(stats,horseData)
 	return stats
 end)
 ```
@@ -812,7 +812,7 @@ Fires before do update actions when user select new item in menu
 -- @param same - boolean value
 -- same = true - Do update actions
 -- same = false - Cancel all update actions
-exports.kd_stable:RegisterAction('isSameMenu', function(same)
+exports.kd_stable:RegisterFilter('isSameMenu', function(same)
 	return same
 end)
 ```
@@ -821,7 +821,7 @@ Fires before display horse owned line in the menu
 ```lua
 -- @param item - menu item
 -- @param horseID - horse ID in the database
-exports.kd_stable:RegisterAction('updateItemHorseAvailable', function(item, horseID)
+exports.kd_stable:RegisterFilter('updateItemHorseAvailable', function(item, horseID)
 	return item
 end)
 ```
@@ -831,7 +831,7 @@ Fires before udpate translated string
 -- @param _lang - array of translated script
 -- <key> is the key of string (don't edit them)
 -- <value> is the translated string
-exports.kd_stable:RegisterAction('updateLangForNUI', function(_lang)
+exports.kd_stable:RegisterFilter('updateLangForNUI', function(_lang)
 	return _lang
 end)
 ```
@@ -840,7 +840,7 @@ Fires after all update action to edit the current prompt
 ```lua
 -- @param currentPrompt - name of the current prompt
 -- @param itemMenuData - all data of menu's item
-exports.kd_stable:RegisterAction('updatePreviewPrompt', function(currentPrompt,itemMenuData)
+exports.kd_stable:RegisterFilter('updatePreviewPrompt', function(currentPrompt,itemMenuData)
 	return currentPrompt
 end)
 ```
@@ -850,7 +850,7 @@ Fires when player buy a new horse, just before the 'buyHorse' aciton
 -- @param horseData - horse's datas filtered
 -- @param horseID - horse ID in Config.horses table
 -- @param source - serverID of the player
-exports.kd_stable:RegisterAction('buyHorse', function(horseData,horseID,source)
+exports.kd_stable:RegisterFilter('buyHorse', function(horseData,horseID,source)
 	return horseData
 end)
 ```
@@ -859,7 +859,7 @@ Fires at the start of the script after loaded all horses datas
 ```lua
 -- @param horseData - horse's datas filtered
 -- @param itemMenuData - horse's datas filtered from database
-exports.kd_stable:RegisterAction('loadHorseData', function(horseData,horseDataFromDB)
+exports.kd_stable:RegisterFilter('loadHorseData', function(horseData,horseDataFromDB)
 	return horseData
 end)
 ```
@@ -871,7 +871,7 @@ Fires when player open a saddlebag
 -- saddlebagConfig.maxWeight
 -- @param hash - saddlebag component hash
 -- @param source - serverID of the player
-exports.kd_stable:RegisterAction('updateSaddlebagConfig', function(saddlebagConfig,hash,source)
+exports.kd_stable:RegisterFilter('updateSaddlebagConfig', function(saddlebagConfig,hash,source)
 	return saddlebagConfig
 end)
 ```
