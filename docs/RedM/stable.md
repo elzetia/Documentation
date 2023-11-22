@@ -863,6 +863,16 @@ exports.kd_stable:RegisterFilter('loadHorseData', function(horseData,horseDataFr
 	return horseData
 end)
 ```
+#### <Badge type="server" text="Server" /> updateMaxStableSlot
+Fires when player open a saddlebag
+```lua
+-- @param maxAmount - maximum of slot
+-- @param source - serverID of the player
+-- @param typeOrder - 'horse' or 'wagon'
+exports.kd_stable:RegisterFilter('updateMaxStableSlot', function(maxAmount,source,typeOrder)
+	return maxAmount
+end)
+```
 #### <Badge type="server" text="Server" /> updateSaddlebagConfig
 Fires when player open a saddlebag
 ```lua
