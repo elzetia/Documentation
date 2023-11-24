@@ -486,11 +486,49 @@ end
 ```
 ### Events
 
-#### <Badge type="client" text="Client" /> Stop saddlebag animation {badge=Badge personnalisé}
+#### <Badge type="client" text="Client" /> Stop saddlebag animation
 Client event to stop the saddlebag animation
 ```lua
 'kd_stable:client:closeSaddleBag'
 ```
+
+### Exports
+
+#### <Badge type="client" text="Client" /> Get player's horses
+exports to get the list of player's horses datas
+```lua
+exports.kd_stable:getMyHorses()
+```
+
+#### <Badge type="client" text="Client" /> Get player's wagons
+exports to get the list of player's wagons datas
+```lua
+exports.kd_stable:getMyWagons()
+```
+
+#### <Badge type="server" text="Server" /> Get script configuration
+exports to get the script configuration
+```lua
+exports.kd_stable:getConfig()
+```
+
+#### <Badge type="server" text="Server" /> Get horse data
+exports to get the horse datas
+```lua
+-- @param horseID - ID of the horse (optional)
+-- if horseID is missing, the function returns the full list of horses
+exports.kd_stable:getHorses(horseID)
+```
+
+#### <Badge type="server" text="Server" /> Get wagon data
+exports to get the wagon datas
+```lua
+-- @param wagonID - ID of the wagon (optional)
+-- if wagonID is missing, the function returns the full list of wagons
+exports.kd_stable:getWagons(wagonID)
+```
+
+
 
 ### Actions
 
