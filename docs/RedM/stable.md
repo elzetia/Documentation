@@ -414,7 +414,8 @@ Function to open saddlebag
 ```lua
 -- @param source - serverID of the player
 -- @param saddlebagID - ID of container
-Config.OpenSaddlebag = function(source,saddlebagID)
+-- @param horseID - ID of the horse
+Config.OpenSaddlebag = function(source,saddlebagID, horseID)
 end
 ```
 #### <Badge type="server" text="Server" /> Open wagon locker
@@ -881,7 +882,8 @@ Fires when player open a saddlebag
 -- saddlebagConfig.maxWeight
 -- @param hash - saddlebag component hash
 -- @param source - serverID of the player
-exports.kd_stable:RegisterFilter('updateSaddlebagConfig', function(saddlebagConfig,hash,source)
+-- @param horseID - ID of the horse
+exports.kd_stable:RegisterFilter('updateSaddlebagConfig', function(saddlebagConfig,hash,source, horseID)
 	return saddlebagConfig
 end)
 ```
