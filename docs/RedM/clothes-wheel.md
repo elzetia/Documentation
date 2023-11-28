@@ -18,7 +18,7 @@ kd_clotheswheel works with VORPcore, RedEM:RP and QBR. Be sure you installed one
 - Congratulation, the Clothes Wheel script is ready to be use !
 ## 2. Usage
 The script will automatically detect what clothes you wear to only display them. 
-By default, press the key 2 to open the wheel. 
+By default, press the key `B` to open the wheel. 
 
 You can also open the wheel from other resource by using the client side event :
 ```lua
