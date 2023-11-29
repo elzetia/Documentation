@@ -20,9 +20,9 @@ kd_clotheswheel works with VORPcore, RedEM:RP and QBR. Be sure you installed one
 The script will automatically detect what clothes you wear to only display them. 
 By default, press the key `B` to open the wheel. 
 
-You can also open the wheel from other resource by using the client side event :
+You can also open the wheel from other resource by using the server side event :
 ```lua
-TriggerEvent('kd_clotheswheel:Open')
+TriggerServerEvent("kd_clotheswheel:server:getClothes")
 ```
 For shirt and neckwear, you have the possibility to put them up/down too.
 
