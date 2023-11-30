@@ -359,7 +359,7 @@ TriggerServerEvent('kd_clothingstore:useOutfitId',id)
 
 ## 5. Compatibility issues
 ### Fix VORP clothes commands
-Go in `vorp_character>client>commands.lua` line 3
+Go in `vorp_character > client > commands.lua` line 3
 ```lua
 local function toggleComp(hash, item)
 	local __player = PlayerPedId()
