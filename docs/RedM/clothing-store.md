@@ -42,6 +42,7 @@ Config.BlipSprite = `blip_shop_tailor`	 -- Clothing shop sprite
 Config.BlipSpriteWardrobes = `blip_shop_wardrobe`
 Config.DisplayOutfitId = false
 Config.PercentResell = 0.33 -- Use 0 tu turn off the resell feature : 0.5 = 50% of the initial price
+Config.CanResellInWardrobe = false --Allow player to resell clothes in wardrobe
 Config.OpenStoreNewCharacter = true
 Config.EnablePrompt = true
 Config.ExtraLightIntensity = 10.0 -- Light added in the store to see better the character
