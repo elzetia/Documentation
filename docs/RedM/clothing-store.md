@@ -334,6 +334,12 @@ You can grab the closing of the menu after the ped creation with this client eve
 RegisterNetEvent('kd_clothingstore:client:endCreation', function()
 end)
 ```
+#### <Badge type="client" text="Client" /> Open the store
+Event to open the store
+```lua
+--@param needInstance = true/false : Define if the wardrobe need personnal instance
+TriggerEvent('kd_clothingstore:openStore', needInstance)
+```
 #### <Badge type="client" text="Client" /> Open the wardrobe
 Event to open the wardrobe
 ```lua
