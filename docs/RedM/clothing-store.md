@@ -356,3 +356,21 @@ You can apply an outfit from his id to a player by trigger this server event (fr
 ```lua
 TriggerServerEvent('kd_clothingstore:useOutfitId',id)
 ```
+
+## 5. Compatibility issues
+### Fix VORP clothes commands
+Go in `vorp_character>client>commands.lua` line 3
+```lua
+local function toggleComp(hash, item)
+	local __player = PlayerPedId()
+	if Citizen.InvokeNative(0xFB4891BD7578CDC1, __player, hash) then
+		-- Citizen.InvokeNative(0xD710A5007C2AC539, __player, hash, 0)
+		TriggerEvent('kd_clothingstore:setClothData', hash, 0)
+	else
+		-- Citizen.InvokeNative(0xD3A7B003ED343FD9, __player, item, false, false, false)
+		-- Citizen.InvokeNative(0xD3A7B003ED343FD9, __player, item, true, true, true)
+		TriggerEvent('kd_clothingstore:setClothData', hash, item)
+	end
+	UpdateVariation(__player)
+end
+```
