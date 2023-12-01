@@ -358,7 +358,7 @@ TriggerServerEvent('kd_clothingstore:useOutfitId',id)
 ```
 
 ## 5. Compatibility issues
-### Fix VORP clothes commands
+### <Badge type="" text="VORP" /> Fix clothes commands
 Go in `vorp_character\client\commands.lua` line 3
 ```lua:line-numbers=3
 local function toggleComp(hash, item)
@@ -376,7 +376,7 @@ local function toggleComp(hash, item)
 	TriggerEvent('kd_clothingstore:setClothData', __player, category, item)
 end
 ```
-### Fix VORP clothes in character selector
+### <Badge type="" text="VORP" /> Fix clothes in character selector
 Go in `vorp_character\client\client.lua` line 137
 ```lua:line-numbers=137
 local function LoadComps(ped, components)
