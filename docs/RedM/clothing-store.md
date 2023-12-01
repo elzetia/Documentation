@@ -373,21 +373,13 @@ local function toggleComp(hash, item)
 			break
 		end
 	end
-	TriggerEvent('kd_clothingstore:setClothData', __player, category, item) // [!code ++]
+	TriggerEvent('kd_clothingstore:setClothData', __player, category, item)
 end
 ```
 ### Fix VORP clothes in character selector
 Go in `vorp_character\client\client.lua` line 137
 ```lua:line-numbers=137
 local function LoadComps(ped, components)
-	for category, value in pairs(components) do
-		if value ~= -1 then
-			Citizen.InvokeNative(0xD3A7B003ED343FD9, ped, value, false, false, false)
-			Citizen.InvokeNative(0xD3A7B003ED343FD9, ped, value, false, true, false)
-			Citizen.InvokeNative(0x66b957aac2eaaeab, ped, value, 0, 0, 1, 1) -- _UPDATE_SHOP_ITEM_WEARABLE_STATE
-			Citizen.InvokeNative(0xAAB86462966168CE, ped, 1)        --_CLEAR
-		end
-	end
-	TriggerEvent("kd_clothingstore:ApplyClothes",ped,components) // [!code ++]
+	TriggerEvent("kd_clothingstore:ApplyClothes",ped,components)
 end
 ```
