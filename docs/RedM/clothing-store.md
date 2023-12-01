@@ -359,18 +359,35 @@ TriggerServerEvent('kd_clothingstore:useOutfitId',id)
 
 ## 5. Compatibility issues
 ### Fix VORP clothes commands
-Go in `vorp_character > client > commands.lua` line 3
-```lua
+Go in `vorp_character\client\commands.lua` line 3
+```lua:line-numbers=3
 local function toggleComp(hash, item)
 	local __player = PlayerPedId()
 	if Citizen.InvokeNative(0xFB4891BD7578CDC1, __player, hash) then
-		-- Citizen.InvokeNative(0xD710A5007C2AC539, __player, hash, 0)
-		TriggerEvent('kd_clothingstore:setClothData', hash, 0)
-	else
-		-- Citizen.InvokeNative(0xD3A7B003ED343FD9, __player, item, false, false, false)
-		-- Citizen.InvokeNative(0xD3A7B003ED343FD9, __player, item, true, true, true)
-		TriggerEvent('kd_clothingstore:setClothData', hash, item)
+		item = 0
 	end
-	UpdateVariation(__player)
+	local category = 'unknown'
+	for categoryName,categoryHash in pairs (Config.HashList) do
+		if categoryHash == hash then
+			category = categoryName
+			break
+		end
+	end
+	TriggerEvent('kd_clothingstore:setClothData', __player, category, item) // [!code ++]
+end
+```
+### Fix VORP clothes in character selector
+Go in `vorp_character\client\client.lua` line 137
+```lua:line-numbers=137
+local function LoadComps(ped, components)
+	for category, value in pairs(components) do
+		if value ~= -1 then
+			Citizen.InvokeNative(0xD3A7B003ED343FD9, ped, value, false, false, false)
+			Citizen.InvokeNative(0xD3A7B003ED343FD9, ped, value, false, true, false)
+			Citizen.InvokeNative(0x66b957aac2eaaeab, ped, value, 0, 0, 1, 1) -- _UPDATE_SHOP_ITEM_WEARABLE_STATE
+			Citizen.InvokeNative(0xAAB86462966168CE, ped, 1)        --_CLEAR
+		end
+	end
+	TriggerEvent("kd_clothingstore:ApplyClothes",ped,components) // [!code ++]
 end
 ```
