@@ -64,7 +64,8 @@ Config.ValidModel = {
     ropeOffset = vector3(0,0,0.3), -- offset from ropeBone to adjust the position of the rope
     ropeDistancetake =  1.5, -- Max distance to take the winch
     attachVehBone = "misc_a", -- Bone where the vehicle is attached
-    attachOffset = vector4(0.0,0.0,0.0,0.0) -- Offset of the attach positon (w value is the tilt)
+    attachLocationOffset = vector3(0.0,0.0,0.0), --offset from the attachVehBone bone
+    attachOffset = vector4(0.0,0.0,0.0,0.0) -- for the vehicle location when attach (w value is the tilt)
   },
    [`slamtruck`] =  {
     bedUp = 0,
@@ -124,4 +125,65 @@ TriggerClientEvent('kd_towtruck:CanUse', source, false)
 You can turn on the script again with the same client event
 ```lua
 TriggerClientEvent('kd_towtruck:CanUse', source, true)
+```
+
+## 6. Towtruck setup
+### cortowmfd4
+```lua
+Config.ValidModel[`cortowmfd4`] =  {
+  bedUp = 1.901,
+  bedDown = 6.0,
+  ropeBone = "attach_male",
+  ropeOffset = vector3(0,0,0),
+  ropeDistancetake =  1.5,
+  attachVehBone = "misc_z",
+  attachOffset = vector4(0.0,0.0,0.0,0.0)
+}
+```
+### lgc19flatbed
+```lua
+Config.ValidModel[`lgc19flatbed`] =  {
+  bedUp = 3.235,
+  bedDown = 7.7,
+  ropeBone = "misc_b",
+  ropeOffset = vector3(0,0,0),
+  ropeDistancetake =  1.5,
+  attachVehBone = "misc_a",
+  attachOffset = vector4(0.0,0.0,0.0,0.0)
+}
+```
+### 20ramrbc
+```lua
+Config.ValidModel[`20ramrbc`] =  {
+  bedUp = 4.449,
+  bedDown = 6.87,
+  ropeBone = "attach_male",
+  ropeOffset = vector3(0,0,0),
+  ropeDistancetake =  1.5,
+  attachVehBone = "misc_z",
+  attachOffset = vector4(0.0,0.0,0.0,0.0)
+}
+### c3navistar
+```lua
+Config.ValidModel[`c3navistar`] =  {
+  bedUp = 4.603,
+  bedDown = 9.8,
+  ropeBone = "misc_a",
+  ropeOffset = vector3(0.0,0.0,-0.2),
+  ropeDistancetake =  1.5,
+  attachVehBone = "misc_b",
+  attachOffset = vector4(0.0,0.0,0.0,0.0) 
+}
+```
+### BFGWBerg
+```lua
+Config.ValidModel[`BFGWBerg`] =  {
+  bedUp = 2.31,
+  bedDown = 6.45,
+  ropeBone = "misc_b",
+  ropeOffset = vector3(-0.20,0.00,0.0),
+  ropeDistancetake =  1.3,
+  attachVehBone = "misc_a",
+  attachOffset = vector3(0,0,0)
+}
 ```
