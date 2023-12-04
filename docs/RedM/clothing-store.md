@@ -358,8 +358,8 @@ TriggerServerEvent('kd_clothingstore:useOutfitId',id)
 ```
 
 ## 5. Compatibility issues
-### <Badge type="" text="VORP" /> Fix clothes commands
-Go in `vorp_character\client\commands.lua` line 3
+### <Badge type="vorp" text="VORP" /> Fix clothes commands
+Go in `vorp_character\client\commands.lua` line 3 and replace `toggleComp` function by this one
 ```lua:line-numbers=3
 local function toggleComp(hash, item)
 	local __player = PlayerPedId()
@@ -376,10 +376,34 @@ local function toggleComp(hash, item)
 	TriggerEvent('kd_clothingstore:setClothData', __player, category, item)
 end
 ```
-### <Badge type="" text="VORP" /> Fix clothes in character selector
-Go in `vorp_character\client\client.lua` line 137
+### <Badge type="vorp" text="VORP" /> Fix clothes in character selector
+Go in `vorp_character\client\client.lua` line 137 and replace `LoadComps` function by this one
 ```lua:line-numbers=137
 local function LoadComps(ped, components)
 	TriggerEvent("kd_clothingstore:ApplyClothes",ped,components)
+end
+```
+### <Badge type="rsg" text="RSG" /> Fix rsg-bathing
+Go in `rsg-bathing\fxmanifest.lua` line 24 and remove the `rsg-wardrobe` dependency
+```lua:line-numbers=21
+dependencies {
+    'rsg-core',
+    'rsg-appearance', 
+    'rsg-wardrobe' // [!code --]
+}
+```
+Go in `rsg-bathing\client\client.lua` line 367 and edit `UndressCharacter` function
+```lua:line-numbers=367
+UndressCharacter = function()
+    local ped = PlayerPedId()
+    local EquippedWeapons = {}
+
+    EquippedWeapons = exports['rsg-weapons']:EquippedWeapons()
+
+    for i = 1, #EquippedWeapons do
+        RemoveWeaponFromPed(ped, EquippedWeapons[i])
+    end
+    TriggerEvent('rsg-wardrobe:client:removeAllClothing') // [!code --]
+    TriggerEvent('kd_clothingstore:removeAllClothes') // [!code ++]
 end
 ```
