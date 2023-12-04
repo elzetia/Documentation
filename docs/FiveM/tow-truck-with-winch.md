@@ -91,32 +91,6 @@ Config.VehAttachBone = {
 To add it, just copy the `flatbed3` array in the Config.ValidModel variable and change the modelname. Sometime, you will have to change the configuration of the vehicle to make it more usable. 
 
 [Video tutorial](https://youtu.be/fIqxunMiysM?si=XlnLo-6CRWjvettT)
-
-Example :
-```lua
-Config.ValidModel = {
-  [`flatbed3`] =  {
-    -- Set bedUp & bedDown to 0 if you don't need to move the bed to use the winch
-    bedUp = 3.7, -- Distance between bodyshell bone and attachVehBone when the bed is up
-    bedDown = 8.1, -- Distance between bodyshell bone and attachVehBone when the bed is down
-    ropeBone = "misc_b", -- Bone where the rope is attached
-    ropeOffset = vector3(0,0,0.3), -- offset from ropeBone to adjust the position of the rope
-    ropeDistancetake =  1.5, -- Max distance to take the winch
-    attachVehBone = "misc_a", -- Bone where the vehicle is attached
-    attachOffset = vector4(0.0,0.0,0.0,0.0) -- Offset of the attach positon (w value is the tilt)
-  },
-  [`policebed`] =  {
-    -- Set bedUp & bedDown to 0 if you don't need to move the bed to use the winch
-    bedUp = 3.7, -- Distance between bodyshell bone and attachVehBone when the bed is up
-    bedDown = 8.1, -- Distance between bodyshell bone and attachVehBone when the bed is down
-    ropeBone = "misc_b", -- Bone where the rope is attached
-    ropeOffset = vector3(0,0,0.3), -- offset from ropeBone to adjust the position of the rope
-    ropeDistancetake =  1.5, -- Max distance to take the winch
-    attachVehBone = "misc_a", -- Bone where the vehicle is attached
-    attachOffset = vector4(0.0,0.0,0.0,0.0) -- Offset of the attach positon (w value is the tilt)
-  },
-}
-```
 ## 5. For developer
 You can turn off the script for a specific player by using this client event
 ```lua
@@ -127,7 +101,7 @@ You can turn on the script again with the same client event
 TriggerClientEvent('kd_towtruck:CanUse', source, true)
 ```
 
-## 6. Towtruck setup
+## 6. Some Towtrucks configuration
 ### cortowmfd4
 ```lua
 Config.ValidModel[`cortowmfd4`] =  {
