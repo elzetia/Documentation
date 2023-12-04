@@ -163,6 +163,7 @@ Config.ValidModel[`20ramrbc`] =  {
   attachVehBone = "misc_z",
   attachOffset = vector4(0.0,0.0,0.0,0.0)
 }
+```
 ### c3navistar
 ```lua
 Config.ValidModel[`c3navistar`] =  {
