@@ -56,16 +56,16 @@ Config.ValidModel = {
   -- Copy this array to add vehicle.
   [`flatbed3`] =  {
     -- Set bedUp & bedDown to 0 if you don't need to move the bed to use the winch
-    referenceBone = "bodyshell", --optional, by default: bodyshell
+    referenceBone = "bodyshell", --optional
     --referenceBone <-> attachVehBone is the distance to define if the bed is up or down
     bedUp = 3.7, -- Distance between bodyshell bone and attachVehBone when the bed is up
     bedDown = 8.1, -- Distance between bodyshell bone and attachVehBone when the bed is down
     ropeBone = "misc_b", -- Bone where the rope is attached
-    ropeOffset = vector3(0,0,0.3), -- offset from ropeBone to adjust the position of the rope
+    ropeOffset = vector3(0,0,0.3), -- offset from ropeBone to adjust the position of the rope (optional)
     ropeDistancetake =  1.5, -- Max distance to take the winch
     attachVehBone = "misc_a", -- Bone where the vehicle is attached
-    attachLocationOffset = vector3(0.0,0.0,0.0), --offset from the attachVehBone bone
-    attachOffset = vector4(0.0,0.0,0.0,0.0) -- for the vehicle location when attach (w value is the tilt)
+    attachLocationOffset = vector3(0.0,0.0,0.0), --offset from the attachVehBone bone (optional)
+    attachOffset = vector4(0.0,0.0,0.0,0.0) -- for the vehicle location when attach (w value is the tilt) (optional)
   },
    [`slamtruck`] =  {
     bedUp = 0,
@@ -134,10 +134,8 @@ Config.ValidModel[`cortowmfd4`] =  {
   bedUp = 1.901,
   bedDown = 6.0,
   ropeBone = "attach_male",
-  ropeOffset = vector3(0,0,0),
   ropeDistancetake =  1.5,
   attachVehBone = "misc_z",
-  attachOffset = vector4(0.0,0.0,0.0,0.0)
 }
 ```
 ### lgc19flatbed
@@ -146,10 +144,8 @@ Config.ValidModel[`lgc19flatbed`] =  {
   bedUp = 3.235,
   bedDown = 7.7,
   ropeBone = "misc_b",
-  ropeOffset = vector3(0,0,0),
   ropeDistancetake =  1.5,
   attachVehBone = "misc_a",
-  attachOffset = vector4(0.0,0.0,0.0,0.0)
 }
 ```
 ### 20ramrbc
@@ -158,10 +154,8 @@ Config.ValidModel[`20ramrbc`] =  {
   bedUp = 4.449,
   bedDown = 6.87,
   ropeBone = "attach_male",
-  ropeOffset = vector3(0,0,0),
   ropeDistancetake =  1.5,
   attachVehBone = "misc_z",
-  attachOffset = vector4(0.0,0.0,0.0,0.0)
 }
 ```
 ### c3navistar
@@ -173,7 +167,6 @@ Config.ValidModel[`c3navistar`] =  {
   ropeOffset = vector3(0.0,0.0,-0.2),
   ropeDistancetake =  1.5,
   attachVehBone = "misc_b",
-  attachOffset = vector4(0.0,0.0,0.0,0.0) 
 }
 ```
 ### BFGWBerg
@@ -185,6 +178,19 @@ Config.ValidModel[`BFGWBerg`] =  {
   ropeOffset = vector3(-0.20,0.00,0.0),
   ropeDistancetake =  1.3,
   attachVehBone = "misc_a",
-  attachOffset = vector3(0,0,0)
+}
+```
+### Mercedes Atego
+[Download](https://www.gtainside.com/en/gta5/cars/185943-mercedes-benz-atego-adac-flatbed/)
+```lua
+Config.ValidModel[`flatbed4`] =  {
+  referenceBone = "misc_d",
+  bedUp = 1.92,
+  bedDown = 6.310,
+  ropeBone = "misc_b",
+  ropeOffset = vector3(0,-0.9,-0.1),
+  ropeDistancetake =  1.5,
+  attachVehBone = "misc_b",
+  attachLocationOffset = vector3(0.0,-3.0,-1.0),
 }
 ```
