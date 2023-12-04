@@ -12,12 +12,10 @@ Documentation relating to the kd_towtruck.
 Tow Truck with WINCH is a standalone script. So you don't need a specific framework to use it. It's also mean it works with all framework (Esx, QBCore, VRP, DRP, …).
 
 - Drag and drop this 4 resources in your resources folder
-  - InteractSound
   - kd_custom_native
   - kd_hud-event
   - kd_towtruck
 - Add this 4 ensures in your server.cfg
-  - `ensure InteractSound`
   - `ensure kd_custom-native`
   - `ensure kd_hud-event`
   - `ensure kd_towtruck`
@@ -58,6 +56,8 @@ Config.ValidModel = {
   -- Copy this array to add vehicle.
   [`flatbed3`] =  {
     -- Set bedUp & bedDown to 0 if you don't need to move the bed to use the winch
+    referenceBone = "bodyshell", --optional, by default: bodyshell
+    --referenceBone <-> attachVehBone is the distance to define if the bed is up or down
     bedUp = 3.7, -- Distance between bodyshell bone and attachVehBone when the bed is up
     bedDown = 8.1, -- Distance between bodyshell bone and attachVehBone when the bed is down
     ropeBone = "misc_b", -- Bone where the rope is attached
