@@ -243,6 +243,7 @@ Config.horses = {
 	[1] = {
 		price = {money=2.75,gold = 2},
 		name = "New name",
+		noDieByAge = true, --if true, the horse will not die by aging (optional)
 		age = 5, --Age of the horse if 'Horse Aging' add-ons is loaded
 		variations = {
 			"A_C_Horse_AmericanPaint_Greyovero",
@@ -825,6 +826,31 @@ kd_stable:RegisterFilter('filterHorseData', function(horseData)
 end)
 ```
 
+#### <Badge type="client" text="Client" /> canAccessToStable
+Fires before display stable prompt
+```lua
+-- @param canAccess - boolean
+-- @param stable - stable data
+exports.kd_stable:RegisterFilter('canAccessToStable', function(canAccess, stable)
+	return canAccess
+end)
+```
+#### <Badge type="client" text="Client" /> canUseFixHorseCommand
+Fires before fix horse prompt with the command
+```lua
+-- @param canUse - boolean
+exports.kd_stable:RegisterFilter('canUseFixHorseCommand', function(canUse)
+	return canUse
+end)
+```
+#### <Badge type="client" text="Client" /> canUseFixWagonCommand
+Fires before fix wagon with the command
+```lua
+-- @param canUse - boolean
+exports.kd_stable:RegisterFilter('canUseFixWagonCommand', function(canUse)
+	return canUse
+end)
+```
 #### <Badge type="client" text="Client" /> filterHorseData
 Fires before generate horse item in menu
 ```lua
@@ -859,6 +885,14 @@ Fires before do update actions when user select new item in menu
 -- same = false - Cancel all update actions
 exports.kd_stable:RegisterFilter('isSameMenu', function(same)
 	return same
+end)
+```
+#### <Badge type="client" text="Client" /> updateHorseDataBeforeSpawn
+Fires before spawn an horse
+```lua
+-- @param horseData - horse's datas
+exports.kd_stable:RegisterFilter('updateHorseDataBeforeSpawn', function(horseData)
+	return item
 end)
 ```
 #### <Badge type="client" text="Client" /> updateItemHorseAvailable
