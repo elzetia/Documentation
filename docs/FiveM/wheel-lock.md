@@ -120,6 +120,6 @@ Use this canUseWheellock function in the configuration
 ESX = exports['es_extended']:getSharedObject()
 Config.canUseWheellock = function(source)
     local xPlayer = ESX.GetPlayerFromId(source)
-    return (xPlayer.job.Name == "police")
+    return (xPlayer.getJob().name == "police")
 end
 ```
