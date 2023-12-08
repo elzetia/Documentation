@@ -112,3 +112,14 @@ TriggerEvent('kd_wheellock:action') -- Put or remove the wheel lock
 TriggerEvent('kd_wheellock:actionPut') -- Only Put the wheel lock
 TriggerEvent('kd_wheellock:actionRemove') -- Only Remove the wheel lock
 ```
+
+## 5. Snippets
+### <Badge type="esx" text="ESX" /> Restrict the wheellock with job
+Use this canUseWheellock function in the configuration
+```lua
+ESX = exports['es_extended']:getSharedObject()
+Config.canUseWheellock = function(source)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    return (xPlayer.job.Name == "police")
+end
+```
