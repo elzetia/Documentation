@@ -644,6 +644,8 @@ Fires when the player buy a new horse
 -- horseData.acceleration - horse's acceleration statistic
 -- horseData.handling - horse's handling statistic
 -- horseData.components - array of horse's components <key: category, value: componentData>
+-- horseData.birth - (need aging add-on) horse's birthday
+-- horseData.deathAge - (need aging add-on) horse's age of death
 -- @param price - price of the horse
 -- @param moneyType - devise of the price : 0 for normal & 1 for gold
 exports.kd_stable:RegisterAction('buyHorse', function(source,horseData,price,moneyType)
