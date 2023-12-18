@@ -359,77 +359,8 @@ TriggerServerEvent('kd_clothingstore:useOutfitId',id)
 
 ## 5. Compatibility issues
 ### <Badge type="vorp" text="VORP" /> Fix clothes commands
-Go in `vorp_character\client\commands.lua` line 3 and replace `toggleComp` function by this one
-```lua:line-numbers=3
-local function toggleComp(hash, item)
-	local __player = PlayerPedId()
-	if Citizen.InvokeNative(0xFB4891BD7578CDC1, __player, hash) then
-		item = 0
-	end
-	local category = 'unknown'
-	for categoryName,categoryHash in pairs (Config.HashList) do
-		if categoryHash == hash then
-			category = categoryName
-			break
-		end
-	end
-	TriggerEvent('kd_clothingstore:setClothData', __player, category, item)
-end
-```
+Replace `vorp_character\client\commands.lua` by this new one: <b><a href="../snippets/VORP-fix-commands/commands.lua" download="commands.lua">commands.lua</a></b>
 
-Go in `vorp_character\client\commands.lua` line 51 and replace `bandanaon` & `bandanaoff` commands by these one
-```lua:line-numbers=51
-local BandanaOn = false
-RegisterCommand('bandanaon', function(source, args, rawCommand)
-    local player = PlayerPedId()
-    if not BandanaOn then
-        Citizen.InvokeNative(0xAE72E7DF013AAA61, player, 0, `BANDANA_ON_RIGHT_HAND`, 1, 0, -1.0)
-        Wait(750)
-    end
-    if type(CachedComponents.NeckWear) == "table" then
-        Citizen.InvokeNative(0x66B957AAC2EAAEAB, player, CachedComponents.NeckWear.hash, -1829635046, 0, true, 1)
-        if CachedComponents.NeckWear.palette then
-        Citizen.InvokeNative(0x4EFC1F8FF1AD94DE,
-                player,
-                94259016,
-                CachedComponents.NeckWear.palette,
-                CachedComponents.NeckWear.tint0,
-                CachedComponents.NeckWear.tint1,
-                CachedComponents.NeckWear.tint2
-            )
-        end
-    else
-        Citizen.InvokeNative(0x66B957AAC2EAAEAB, player, CachedComponents.NeckWear, -1829635046, 0, true, 1)
-    end
-    Citizen.InvokeNative(0x704C908E9C405136, player)
-    BandanaOn = true
-end, false)
-
-RegisterCommand('bandanaoff', function(source, args, rawCommand)
-    local player = PlayerPedId()
-    if BandanaOn then
-        Citizen.InvokeNative(0xAE72E7DF013AAA61, player, 0, `BANDANA_OFF_RIGHT_HAND`, 1, 0, -1.0)
-        Wait(750)
-    end
-    if type(CachedComponents.NeckWear) == "table" then
-        Citizen.InvokeNative(0x66B957AAC2EAAEAB, player, CachedComponents.NeckWear.hash, `base`, 0, true, 1)
-        if CachedComponents.NeckWear.palette then
-        Citizen.InvokeNative(0x4EFC1F8FF1AD94DE,
-                player,
-                94259016,
-                CachedComponents.NeckWear.palette,
-                CachedComponents.NeckWear.tint0,
-                CachedComponents.NeckWear.tint1,
-                CachedComponents.NeckWear.tint2
-            )
-        end
-    else
-        Citizen.InvokeNative(0x66B957AAC2EAAEAB, player, CachedComponents.NeckWear, `base`, 0, true, 1)
-    end
-    Citizen.InvokeNative(0x704C908E9C405136, player)
-    BandanaOn = false
-end, false)
-```
 ### <Badge type="vorp" text="VORP" /> Fix clothes in character selector
 Go in `vorp_character\client\client.lua` line 137 and replace `LoadComps` function by this one
 ```lua:line-numbers=137
