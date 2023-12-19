@@ -150,29 +150,45 @@ RegisterCommand("tuck", function()
 
 	if type(CachedComponents.Boots) == "table" then
 		if CachedComponents.Boots.hash == -1 then return end
-
 		Citizen.InvokeNative(0x66B957AAC2EAAEAB, PlayerPedId(), CachedComponents.Boots.hash, status, 0,true, 1)
-		
 		if CachedComponents.Boots.palette then
-			Citizen.InvokeNative(0x4EFC1F8FF1AD94DE, PlayerPedId(), joaat('boots'), CachedComponents.Boots.palette, CachedComponents.Boots.tint0, CachedComponents.Boots.tint1, CachedComponents.Boots.tint2)
+			Citizen.InvokeNative(0x4EFC1F8FF1AD94DE,
+				PlayerPedId(),
+				joaat('boots'),
+				CachedComponents.Boots.palette,
+				CachedComponents.Boots.tint0,
+				CachedComponents.Boots.tint1,
+				CachedComponents.Boots.tint2
+			)
 		end
-		
 		if type(CachedComponents.Pant) == "table" then
 			if CachedComponents.Pant.palette then
-				Citizen.InvokeNative(0x4EFC1F8FF1AD94DE, PlayerPedId(), joaat('pants'), CachedComponents.Pant.palette, CachedComponents.Pant.tint0, CachedComponents.Pant.tint1, CachedComponents.Pant.tint2)
+				Citizen.InvokeNative(0x4EFC1F8FF1AD94DE,
+					PlayerPedId(),
+					joaat('pants'),
+					CachedComponents.Pant.palette,
+					CachedComponents.Pant.tint0,
+					CachedComponents.Pant.tint1,
+					CachedComponents.Pant.tint2
+				)
 			end
 		end
 		tuck = not tuck
 	else
 		Citizen.InvokeNative(0x66B957AAC2EAAEAB, PlayerPedId(), CachedComponents.Boots, status, 0, true, 1)
-		
 		if type(CachedComponents.Pant) == "table" then
 			if CachedComponents.Pant.palette then
-				Citizen.InvokeNative(0x4EFC1F8FF1AD94DE, PlayerPedId(), joaat('pants'), CachedComponents.Pant.palette, CachedComponents.Pant.tint0, CachedComponents.Pant.tint1, CachedComponents.Pant.tint2)
+				Citizen.InvokeNative(0x4EFC1F8FF1AD94DE,
+					PlayerPedId(),
+					joaat('pants'),
+					CachedComponents.Pant.palette,
+					CachedComponents.Pant.tint0,
+					CachedComponents.Pant.tint1,
+					CachedComponents.Pant.tint2
+				)
 			end
 		end
 		tuck = not tuck
 	end
-
 	Citizen.InvokeNative(0x704C908E9C405136, PlayerPedId())
 end, false)
