@@ -357,6 +357,44 @@ You can apply an outfit from his id to a player by trigger this server event (fr
 TriggerServerEvent('kd_clothingstore:useOutfitId',id)
 ```
 
+### Filters
+
+[Filters](/DeveloperResources/filters) are the new way to modify data used by the script added in the `v2.4.8`. These filters are fired at a specific point in time during the execution of the script. But contrary to events, filters are **synchronous**. 
+
+- Syntax: 
+```lua
+-- @param <actionName> - name of the action
+-- @param <argumentList> - list of arguments which are passed
+exports.kd_clothingstore:RegisterFilter(<actionName>, function(variable)
+  -- Add your new data here
+	return variable -- Don't forget to return the value
+end)
+```
+
+- Example :
+```lua
+kd_clothingstore:RegisterFilter('canAccessToSpecificClothes', function(canAccess,source,clothesData,moneyType)
+  local job = GetJob(source)
+	if job ~= "tailor" then
+		return false, SendNotif("Only tailer can buy clothes")
+	end
+  return canAccess
+end)
+```
+
+#### <Badge type="server" text="Server" /> canAccessToSpecificClothes
+Fires before buy a new clothes
+```lua
+-- @param canAccess - boolean
+-- @param source - serverID of the player
+-- @param clothesData - information about clothes
+-- @param clothesData.hash - hash of the clothes
+-- @param moneyType - devise of the order : 0 for normal & 1 for gold
+exports.kd_stable:RegisterFilter('canAccessToStable', function(canAccess,source,clothesData,moneyType)
+	return canAccess
+end)
+```
+
 ## 5. Compatibility issues
 ### <Badge type="vorp" text="VORP" /> Fix clothes commands
 Replace `vorp_character\client\commands.lua` by this new one: <b><a href="../snippets/VORP-fix-commands/commands.lua" download="commands.lua">commands.lua</a></b>
