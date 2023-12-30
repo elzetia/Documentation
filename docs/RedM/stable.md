@@ -15,11 +15,10 @@ To install kd_stable:
 - Add this ensure in your server.cfg
   - `ensure kd_stable`
 - Be sure you remove your previous stable script
-- 
 Congratulation, the **Stable** script is ready to be used!
 
 ## 2. Usage
-Go on the store (blip on the map) to get the prompt. Press the key to open the menu.
+Go to the store (blip on the map) to get the prompt. Press the key to open the menu.
 
 ## 3. Config.lua file
 **Price format**
@@ -323,8 +322,8 @@ trainingTracks = {
 
 ### Functions
 
-If you need to overwrite a native function linked to the framework (custom inventory for example), you can overwrite my functions by added them in the config file.
-You don't need to use all functions.
+If you need to overwrite a native function linked to the framework (custom inventory for example), you can overwrite my functions by adding them in the config file.
+You don't need to use all the functions.
 
 #### <Badge type="client" text="Client" /> Initialize the framework
 Function to init your framework
@@ -335,7 +334,7 @@ Config.InitFramework = function()
 end
 ```
 #### <Badge type="client" text="Client" /> Restrict the access to specific stable
-Function to restrict the access to a specific stable
+Function to restrict access to a specific stable
 ```lua
 -- @param stableID - ID of stable
 -- @return false to cancel the access to the stable
@@ -385,7 +384,7 @@ Config.GetJob = function(source)
 end
 ```
 #### <Badge type="server" text="Server" /> Get RP Name
-Function to get the player's job
+Function to get the player's name
 ```lua
 -- @param source - serverID of the player
 -- @return the player name
@@ -393,7 +392,7 @@ Config.GetRPName = function(source)
 end
 ```
 #### <Badge type="server" text="Server" /> Give money
-Function to give money to player
+Function to give money to the player
 ```lua
 -- @param source - serverID of the player
 -- @param amount - money amount
@@ -409,7 +408,7 @@ Config.InitFramework = function()
 end
 ```
 #### <Badge type="server" text="Server" /> Notification
-Function to send notification to player
+Function to send notification to the player
 ```lua
 -- @param source - serverID of the player
 -- @param text - text of notification
@@ -434,7 +433,7 @@ Config.OpenWagonLocker = function(source,wagonID)
 end
 ```
 #### <Badge type="server" text="Server" /> Overwrite horse slot
-Function to overwrite the number of horse the player can buy
+Function to overwrite the number of horses the player can buy
 ```lua
 -- @param typeOrder - type of order : 'horse' or 'wagon'
 -- @param source - serverID of the player
@@ -570,7 +569,7 @@ exports.kd_stable:RegisterAction('initHorsePrompt', function(promptGroupId,entit
 end)
 ```
 #### <Badge type="client" text="Client" /> letterBox
-Fires when the letter box state switch
+Fires when the letter box state is switched
 ```lua
 -- @param show - state of letter box: true/false
 exports.kd_stable:RegisterAction('letterBox', function(show)
@@ -618,7 +617,7 @@ exports.kd_stable:RegisterAction('bequeathWagon', function(source,wagonID,target
 end)
 ```
 #### <Badge type="server" text="Server" /> buyComponent
-Fires when the player buy a new component
+Fires when the player buys a new component
 ```lua
 -- @param source - serverID of the player
 -- @param componentData - information about the component
@@ -630,7 +629,7 @@ exports.kd_stable:RegisterAction('buyComponent', function(source,componentData,p
 end)
 ```
 #### <Badge type="server" text="Server" /> buyHorse
-Fires when the player buy a new horse
+Fires when the player buys a new horse
 ```lua
 -- @param source - serverID of the player
 -- @param horseData - information about the horse
@@ -652,7 +651,7 @@ exports.kd_stable:RegisterAction('buyHorse', function(source,horseData,price,mon
 end)
 ```
 #### <Badge type="server" text="Server" /> buyWagon
-Fires when the player buy a new wagon
+Fires when the player buys a new wagon
 ```lua
 -- @param source - serverID of the player
 -- @param wagonData - information about the wagon
@@ -700,13 +699,13 @@ exports.kd_stable:RegisterAction('horsesLoaded', function()
 end)
 ```
 #### <Badge type="server" text="Server" /> initSQLValues
-Fires when all database values are updated after start the script
+Fires when all database values are updated after the script is started
 ```lua
 exports.kd_stable:RegisterAction('initSQLValues', function()
 end)
 ```
 #### <Badge type="server" text="Server" /> newFavorite
-Fires when the player defines a new favourite horse
+Fires when the player assigns a new favourite horse
 ```lua
 -- @param source - serverID of the player
 -- @param horseID - ID of the horse
@@ -794,7 +793,7 @@ exports.kd_stable:RegisterAction('takeSaddlebag', function(source,horseID,saddle
 end)
 ```
 #### <Badge type="server" text="Server" /> updateSQLStructure
-Fires when the MySQL is initilized
+Fires when the MySQL is initialized
 ```lua
 exports.kd_stable:RegisterAction('updateSQLStructure', function()
 end)
@@ -829,7 +828,7 @@ end)
 ```
 
 #### <Badge type="client" text="Client" /> canAccessToStable
-Fires before display stable prompt
+Fires before display of the stable prompt
 ```lua
 -- @param canAccess - boolean
 -- @param stable - stable data
@@ -838,7 +837,7 @@ exports.kd_stable:RegisterFilter('canAccessToStable', function(canAccess, stable
 end)
 ```
 #### <Badge type="client" text="Client" /> canUseFixHorseCommand
-Fires before fix horse prompt with the command
+Fires before display of the fix horse prompt with the command
 ```lua
 -- @param canUse - boolean
 exports.kd_stable:RegisterFilter('canUseFixHorseCommand', function(canUse)
@@ -846,7 +845,7 @@ exports.kd_stable:RegisterFilter('canUseFixHorseCommand', function(canUse)
 end)
 ```
 #### <Badge type="client" text="Client" /> canUseFixWagonCommand
-Fires before fix wagon with the command
+Fires before fixing a wagon with the command
 ```lua
 -- @param canUse - boolean
 exports.kd_stable:RegisterFilter('canUseFixWagonCommand', function(canUse)
@@ -871,7 +870,7 @@ exports.kd_stable:RegisterFilter('filterYourHorseLine', function(item,horseData)
 end)
 ```
 #### <Badge type="client" text="Client" /> generateHorseStatisticsForMenu
-Fires before display horse statistics in the menu
+Fires before the display of the horse statistics in the menu
 ```lua
 -- @param stats - table of horse's statistics 
 -- @param horseData - horse's datas
@@ -907,7 +906,7 @@ exports.kd_stable:RegisterFilter('updateItemHorseAvailable', function(item, hors
 end)
 ```
 #### <Badge type="client" text="Client" /> updateLangForNUI
-Fires before udpate translated string
+Fires before update translated string
 ```lua
 -- @param _lang - array of translated script
 -- <key> is the key of string (don't edit them)
@@ -936,7 +935,7 @@ exports.kd_stable:RegisterFilter('buyHorse', function(horseData,horseID,source)
 end)
 ```
 #### <Badge type="server" text="Server" /> loadHorseData
-Fires at the start of the script after loaded all horses datas
+Fires at the start of the script after all horses data is loaded
 ```lua
 -- @param horseData - horse's datas filtered
 -- @param itemMenuData - horse's datas filtered from database
@@ -945,7 +944,7 @@ exports.kd_stable:RegisterFilter('loadHorseData', function(horseData,horseDataFr
 end)
 ```
 #### <Badge type="server" text="Server" /> updateMaxStableSlot
-Fires when player open a saddlebag
+Fires when player opens a saddlebag
 ```lua
 -- @param maxAmount - maximum of slot
 -- @param source - serverID of the player
@@ -955,7 +954,7 @@ exports.kd_stable:RegisterFilter('updateMaxStableSlot', function(maxAmount,sourc
 end)
 ```
 #### <Badge type="server" text="Server" /> updateSaddlebagConfig
-Fires when player open a saddlebag
+Fires when player opens a saddlebag
 ```lua
 -- @param saddlebagConfig - saddlebag configuration
 -- saddlebagConfig.maxSlots
