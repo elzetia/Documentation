@@ -926,7 +926,7 @@ exports.kd_stable:RegisterFilter('updatePreviewPrompt', function(currentPrompt,i
 end)
 ```
 #### <Badge type="server" text="Server" /> buyHorse
-Fires when player buy a new horse, just before the 'buyHorse' aciton
+Fires when player buy a new horse, just before the 'buyHorse' action
 ```lua
 -- @param horseData - horse's datas filtered
 -- @param horseID - horse ID in Config.horses table
