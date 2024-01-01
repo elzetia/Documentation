@@ -123,3 +123,12 @@ Config.canUseWheellock = function(source)
     return (xPlayer.getJob().name == "police")
 end
 ```
+### <Badge type="qb" text="QBcore" /> Restrict the wheellock with job
+Use this canUseWheellock function in the configuration
+```lua
+QBCore = exports['qb-core']:GetCoreObject()
+Config.canUseWheellock = function(source)
+    local Player = QBCore.Functions.GetPlayer(source)
+    return (Player.PlayerData.job.type == "police" or Player.PlayerData.job.type == "mechanic")
+end
+```
