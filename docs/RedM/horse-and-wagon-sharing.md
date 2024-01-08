@@ -3,7 +3,7 @@ Documentation relating to the kd_horse_sharing.
 
 :::tabs
 == BUY
-[Buy the script](https://store.kaddarem.com/package/5223732)
+[Buy the script](https://store.jumpon-studios.com/package/5223732)
 :::
 
 ## 1. Installation

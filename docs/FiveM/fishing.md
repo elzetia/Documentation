@@ -3,7 +3,7 @@ Documentation relating to the kd_peche.
 
 :::tabs
 == BUY
-[Buy the script](https://store.kaddarem.com/package/5207756)
+[Buy the script](https://store.jumpon-studios.com/package/5207756)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/d5lysom6yWI?si=_qPVqNxG_A8yErdS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

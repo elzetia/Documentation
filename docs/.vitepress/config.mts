@@ -28,8 +28,8 @@ export default defineConfig({
     }
   },
   base: "/",
-  title: "KadDarem Docs",
-  description: "KadDarem Documentation",
+  title: "Jump On Docs",
+  description: "Documentation's Jump On scripts",
   lastUpdated: true,
   cleanUrls: true,
   head: [
@@ -48,7 +48,7 @@ export default defineConfig({
     outlineBadges: true,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Store', link: 'https://store.kaddarem.com',target: '_target',rel: 'external' }
+      { text: 'Store', link: 'https://store.jumpon-studios.com',target: '_target',rel: 'external' }
     ],
 
     sidebar: [
@@ -108,7 +108,7 @@ export default defineConfig({
       { icon: 'discord', link: 'https://discord.com/invite/8rqVHnSb2K' },
     ],
     footer : {
-      copyright: 'Copyright © 2023 Kad Darem'
+      copyright: 'Copyright © 2024 Jump On'
     },
     docFooter: {
       prev: false,

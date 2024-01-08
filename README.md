@@ -1,3 +1,3 @@
 # Documentation
 
-> This is the repo for Kad Darem documentation and website ! 
+> This is the repo for Jump On documentation and website ! 

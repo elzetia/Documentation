@@ -3,7 +3,7 @@ Documentation relating to the kd_hairdresser.
 
 :::tabs
 == BUY
-[Buy the script](https://store.kaddarem.com/package/5394069)
+[Buy the script](https://store.jumpon-studios.com/package/5394069)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fk8_NfIcVTo?si=jPp9u4nlWKLpOtj1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::
@@ -37,7 +37,7 @@ kd_hairdresser:client:reload
 ### 3. Config.lua file
 ```lua
 -------------------------------
--- DOCUMENTATION : https://docs.kaddarem.com/
+-- DOCUMENTATION : https://docs.jumpon-studios.com/
 --------------------------------
 
 Config = {}
