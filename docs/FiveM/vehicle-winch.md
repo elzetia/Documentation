@@ -3,7 +3,7 @@ Documentation relating to the kd_winch.
 
 :::tabs
 == BUY
-[Buy the script](https://store.jumpon-studios.com/package/5230768)
+[Buy the script](https://shop.jumpon-studios.com/package/5230768)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CIs16GE6hZM?si=pfp8U1-hPmXm1Yoc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::
