@@ -869,6 +869,25 @@ exports.kd_stable:RegisterFilter('filterHorseData', function(horseData)
 	return horseData
 end)
 ```
+#### <Badge type="client" text="Client" /> filterNotification
+filter the notification messages
+```lua
+-- @param message - message's datas
+-- @param message.type - string : 'notificationLeft' or 'notificationRight' (can't be change)
+-- @param message.title - string : notification title
+-- @param message.text - string : notification text
+-- @param message.dict - string : dictionary of the icon
+-- @param message.icon - string : icon name
+-- @param message.color - string : color of the text
+-- @param message.duration - int : duration of the notification
+-- @param message.soundset_ref - string : dictionary of the sound
+-- @param message.soundset_name - string : sound name
+	}
+exports.kd_stable:RegisterFilter('filterNotification', function(message)
+	--return false to turn off the notification
+	return message
+end)
+```
 #### <Badge type="client" text="Client" /> filterYourHorseLine
 Fires after generated horse item in menu
 ```lua
