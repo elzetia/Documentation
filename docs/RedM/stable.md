@@ -836,6 +836,15 @@ exports.kd_stable:RegisterFilter('canAccessToStable', function(canAccess, stable
 	return canAccess
 end)
 ```
+#### <Badge type="client" text="Client" /> canFleeHorse
+Overwrite the player's ability to make the horse flee
+```lua
+-- @param canFlee - boolean
+-- @param entity - entity ID of the horse
+exports.kd_stable:RegisterFilter('canFleeHorse', function(canFlee,entity)
+	return canFlee
+end)
+```
 #### <Badge type="client" text="Client" /> canUseFixHorseCommand
 Fires before display of the fix horse prompt with the command
 ```lua
