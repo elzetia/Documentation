@@ -321,6 +321,12 @@ trainingTracks = {
 ## 5. For developers
 
 ### API
+#### <Badge type="client" text="Client" /> Stop saddlebag animation
+Client event to stop the saddlebag animation
+```lua
+TriggerEvent('kd_stable:client:closeSaddleBag')
+```
+
 #### <Badge type="server" text="Server" /> Create a new wagon
 Have to be call from the server side
 ```lua
@@ -331,7 +337,7 @@ Have to be call from the server side
 TriggerEvent('kd_stable:server:AddNewWagon', source, stableID, model, name)
 ```
 
-### Overwrite default framework functions
+### Overwrite framework functions
 
 If you need to overwrite a native function linked to the framework (custom inventory for example), you can overwrite my functions by adding them in the config file.
 You don't need to use all the functions.
@@ -500,13 +506,6 @@ Function to restrict specific wagon buying
 Config.restrictWagonBuying(source,wagonKey)
     return true
 end
-```
-### Events
-
-#### <Badge type="client" text="Client" /> Stop saddlebag animation
-Client event to stop the saddlebag animation
-```lua
-'kd_stable:client:closeSaddleBag'
 ```
 
 ### Exports
