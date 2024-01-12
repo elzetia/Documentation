@@ -75,7 +75,10 @@ export default defineConfig({
           { text: "⛺ Camp builder", link:'/RedM/camp-builder'},
           { text: "💰 Cash register Robbery", link:'/RedM/cash-register-robbery'},
           { text: "🎩 Clothes Wheel", link:'/RedM/clothes-wheel'},
-          { text: "👔 Clothing Store", link:'/RedM/clothing-store'},
+          { text: "👔 Clothing Store", link:'/RedM/clothing-store', items: [
+            { text: 'Main script', link:'/RedM/clothing-store'},
+            { text: 'Colorways', link:'/RedM/clothing-store-colorways'},
+          ]},
           { text: "⚔️ Duel Gun", link:'/RedM/duel-gun'},
           { text: "✂️ Hairdresser", link:'/RedM/hairdresser'},
           { text: "🐎 Horse and Wagon sharing", link:'/RedM/horse-and-wagon-sharing'},
