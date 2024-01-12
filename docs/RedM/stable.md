@@ -320,7 +320,18 @@ trainingTracks = {
 ```
 ## 5. For developers
 
-### Functions
+### API
+#### <Badge type="server" text="Server" /> Create a new wagon
+Have to be call from the server side
+```lua
+-- @param source - int : serverID of the wagon owner
+-- @param stableID - string : ID of the stable
+-- @param model - string : model of the wagon
+-- @param name - string : name of the wagon
+TriggerEvent('kd_stable:server:AddNewWagon', source, stableID, model, name)
+```
+
+### Overwrite default framework functions
 
 If you need to overwrite a native function linked to the framework (custom inventory for example), you can overwrite my functions by adding them in the config file.
 You don't need to use all the functions.
