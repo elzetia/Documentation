@@ -278,6 +278,7 @@ Config.wagons = {
 			maxWeight = 5000.0,
 			maxSlots = 15
 		}
+		-- locker = false, --Disable the locker
 	},
   ...
 }
