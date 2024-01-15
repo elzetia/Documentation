@@ -20,8 +20,8 @@ Congratulation, the **Stable** script is ready to be used!
 ## 2. Usage
 Go to the store (blip on the map) to get the prompt. Press the key to open the menu.
 
-## 3. Config.lua file
-**Price format**
+## 3. Script configuration
+### Price format
 
 You can use dollar and/or gold to set the price in the config file
 ```lua
@@ -32,6 +32,7 @@ price = {money = 5.00, gold = 2}
 --To use only gold
 price = {gold = 2}
 ```
+### Config.lua file
 
 :::details Config.lua
 ```lua
@@ -52,7 +53,7 @@ Config.realisticMod = false
 -- No horse teleportation. You can only whistle horse if he is near than you.
 -- Horse are linked on the last stable you use to stabling it.
 
-Config.distancePromptStore = 2.0 --maximum distance to display the prompt to open the store
+Config.distancePromptStore = 3.0 --maximum distance to display the prompt to open the store
 Config.distanceSpawnPed = 15.0 --maximum distance to spawn the stable man
 Config.distanceSpawnHorse = 50.0 --distance to spawn the horse when whistle
 Config.distanceTeleportHorse = 200.0 -- maximum distance to whistle horse before teleport him
@@ -67,22 +68,43 @@ Config.usePromptHorseStatistics = true --turn off the prompt to display horses s
 Config.maxDistanceWithHorseshoes = 100 --in kilometers
 Config.warningMessageHorseshoePercent = 20 --display a warning message when the horseshoes is under this value
 Config.stopRunHorseshoesPercent = 10 --disable horse run when horseshoes is under this value
-Config.useHorseHolster = true --false to disable the horse holster
+Config.distanceSafeSpawn = 5.0 --minimal distance from the farest vehicle to be able to spawn a new one
+Config.useHorseHolster = true --false to disable horse holster (only the horse owner can interact with it)
+Config.showHorseLevelUp = true --false to turn of horse exp notifications
+Config.keepHorseCoreDuration = 60*1000 --time in ms (duration after which stats of a horse that flee are resetting)
+Config.forceDespawnAfterFleeTimer = 10*1000 --time in ms to delete the horse after flee
+Config.uniquePriceForStableTransfer = false -- false : transfer price depends of the distance, true : same price for all stables
+Config.allowStowSmallPeltOnHorse = true
+
 Config.winExpByWalk = { --horse exp win by walking
 	distance = 200, --distance to earn new points (in meters)
 	point = 1 --amount earn by each distance
 }
+-- Bonding level depend of the horse breed
+-- Level 1 ~ 100 points
+-- Level 2 ~ 250 points
+-- Level 3 ~ 800 points
+-- Level 4 ~ 1500 points
+
+
 Config.horseSlots = 5 -- maximum of horse for players (set -1 to unlimited)
 Config.wagonSlots = 5 -- maximum of horse for players (set -1 to unlimited)
 
+Config.commands = { --set false to disable a command
+	sidesiddle = "sidesaddle",
+	fixWagon = "fixWagon",
+	fixHorse = "fixHorse",
+	fleeHorse = "fleeHorse"
+}
+
 Config.allowCustomColorForHorse = true --turn off to remove the prompt to allow custom color on horse coat
 Config.palettesForHorseCoat = {
-	tint_generic_clean = false,
-	tint_hair = false,
+	tint_generic_clean = true,
+	tint_hair = true,
 	tint_horse = true,
-	tint_horse_leather = false,
-	tint_leather = false,
-	tint_makeup = false
+	tint_horse_leather = true,
+	tint_leather = true,
+	tint_makeup = true
 }
 Config.allowCustomColorForComponent = true --turn off to remove the prompt to allow custom color on horse component
 Config.palettesForComponent = {
@@ -99,10 +121,21 @@ Config.saddlebagMod = 2
 -- 1 : Saddlebag only for horse owner
 -- 2 : Everyone can access to the saddlebag
 
+Config.wagonLockerMod = 1
+-- 0 : No wagon locker
+-- 1 : Wagon locker only for wagon owner
+-- 2 : Everyone can access to the wagon locker
+
 Config.saddlebag = {
-	maxWeight = 1000.0,
+	maxWeight = 500.0,
 	maxSlots = 10 --for QBR & RSG & VORP
 }
+Config.wagonLocker = { --default locker size for wagon
+	maxWeight = 1000.0,
+	maxSlots = 50 --for QBR & RSG & VORP
+}
+Config.displayLockerSlotInStore = true --Set false to hide the maxSlots
+Config.displayLockerWeightInStore = true --Set false to hide the maxWeight
 
 Config.keys = {
 	enter = "INPUT_FRONTEND_ACCEPT",
