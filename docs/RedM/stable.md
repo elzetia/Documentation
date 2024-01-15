@@ -346,7 +346,6 @@ TriggerEvent('kd_stable:server:requestChangeHorseShoes', source, function(succes
 	print(success,horseNetId)
 end)
 ```
-```
 
 ### Overwrite framework functions
 
