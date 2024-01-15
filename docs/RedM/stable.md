@@ -336,6 +336,17 @@ Have to be call from the server side
 -- @param name - string : name of the wagon
 TriggerEvent('kd_stable:server:AddNewWagon', source, stableID, model, name)
 ```
+#### <Badge type="server" text="Server" /> Repair horseshoes
+This event has to be called from the server side.
+```lua
+-- @param source - int : serverID of the wagon owner
+-- @param sucess - boolean : true if a horse is found around the player
+-- @param horseNetId - int : Network ID of the horse
+TriggerEvent('kd_stable:server:requestChangeHorseShoes', source, function(success,horseNetId)
+	print(success,horseNetId)
+end)
+```
+```
 
 ### Overwrite framework functions
 
