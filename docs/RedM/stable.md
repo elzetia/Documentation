@@ -982,6 +982,20 @@ exports.kd_stable:RegisterFilter('buyHorse', function(horseData,horseID,source)
 	return horseData
 end)
 ```
+#### <Badge type="server" text="server" /> canUseWagonLocker
+Manage the access to a specific wagon locker
+```lua
+-- @param canUse - boolean
+-- @param source - int : serverID of the player
+-- @param wagonID - int : ID of the wagon
+-- @param model - string : model of the wagon
+-- @param size - table : size of the wagon locker
+-- size.maxWeight
+-- size.maxSlots
+exports.kd_stable:RegisterFilter('canUseWagonLocker', function(canUse, source, wagonID, model, size )
+	return canUse
+end)
+```
 #### <Badge type="server" text="Server" /> loadHorseData
 Fires at the start of the script after all horses data is loaded
 ```lua
