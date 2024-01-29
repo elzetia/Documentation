@@ -396,16 +396,7 @@ end)
 ```
 
 ## 5. Compatibility issues
-### <Badge type="vorp" text="VORP" /> Fix clothes commands
-Replace `vorp_character\client\commands.lua` by this new one: <b><a href="../snippets/VORP-fix-commands/commands.lua" download="commands.lua">commands.lua</a></b>
 
-### <Badge type="vorp" text="VORP" /> Fix clothes in character selector
-Go in `vorp_character\client\client.lua` line 137 and replace `LoadComps` function by this one
-```lua:line-numbers=137
-local function LoadComps(ped, components)
-	TriggerEvent("kd_clothingstore:ApplyClothes",ped,components)
-end
-```
 ### <Badge type="rsg" text="RSG" /> Fix rsg-bathing
 Go in `rsg-bathing\fxmanifest.lua` line 24 and remove the `rsg-wardrobe` dependency
 ```lua:line-numbers=21
