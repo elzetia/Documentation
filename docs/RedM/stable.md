@@ -1058,7 +1058,8 @@ Fires when player opens a saddlebag
 -- @param hash - saddlebag component hash
 -- @param source - serverID of the player
 -- @param horseID - ID of the horse
-exports.kd_stable:RegisterFilter('updateSaddlebagConfig', function(saddlebagConfig,hash,source, horseID)
+-- @paran invName - ID of the inventory
+exports.kd_stable:RegisterFilter('updateSaddlebagConfig', function(saddlebagConfig,hash,source, horseID, invName)
 	return saddlebagConfig
 end)
 ```
