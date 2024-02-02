@@ -807,7 +807,7 @@ Fires when the player revives a horse
 -- @param horseID - ID of the horse
 -- @param price - price of the wagon
 -- @param moneyType - devise of the price : 0 for normal & 1 for gold
-exports.kd_stable:RegisterAction('putSaddlebag', function(source,horseID,price,moneyType)
+exports.kd_stable:RegisterAction('reviveHorse', function(source,horseID,price,moneyType)
 end)
 ```
 #### <Badge type="server" text="Server" /> spawnWagon
