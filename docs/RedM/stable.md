@@ -355,6 +355,15 @@ trainingTracks = {
 ## 5. For developers
 
 ### API
+#### <Badge type="client" text="Client" /> Add a new horse to the stable
+Client event to add a spawned horse to the player stable
+```lua
+--@param horse - int : entity ID of the horse
+--@param name - string : name of the horse
+--@param age - int : age of the horse (optional)
+--@param noDieByAge - boolean : if true, the horse will not die by aging (optional)
+TriggerEvent('kd_stable:client:addHorse',horse,name,age,noDieByAge)
+```
 #### <Badge type="client" text="Client" /> Stop saddlebag animation
 Client event to stop the saddlebag animation
 ```lua
