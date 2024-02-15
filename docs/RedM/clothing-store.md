@@ -382,15 +382,43 @@ kd_clothingstore:RegisterFilter('canAccessToSpecificClothes', function(canAccess
 end)
 ```
 
-#### <Badge type="server" text="Server" /> canAccessToSpecificClothes
+#### <Badge type="client" text="Client" /> Restrict the saving of new outfit
+Fires to disable the "New" & "Save" button in the outfit menu
+```lua
+-- @param canSave - boolean : return false to disable buttons
+exports.kd_stable:RegisterFilter('canSaveNewOutfit', function(canSave)
+	return canSave
+end)
+```
+#### <Badge type="server" text="Server" /> Edit metadata of clothes item
+Fires before add the item in the player inventory
+```lua
+-- @param metadata - table : metadata of the item
+-- @param source - int : serverID of the player
+-- @param item - string : item name
+exports.kd_stable:RegisterFilter('editItemMeta', function(meta,source,item)
+	return canAccess
+end)
+```
+#### <Badge type="server" text="Server" /> Restrict specific clothes
 Fires before buy a new clothes
 ```lua
--- @param canAccess - boolean
--- @param source - serverID of the player
--- @param clothesData - information about clothes
--- @param clothesData.hash - hash of the clothes
--- @param moneyType - devise of the order : 0 for normal & 1 for gold
-exports.kd_stable:RegisterFilter('canAccessToStable', function(canAccess,source,clothesData,moneyType)
+-- @param canAccess - boolean : return false to disable the buying
+-- @param source - int : serverID of the player
+-- @param clothesData - table : information about clothes
+-- @param clothesData.hash - int : hash of the clothes
+-- @param moneyType - int : devise of the order : 0 for normal & 1 for gold
+exports.kd_stable:RegisterFilter('canAccessToSpecificClothes', function(canAccess,source,clothesData,moneyType)
+	return canAccess
+end)
+```
+#### <Badge type="server" text="Server" /> Restrict the using of clothes/outfit item
+Fires when a player use an item
+```lua
+-- @param canUse - boolean : return false to not use the item
+-- @param source - int : serverID of the player
+-- @param metadata - table : item metadata
+exports.kd_stable:RegisterFilter('canUseItem', function(canUse,source,metadata)
 	return canAccess
 end)
 ```
