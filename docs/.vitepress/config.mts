@@ -4,6 +4,11 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@vitepress': 'vitepress',
+    },
+  },
   vite: {
     resolve: {
       alias: [
@@ -18,7 +23,7 @@ export default defineConfig({
           replacement: fileURLToPath(
             new URL('./composables/outline.ts', import.meta.url)
           )
-        }
+        },
       ]
     }
   },
@@ -61,7 +66,7 @@ export default defineConfig({
           { text: "🚗 Car door Icon", link:'/FiveM/car-door-icon'},
           { text: "🚚 Car shop delivery", link:'/FiveM/car-shop-delivery'},
           { text: "🎣 Fishing", link:'/FiveM/fishing'},
-          { text: "🚧 Gun rack", link:'/FiveM/gunrack'},
+          { text: "<img src='/images/gunrack-16.webp'/> Gun rack", link:'/FiveM/gunrack'},
           { text: "⛏️ Mining job", link:'/FiveM/mining-job'},
           { text: "📦 Movable chest", link:'/FiveM/movable-chest'},
           { text: "⛓️ Tow Truck with WINCH", link:'/FiveM/tow-truck-with-winch'},
