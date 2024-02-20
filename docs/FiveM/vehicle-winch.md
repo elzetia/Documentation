@@ -1,4 +1,4 @@
-# :hook: Vehicle WINCH
+# <img src='/images/winch.webp'/> Vehicle WINCH
 Documentation relating to the kd_winch.
 
 :::tabs

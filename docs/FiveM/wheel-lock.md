@@ -1,4 +1,4 @@
-# :blue_car: Wheel lock
+# <img src='/images/wheelclamp.webp'/> Wheel clamp
 Documentation relating to the kd_wheellock.
 
 :::tabs

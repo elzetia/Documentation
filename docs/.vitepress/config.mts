@@ -70,8 +70,8 @@ export default defineConfig({
           { text: "⛏️ Mining job", link:'/FiveM/mining-job'},
           { text: "📦 Movable chest", link:'/FiveM/movable-chest'},
           { text: "⛓️ Tow Truck with WINCH", link:'/FiveM/tow-truck-with-winch'},
-          { text: "🪝 Vehicle WINCH", link:'/FiveM/vehicle-winch'},
-          { text: "🚙 Wheel lock", link:'/FiveM/wheel-lock'},
+          { text: "<img src='/images/winch.webp'/> Vehicle WINCH", link:'/FiveM/vehicle-winch'},
+          { text: "<img src='/images/wheelclamp.webp'/> Wheel lock", link:'/FiveM/wheel-lock'},
         ]
       },
       {
