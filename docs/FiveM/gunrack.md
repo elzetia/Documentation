@@ -24,7 +24,6 @@ Congratulation, the **Gunrack** script is ready to be used!
 Go to one of the locations to see the gunrack. Press the 3rd eye key to interact with it.
 
 ## 3. Script configuration
-### Config.lua file
 
 :::details Config.lua
 ```lua
@@ -80,7 +79,13 @@ Config.gunracks = {
 ```
 :::
 
-### Filters
+## 4. Know issues
+:::details No such export isActive in resource ox_target
+My update of ox_target is in waiting of approval by the OX team. To wait the integration in the main script, you can use my edit : [ox_target](https://github.com/KadDarem/ox_target/tree/isactive-export).<br>
+You can find the 3 lines I added here : [the pull request](https://github.com/overextended/ox_target/pull/133/commits/6573d595b86fc41d9bc815795f6ae4ab3bcc3852)
+:::
+
+## 5. Filters
 
 [Filters](/DeveloperResources/filters) are the new way to modify data used by the script. These filters are fired at a specific point in time during the execution of the script. But contrary to events, filters are **synchronous**. 
 
