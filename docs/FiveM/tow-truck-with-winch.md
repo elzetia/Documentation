@@ -1,4 +1,4 @@
-# :chains: Tow Truck with WINCH
+# <img src='/images/towtruck.webp'/> Tow Truck with WINCH
 Documentation relating to the kd_towtruck.
 
 :::tabs

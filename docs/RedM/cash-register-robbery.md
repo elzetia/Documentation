@@ -1,4 +1,4 @@
-# :moneybag: Cash register Robbery
+# <img src='/images/cashregister.webp' /> Cash register Robbery
 Documentation relating to the kd_robberyshop.
 
 :::tabs

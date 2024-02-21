@@ -1,4 +1,4 @@
-# :crossed_swords: Duel Gun
+# <img src='/images/gunduel.webp' /> Duel Gun
 Documentation relating to the kd_gun_duel.
 
 :::tabs

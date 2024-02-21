@@ -69,7 +69,7 @@ export default defineConfig({
           { text: "<img src='/images/gunrack-16.webp'/> Gun rack", link:'/FiveM/gunrack'},
           { text: "⛏️ Mining job", link:'/FiveM/mining-job'},
           { text: "📦 Movable chest", link:'/FiveM/movable-chest'},
-          { text: "⛓️ Tow Truck with WINCH", link:'/FiveM/tow-truck-with-winch'},
+          { text: "<img src='/images/towtruck.webp'/> Tow Truck with WINCH", link:'/FiveM/tow-truck-with-winch'},
           { text: "<img src='/images/winch.webp'/> Vehicle WINCH", link:'/FiveM/vehicle-winch'},
           { text: "<img src='/images/wheelclamp.webp'/> Wheel lock", link:'/FiveM/wheel-lock'},
         ]
@@ -79,13 +79,13 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: "⛺ Camp builder", link:'/RedM/camp-builder'},
-          { text: "💰 Cash register Robbery", link:'/RedM/cash-register-robbery'},
+          { text: "<img src='/images/cashregister.webp' /> Cash register Robbery", link:'/RedM/cash-register-robbery'},
           { text: "🎩 Clothes Wheel", link:'/RedM/clothes-wheel'},
           { text: "👔 Clothing Store", link:'/RedM/clothing-store', items: [
             { text: 'Main script', link:'/RedM/clothing-store'},
             { text: 'Colorways', link:'/RedM/clothing-store-colorways'},
           ]},
-          { text: "⚔️ Duel Gun", link:'/RedM/duel-gun'},
+          { text: "<img src='/images/gunduel.webp' /> Duel Gun", link:'/RedM/duel-gun'},
           { text: "✂️ Hairdresser", link:'/RedM/hairdresser'},
           { text: "🐎 Horse and Wagon sharing", link:'/RedM/horse-and-wagon-sharing'},
           { text: "🦌 Hunting wagon Storage", link:'/RedM/hunting-wagon-storage'},
