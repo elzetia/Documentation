@@ -92,7 +92,17 @@ My update of ox_target is in waiting of approval by the OX team. To wait the int
 You can find the 3 lines I added here : [the pull request](https://github.com/overextended/ox_target/pull/133/commits/6573d595b86fc41d9bc815795f6ae4ab3bcc3852)
 :::
 
-## 5. Filters
+## 5. For developers
+
+### Exports
+
+#### <Badge type="shared" text="Shared" /> Get script configuration
+exports to get the script configuration
+```lua
+exports.jo_gunrack:getConfig()
+```
+
+### Filters
 
 [Filters](/DeveloperResources/filters) are the new way to modify data used by the script. These filters are fired at a specific point in time during the execution of the script. But contrary to events, filters are **synchronous**. 
 
@@ -100,7 +110,7 @@ You can find the 3 lines I added here : [the pull request](https://github.com/ov
 ```lua
 -- @param <actionName> - name of the action
 -- @param <argumentList> - list of arguments which are passed
-exports.kd_stable:RegisterFilter(<actionName>, function(variable)
+exports.jo_gunrack:RegisterFilter(<actionName>, function(variable)
   -- Add your new data here
 	return variable -- Don't forget to return the value
 end)
@@ -110,9 +120,9 @@ end)
 Fires before the player add a weapon into the gunrack
 ```lua
 -- @param canAdd - boolean : true if can add a weapon
--- @param gunrack - int : entity of the gunrack
+-- @param gunrackId - int : unique identifier of the gunrack
 -- @param rackId - int : number of the rack where the weapon is
-exports.kd_stable:RegisterFilter('canAddWeapon', function(canAdd, gunrack, rackId)
+exports.jo_gunrack:RegisterFilter('canAddWeapon', function(canAdd, gunrackId, rackId)
 	return canAdd
 end)
 ```
@@ -120,9 +130,9 @@ end)
 Fires before the player takes a weapon stored in the gunrack
 ```lua
 -- @param isOwner - boolean : true if the player is the owner of the weapon
--- @param gunrack - int : entity of the gunrack
+-- @param gunrackId - int : unique identifier of the gunrack
 -- @param rackId - int : number of the rack where the weapon is
-exports.kd_stable:RegisterFilter('canTakeWeapon', function(isOwner, gunrack, rackId)
+exports.jo_gunrack:RegisterFilter('canTakeWeapon', function(isOwner, gunrackId, rackId)
 	return isOwner
 end)
 ```
