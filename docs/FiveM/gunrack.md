@@ -29,6 +29,7 @@ Go to one of the locations to see the gunrack. Press the 3rd eye key to interact
 ```lua
 Config = {}
 Config.equipWeaponWhenTook = true
+Config.distanceSpawnGunrack = 50.0
 
 Config.gunrackModels = {
   ["xm_prop_xm_gunlocker_01a"] = {
@@ -51,16 +52,16 @@ Config.gunrackModels = {
   },
   ['prop_cs_gunrack'] = {
     racks = {
-      [1] = {offset = vec3(-0.58,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
-      [2] = {offset = vec3(-0.45,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
-      [3] = {offset = vec3(-0.32,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
-      [4] = {offset = vec3(-0.19,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
-      [5] = {offset = vec3(-0.07,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
-      [6] = {offset = vec3(0.06,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
-      [7] = {offset = vec3(0.195,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
-      [8] = {offset = vec3(0.325,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
-      [9] = {offset = vec3(0.455,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
-      [10] = {offset = vec3(0.58,0.05,-0.2), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [1] = {offset = vec3(-0.58,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [2] = {offset = vec3(-0.45,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [3] = {offset = vec3(-0.32,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [4] = {offset = vec3(-0.19,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [5] = {offset = vec3(-0.07,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [6] = {offset = vec3(0.06,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [7] = {offset = vec3(0.195,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [8] = {offset = vec3(0.325,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [9] = {offset = vec3(0.455,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
+      [10] = {offset = vec3(0.58,0.05,-0.3), rotation = vec3(0.0,-90,90), size="all", autoAdjustDimension = "x"},
     },
     sizeLimits = {
       {size="all",max=9999}
@@ -71,8 +72,14 @@ Config.gunrackModels = {
 Config.gunracks = {
   {
     model = "xm_prop_xm_gunlocker_01a", --"xm_prop_xm_gunlocker_01a"/"prop_cs_gunrack"
-    id = "1", --must be unique
+    id = "police1", --must be unique
     location = vec3(461.9, -981.1, 29.69),
+    rotation = vec3(0,0,-90),
+  },
+  {
+    model = "prop_cs_gunrack", --"xm_prop_xm_gunlocker_01a"/"prop_cs_gunrack"
+    id = "police2", --must be unique
+    location = vec3(462.0, -982.677, 30.05),
     rotation = vec3(0,0,-90),
   }
 }
