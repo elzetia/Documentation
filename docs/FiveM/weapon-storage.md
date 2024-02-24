@@ -1,4 +1,4 @@
-# <img src="/images/gunrack.webp" /> Gun rack
+# <img src="/images/gunrack.webp" /> Weapon storage
 Documentation relating to the jo_gunrack.
 
 :::tabs
@@ -18,10 +18,10 @@ To install jo_gunrack:
   - jo_gunrack 
 - Add this ensure in your server.cfg
   - `ensure jo_gunrack`
-Congratulation, the **Gunrack** script is ready to be used!
+Congratulation, the **Weapon storage** script is ready to be used!
 
 ## 2. Usage
-Go to one of the locations to see the gunrack. Press the 3rd eye key to interact with it.
+Go to one of the locations to see the weapon storage. Press the 3rd eye key to interact with it.
 
 ## 3. Script configuration
 
@@ -117,20 +117,20 @@ end)
 ```
 
 #### <Badge type="client" text="Client" /> Limits gun adding
-Fires before the player add a weapon into the gunrack
+Fires before the player add a weapon into the weapon storage
 ```lua
 -- @param canAdd - boolean : true if can add a weapon
--- @param gunrackId - int : unique identifier of the gunrack
+-- @param gunrackId - int : unique identifier of the weapon storage
 -- @param rackId - int : number of the rack where the weapon is
 exports.jo_gunrack:RegisterFilter('canAddWeapon', function(canAdd, gunrackId, rackId)
 	return canAdd
 end)
 ```
 #### <Badge type="client" text="Client" /> Limits gun grabbing
-Fires before the player takes a weapon stored in the gunrack
+Fires before the player takes a weapon stored in the weapon storage
 ```lua
 -- @param isOwner - boolean : true if the player is the owner of the weapon
--- @param gunrackId - int : unique identifier of the gunrack
+-- @param gunrackId - int : unique identifier of the weapon storage
 -- @param rackId - int : number of the rack where the weapon is
 exports.jo_gunrack:RegisterFilter('canTakeWeapon', function(isOwner, gunrackId, rackId)
 	return isOwner

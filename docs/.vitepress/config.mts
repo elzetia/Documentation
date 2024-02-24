@@ -66,7 +66,7 @@ export default defineConfig({
           { text: "🚗 Car door Icon", link:'/FiveM/car-door-icon'},
           { text: "🚚 Car shop delivery", link:'/FiveM/car-shop-delivery'},
           { text: "🎣 Fishing", link:'/FiveM/fishing'},
-          { text: "<img src='/images/gunrack-16.webp'/> Gun rack", link:'/FiveM/gunrack'},
+          { text: "<img src='/images/gunrack-16.webp'/> Weapon storage", link:'/FiveM/gunrack'},
           { text: "⛏️ Mining job", link:'/FiveM/mining-job'},
           { text: "📦 Movable chest", link:'/FiveM/movable-chest'},
           { text: "<img src='/images/towtruck.webp'/> Tow Truck with WINCH", link:'/FiveM/tow-truck-with-winch'},
