@@ -20,6 +20,10 @@
   background-color: #94f8b2;
   color: rgba(60, 60, 67, 0.78);
 }
+.VPBadge.shared {
+  background-color: #78d4fd;
+  color: rgba(60, 60, 67, 0.78);
+}
 
 .outline-link .VPBadge {
   line-height: 16px;
