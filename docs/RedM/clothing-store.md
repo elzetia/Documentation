@@ -386,7 +386,7 @@ end)
 Fires to disable the "New" & "Save" button in the outfit menu
 ```lua
 -- @param canSave - boolean : return false to disable buttons
-exports.kd_stable:RegisterFilter('canSaveNewOutfit', function(canSave)
+exports.kd_clothingstore:RegisterFilter('canSaveNewOutfit', function(canSave)
 	return canSave
 end)
 ```
@@ -396,7 +396,7 @@ Fires before add the item in the player inventory
 -- @param metadata - table : metadata of the item
 -- @param source - int : serverID of the player
 -- @param item - string : item name
-exports.kd_stable:RegisterFilter('editItemMeta', function(meta,source,item)
+exports.kd_clothingstore:RegisterFilter('editItemMeta', function(meta,source,item)
 	return canAccess
 end)
 ```
@@ -408,7 +408,7 @@ Fires before buy a new clothes
 -- @param clothesData - table : information about clothes
 -- @param clothesData.hash - int : hash of the clothes
 -- @param moneyType - int : devise of the order : 0 for normal & 1 for gold
-exports.kd_stable:RegisterFilter('canAccessToSpecificClothes', function(canAccess,source,clothesData,moneyType)
+exports.kd_clothingstore:RegisterFilter('canAccessToSpecificClothes', function(canAccess,source,clothesData,moneyType)
 	return canAccess
 end)
 ```
@@ -418,7 +418,7 @@ Fires when a player use an item
 -- @param canUse - boolean : return false to not use the item
 -- @param source - int : serverID of the player
 -- @param metadata - table : item metadata
-exports.kd_stable:RegisterFilter('canUseItem', function(canUse,source,metadata)
+exports.kd_clothingstore:RegisterFilter('canUseItem', function(canUse,source,metadata)
 	return canAccess
 end)
 ```
