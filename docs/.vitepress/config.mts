@@ -53,7 +53,7 @@ export default defineConfig({
     outlineBadges: true,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Store', link: 'https://store.jumpon-studios.com',target: '_target',rel: 'external' }
+      { text: 'Store', link: 'https://shop.jumpon-studios.com',target: '_target',rel: 'external' }
     ],
 
     sidebar: [
