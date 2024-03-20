@@ -1048,6 +1048,15 @@ exports.kd_stable:RegisterFilter('loadHorseData', function(horseData,horseDataFr
 	return horseData
 end)
 ```
+#### <Badge type="server" text="Server" /> updateExpByWalk
+Fires when player rides a horse to update his experience
+```lua
+-- @param configWinExpByWalk - Config.winExpByWalk
+-- @param horseID - ID of the horse
+exports.kd_stable:RegisterFilter('updateExpByWalk', function(configWinExpByWalk,horseID)
+	return configWinExpByWalk
+end)
+```
 #### <Badge type="server" text="Server" /> updateMaxStableSlot
 Fires when player opens a saddlebag
 ```lua
