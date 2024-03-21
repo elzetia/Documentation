@@ -109,6 +109,10 @@ export default defineConfig({
             ]
           }
         ]
+      },
+      {
+        text: 'Get unencrypted updates',
+        link: 'https://dashboard.jumpon-studios.com/'
       }
     ],
 
