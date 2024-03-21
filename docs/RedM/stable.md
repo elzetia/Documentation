@@ -130,6 +130,8 @@ Config.saddlebag = {
 	maxWeight = 500.0,
 	maxSlots = 10 --for QBR & RSG & VORP
 }
+Config.displaySaddlebagSlotInStore = true --Set false to hide the maxSlots
+Config.displaySaddlebagWeightInStore = true --Set false to hide the maxWeight
 Config.wagonLocker = { --default locker size for wagon
 	maxWeight = 1000.0,
 	maxSlots = 50 --for QBR & RSG & VORP
@@ -274,7 +276,7 @@ Config.modelPrices['horse_saddles'][2] = {money = 50,gold = 2}
 Config.horses = {
 	[1] = {
 		price = {money=2.75,gold = 2},
-		name = "New name",
+		name = "New name", --optional
 		noDieByAge = true, --if true, the horse will not die by aging (optional)
 		age = 5, --Age of the horse if 'Horse Aging' add-ons is loaded
 		variations = {
@@ -291,6 +293,10 @@ Config.horses = {
 			maxAcceleration = 9, -- acceleration<>10
 			handling= 1,--1 = heavy,2 = standard,3 = race,4 = elite
 			maxHandling = 4, --handling<>4
+		},
+		saddlebag = { --optional
+			maxWeight = 100.0,
+			maxSlots = 5
 		}
 	},
 	...
