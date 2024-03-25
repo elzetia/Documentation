@@ -409,6 +409,21 @@ Function to init your framework
 Config.InitFramework = function()
 end
 ```
+#### <Badge type="client" text="Client" /> Change notification functions
+Function to use another notifications system
+```lua
+Config.NotifRight = function(text, dict_icon, icon, color, duration,soundset_ref,soundset_name)
+end
+
+Config.NotifLeft = function(title, text, dict_icon, icon, color, duration,soundset_ref,soundset_name)
+end
+
+Config.DisplayObjectif = function(text,duration)
+end
+
+Config.DisplayTitle = function(text)
+end
+```
 #### <Badge type="client" text="Client" /> Restrict the access to specific stable
 Function to restrict access to a specific stable
 ```lua
