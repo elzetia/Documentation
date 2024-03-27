@@ -18,6 +18,7 @@ To install kd_clothingstore_colorways:
   - kd_clothingstore_colorways 
 - Add this ensure in your server.cfg after `ensure kd_clothingstore`
   - `ensure kd_clothingstore_colorways`
+
 Congratulation, the **Colorways** add-on is ready to be used!
 
 ## 2. Usage

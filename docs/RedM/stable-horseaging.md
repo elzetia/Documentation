@@ -24,6 +24,7 @@ To install kd_stable_horse-age:
   - kd_stable_horse-age 
 - Add this ensure in your server.cfg after `ensure kd_stable`
   - `ensure kd_stable_horse-age`
+
 Congratulation, the **Horse aging** add-on is ready to be used!
 
 ## 2. Usage

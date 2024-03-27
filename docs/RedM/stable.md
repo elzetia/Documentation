@@ -15,6 +15,7 @@ To install kd_stable:
 - Add this ensure in your server.cfg
   - `ensure kd_stable`
 - Be sure you remove your previous stable script
+
 Congratulation, the **Stable** script is ready to be used!
 
 ## 2. Usage

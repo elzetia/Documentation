@@ -15,7 +15,8 @@ kd_mouseselection is a standalone script. So you don't need a specific framework
   - kd_mouseselection
 - Add this ensure in your server.cfg
   - `ensure kd_mouseselection`
-- Congratulation, the Mouse selection script is ready to be use !
+
+Congratulation, the Mouse selection script is ready to be use !
 
 ## 2. Usage
 Press the key `Dead Eye Tag Enemies (by default Q)` to display the mouse. Move your mouse to entity, if you can interact with him, he will glow.
