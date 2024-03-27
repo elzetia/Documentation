@@ -3,7 +3,7 @@ Documentation relating to the kd_wheellock.
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/package/5377055)
+[Buy the script](https://shop.jumpon-studios.com/fivem/wheel-clamp)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rccp5TI9q6Y?si=E4muYL9-q__TX3os" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

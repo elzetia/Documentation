@@ -6,7 +6,7 @@ Documentation relating to the **kd_stable_horse-age** add-on for [Stable script]
 
 :::tabs
 == BUY
-[Buy the add-on](https://shop.jumpon-studios.com/package/5992570)
+[Buy the add-on](hhttps://shop.jumpon-studios.com/redm/horse-aging)
 == PREVIEW
 <div class="preview-img">
   <img src="https://dunb17ur4ymx4.cloudfront.net/wysiwyg/1169448/b684e7238bffefd1cfc20cd6571c4e65e0ad4766.jpg">

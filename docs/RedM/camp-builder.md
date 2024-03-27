@@ -3,7 +3,7 @@ Documentation relating to the kd_campbuilder.
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/package/5253763)
+[Buy the script](https://shop.jumpon-studios.com/redm/camp-builder)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4tKYbyswJGQ?si=vmhF5oiiYUOn8RJp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

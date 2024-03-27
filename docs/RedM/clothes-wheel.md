@@ -3,7 +3,7 @@ Documentation relating to the kd_clotheswheel.
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/package/5234215)
+[Buy the script](https://shop.jumpon-studios.com/redm/clothes-wheel)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DfbGIS4tGo8?si=G71Vam6KQBNYn-Bh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

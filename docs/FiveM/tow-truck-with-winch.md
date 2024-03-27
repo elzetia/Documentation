@@ -3,7 +3,7 @@ Documentation relating to the kd_towtruck.
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/package/5207275)
+[Buy the script](https://shop.jumpon-studios.com/fivem/tow-truck-with-winch)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/derm4LaiuGo?si=3PLcRE8vNp_iTgrN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

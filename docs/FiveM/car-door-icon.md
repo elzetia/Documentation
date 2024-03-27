@@ -3,7 +3,7 @@
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/package/5205417)
+[Buy the script](https://shop.jumpon-studios.com/fivem/car-door-icon)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KLwc9zr9L1Q?si=Zw0ID9gUyu1TtgQg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

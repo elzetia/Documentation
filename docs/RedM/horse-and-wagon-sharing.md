@@ -3,7 +3,7 @@ Documentation relating to the kd_horse_sharing.
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/package/5223732)
+[Buy the script](https://shop.jumpon-studios.com/redm/share-horse-wagon)
 :::
 
 ## 1. Installation
