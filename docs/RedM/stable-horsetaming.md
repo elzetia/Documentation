@@ -187,7 +187,7 @@ end)
 Fires after completed the selling prompt
 ```lua
 -- @param canSell - boolean
-exports.kd_stable:RegisterFilter('canSellWildHorse', function(canSell)
+exports.kd_stable_taming:RegisterFilter('canSellWildHorse', function(canSell)
 	return canSell
 end)
 ```
@@ -195,7 +195,7 @@ end)
 Fires after completed the taming prompt
 ```lua
 -- @param canTame - boolean
-exports.kd_stable:RegisterFilter('canTameWildHorse', function(canTame)
+exports.kd_stable_taming:RegisterFilter('canTameWildHorse', function(canTame)
 	return canTame
 end)
 ```
