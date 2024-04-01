@@ -568,7 +568,7 @@ Function to restrict specific horse buying
 -- @param source - serverID of the player
 -- @param horseKey - key of Horse in Config.horses list
 -- @return false to cancel the order
-Config.restrictHorseBuying(source,horseKey)
+Config.restrictHorseBuying = function(source,horseKey)
     return true
 end
 ```
@@ -578,7 +578,7 @@ Function to restrict specific wagon buying
 -- @param source - serverID of the player
 -- @param wagonKey - key of wagon in Config.wagons list
 -- @return false to cancel the order
-Config.restrictWagonBuying(source,wagonKey)
+Config.restrictWagonBuying = function(source,wagonKey)
     return true
 end
 ```
