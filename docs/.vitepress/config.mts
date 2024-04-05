@@ -86,7 +86,10 @@ export default defineConfig({
             { text: 'Colorways', link:'/RedM/clothing-store-colorways'},
           ]},
           { text: "<img src='/images/gunduel.webp' /> Duel Gun", link:'/RedM/duel-gun'},
-          { text: "✂️ Hairdresser", link:'/RedM/hairdresser'},
+          { text: "✂️ Hairdresser", link:'/RedM/hairdresser', items: [
+            { text: 'Main script', link:'/RedM/hairdresser'},
+            { text: 'Coloring', link:'/RedM/hairdresser-coloring'},
+          ]},
           { text: "🐎 Horse and Wagon sharing", link:'/RedM/horse-and-wagon-sharing'},
           { text: "🦌 Hunting wagon Storage", link:'/RedM/hunting-wagon-storage'},
           { text: "🔪 Knife game", link:'/RedM/knife-game'},
