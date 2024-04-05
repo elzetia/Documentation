@@ -87,7 +87,7 @@ end)
 
 ## 5. Know issues
 :::details Bald characters in VORP character selection
-A [pull request](https://github.com/VORPCORE/vorp_character-lua/pull/121) was made to add an event in the vorp_character to all use to load hair/beard
+A [pull request](https://github.com/VORPCORE/vorp_character-lua/pull/121) was made to add an event in the vorp_character to allow use to load hair/beard
 You can fix this issue before its approval by adding this line in `vorp_character>client>client.lua`
 ```lua:line-numbers=210
 	LoadComps(ped, components, set)
