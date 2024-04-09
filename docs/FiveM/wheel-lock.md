@@ -20,8 +20,9 @@ kd_wheellock is a standalone script. So you don't need a specific framework to u
 - Congratulation, the Wheel lock script is ready to be use !
 
 ## 2. Usage
-You have two way to put/remove the wheel lock on the car in front of you :
-- Use the command : wheellock
+You have twos way to put/remove the wheel lock on the car in front of you :
+- Use the command : /wheellock
+- Use the client event : 'kd_wheellock:action'
 
 ## 3. Config.lua
 ```lua
