@@ -425,7 +425,7 @@ end)
 
 ## 5. Compatibility issues
 
-### <Badge type="rsg" text="RSG" /> Fix clothes selected during the character creation
+### <Badge type="rsg" text="RSG" /> Fix clothes after character creation
 Go in `rsg-apperance\client\functions.lua line 531 and add edit these line :
 ```lua:line-numbers=530
 TriggerServerEvent("rsg-appearance:SetPlayerBucket" , 0)
