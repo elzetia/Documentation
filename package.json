@@ -5,7 +5,12 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "primeicons": "^7.0.0",
+    "primevue": "^3.51.0",
     "vitepress": "^1.0.0-rc.20",
     "vitepress-plugin-tabs": "^0.4.1"
+  },
+  "devDependencies": {
+    "sass": "^1.75.0"
   }
 }
