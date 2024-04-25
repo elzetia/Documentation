@@ -9,9 +9,6 @@ export default defineConfig({
       '@vitepress': 'vitepress',
     },
   },
-  ssgOptions: {
-    format: 'cjs',
-  },
   vite: {
     resolve: {
       alias: [
