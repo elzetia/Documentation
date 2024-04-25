@@ -65,7 +65,6 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Store', link: 'https://shop.jumpon-studios.com',target: '_target',rel: 'external' }
     ],
-
     sidebar: [
       {
         text: 'FiveM',
@@ -116,6 +115,27 @@ export default defineConfig({
         text: 'Developer Resources',
         collapsed: true,
         items: [
+          { text: 'Jo Libs',
+            link: '/',
+            base: '/jo_libs',
+            collapsed: true,
+            items: [
+              { text: 'Modules',
+                base: '/jo_libs/modules',
+                collapsed: true,
+                items: [
+                  { text: 'Callback',
+                    collapsed: true,
+                    base: '/jo_libs/modules/callback',
+                    items: [
+                      { text: 'Client', link: '/client' },
+                      { text: 'Server', link: '/server' },
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
           { text: 'Hooks',
             link: '/DeveloperResources/hooks',
             items: [
