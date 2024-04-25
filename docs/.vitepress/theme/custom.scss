@@ -1,0 +1,111 @@
+:root {
+  --vp-layout-max-width: 100%;
+}
+
+body {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+.content-container {
+    max-width: 100% !important;
+}
+.aside {
+  max-width: 350px !important;
+}
+.aside-container {
+  width: fit-content !important;
+}
+
+.VPBadge {
+  &.server {
+    background-color: #f8d094;
+    color: rgba(60, 60, 67, 0.78);
+  }
+  &.client {
+    background-color: #94f8b2;
+    color: rgba(60, 60, 67, 0.78);
+  }
+  &.shared {
+    background-color: #78d4fd;
+    color: rgba(60, 60, 67, 0.78);
+  }
+}
+
+.outline-link .VPBadge {
+  line-height: 16px;
+  padding: 0 6px;
+  transform: translateY(0px);
+}
+
+.vp-doc ol,.vp-doc ul {
+  padding-left: 2.25rem;
+}
+
+.preview-img {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+  img {
+    width: 100%;
+  }
+}
+
+.VPSidebarItem {
+  .text {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    width: 16px;
+    margin-right: 5px;
+  }
+}
+.main {
+  h1 {
+    display: flex;
+    align-items: center;
+  }
+  h1 img {
+    width: 40px;
+    margin-right: 10px;
+  }
+}
+
+.flex-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+a.box-button {
+  border: 1px solid var(--vp-c-text-1);
+  padding: 0.25em 0.5em;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+  width: fit-content;
+  &:hover {
+    color: var(--vp-c-bg);
+    background-color: var(--vp-c-text-1);
+  }
+}
+
+.VPDoc {
+  padding-top: 0px !important;
+}
+.p-breadcrumb {
+  padding-bottom: 32px;
+  padding-top: 32px;
+  padding-left: 0px;
+  background: transparent;
+}
+@media (max-width: 1110px){
+  .preview-img {
+      display: flex;
+      flex-direction: column;
+  }
+}
