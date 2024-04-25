@@ -51,6 +51,16 @@ export default defineConfig({
       label: 'On this page',
     },
     outlineBadges: true,
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: 'Search in the documentation...'
+          }
+        }
+      }
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Store', link: 'https://shop.jumpon-studios.com',target: '_target',rel: 'external' }
