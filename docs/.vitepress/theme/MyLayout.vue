@@ -39,7 +39,6 @@
         break
       }
     }
-    console.log(tempItems)
     if (!found) return {}
     return tempItems.slice(0,currentLevel)
   })

@@ -3,18 +3,18 @@ import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 import './custom.scss'
 import 'primevue/resources/themes/aura-light-green/theme.css'
 import 'primeicons/primeicons.css'
-import Stepper from 'primevue/stepper';
-import StepperPanel from 'primevue/stepperpanel';
-import Breadcrumb from 'primevue/breadcrumb';
 import MyLayout from './MyLayout.vue'
+
+  // import Breadcrumb from 'primevue/breadcrumb';
 
 export default {
   extends: DefaultTheme,
   Layout: MyLayout,
-  enhanceApp({ app }) {
+  async enhanceApp({ app }) {
     enhanceAppWithTabs(app)
-    app.component('Stepper',Stepper)
-    app.component('StepperPanel',StepperPanel)
-    app.component('Breadcrumb',Breadcrumb)
+    if (!import.meta.env.SSR) {
+      const Breadcrumb = await import('primevue/breadcrumb')
+      app.component('Breadcrumb',Breadcrumb.default)
+    }
   }
 }
