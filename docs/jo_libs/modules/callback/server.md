@@ -1,6 +1,6 @@
 # Register Server Callback
 
-## jo.registerServerCallback
+## jo.registerServerCallback()
 
 ### Syntax
 ```lua

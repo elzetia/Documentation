@@ -2,7 +2,7 @@
 
 The trigger server callback is usefull to get server data from the client side
 
-## jo.triggerServerCallback
+## jo.triggerServerCallback()
 
 ### Syntax
 ```lua

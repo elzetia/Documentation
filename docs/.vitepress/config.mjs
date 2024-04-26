@@ -1,6 +1,78 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+import fs from 'node:fs/promises';
+
+function isFile(filename) {
+  return filename.split('.').length > 1;
+}
+
+function buildFileTree(paths) {
+  const fileTree = { files: [], children: {} };
+
+  paths.forEach(path => {
+    const parts = path.split('\\'); // Utilisation de split('\\') pour les chemins Windows
+    let currentLevel = fileTree;
+
+    parts.forEach(part => {
+      if (part !== '' && !isFile(part)) { // Ignorer la partie vide (pour les chemins commençant par '\\')
+        if (!currentLevel.children[part]) {
+          currentLevel.children[part] = { files: [], children: {} };
+        }
+        currentLevel = currentLevel.children[part];
+      }
+    });
+
+    // Dernière partie de chaque chemin est le nom du fichier
+    const fileName = parts[parts.length - 1];
+    if (fileName !== '') { // Ignorer les noms de fichier vides
+      // Vérifier si le fichier se termine par l'extension ".md"
+      if (isFile(fileName)) {
+        currentLevel.files.push(fileName.replace('.md',''));
+      }
+    }
+  });
+  return fileTree;
+}
+
+const libModulesFiles = await fs.readdir('docs/jo_libs/Modules',{ recursive: true })
+let libModules = buildFileTree(libModulesFiles)
+
+function firtToUpperCase(name) {
+  return name.charAt(0).toUpperCase() + name.slice(1)
+}
+
+function GenerateMenu(fileTree,key,parent) {
+  key = (key || '')
+  parent = (parent || '') + "/"
+  const menu = {
+    text: firtToUpperCase(key),
+    collapsed: true,
+    base: ('/jo_libs/modules'+parent+key).replace('//','/'),
+    link: undefined,
+    items: []
+  }
+
+  if (fileTree.files && fileTree.files.length > 0) {
+    for (let index = 0; index < fileTree.files.length; index++) {
+      const file = fileTree.files[index];
+      if (file.endsWith('.label'))
+        menu.text = file.replace('.label','')
+      else if (file == "index")
+        menu.link = "/"
+      else
+        menu.items.push({text: firtToUpperCase(file), link: '/'+file})
+    }
+  }
+  if (fileTree.children) {
+    for (const child in fileTree.children) {
+      menu.items.push(GenerateMenu(fileTree.children[child],child,parent+key))
+    }
+  }
+  return menu
+}
+
+let sideBarModules = GenerateMenu(libModules)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -69,7 +141,6 @@ export default defineConfig({
       {
         text: 'FiveM',
         collapsed: true,
-
         items: [
           { text: "🔫 Airsoft", link:'/FiveM/airsoft'},
           { text: "🚗 Car door Icon", link:'/FiveM/car-door-icon'},
@@ -123,16 +194,7 @@ export default defineConfig({
               { text: 'Modules',
                 base: '/jo_libs/modules',
                 collapsed: true,
-                items: [
-                  { text: 'Callback',
-                    collapsed: true,
-                    base: '/jo_libs/modules/callback',
-                    items: [
-                      { text: 'Client', link: '/client' },
-                      { text: 'Server', link: '/server' },
-                    ]
-                  }
-                ]
+                items: sideBarModules.items
               }
             ]
           },

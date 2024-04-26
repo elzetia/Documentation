@@ -39,9 +39,10 @@
         break
       }
     }
-    if (!found) return {}
+    if (!found) return []
     return tempItems.slice(0,currentLevel)
   })
+
 
   function stripHtml(html)
   {
