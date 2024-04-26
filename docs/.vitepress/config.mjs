@@ -35,7 +35,7 @@ function buildFileTree(paths) {
   return fileTree;
 }
 
-const libModulesFiles = await fs.readdir('docs/jo_libs/Modules',{ recursive: true })
+const libModulesFiles = await fs.readdir('docs/jo_libs/modules',{ recursive: true })
 let libModules = buildFileTree(libModulesFiles)
 
 function firtToUpperCase(name) {
