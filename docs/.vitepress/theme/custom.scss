@@ -30,6 +30,10 @@ body {
     background-color: #78d4fd;
     color: rgba(60, 60, 67, 0.78);
   }
+  &.optional {
+    border: 1px solid var(--vp-c-text-3);
+    color: var(--vp-c-text-3);
+  }
 }
 
 .outline-link .VPBadge {
