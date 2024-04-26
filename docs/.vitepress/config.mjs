@@ -11,7 +11,7 @@ function buildFileTree(paths) {
   const fileTree = { files: [], children: {} };
 
   paths.forEach(path => {
-    const parts = path.split('\\'); // Utilisation de split('\\') pour les chemins Windows
+    const parts = path.replaceAll('\\','/').split('/'); // Utilisation de split('\\') pour les chemins Windows
     let currentLevel = fileTree;
 
     parts.forEach(part => {
