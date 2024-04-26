@@ -21,7 +21,7 @@ shared_scripts {
   '@jo_libs/init.lua'
 }
 ```
-2. List modules you want use inside the `fxmanifest.lua`
+2. List modules you want use inside the `fxmanifest.lua` (in lowercase)
 ```lua
 jo_libs {
   'print',
