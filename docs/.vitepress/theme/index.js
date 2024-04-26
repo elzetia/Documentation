@@ -12,9 +12,9 @@ export default {
   Layout: MyLayout,
   async enhanceApp({ app }) {
     enhanceAppWithTabs(app)
-    if (!import.meta.env.SSR) {
-      const Breadcrumb = await import('primevue/breadcrumb')
-      app.component('Breadcrumb',Breadcrumb.default)
-    }
+    // if (!import.meta.env.SSR) {
+    //   const Breadcrumb = await import('primevue/breadcrumb')
+    //   app.component('Breadcrumb',Breadcrumb.default)
+    // }
   }
 }
