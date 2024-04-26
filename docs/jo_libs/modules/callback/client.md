@@ -15,7 +15,7 @@ jo.triggerServerCallback(name, cb, ...)
 `cb` : *function*
 > A function to receive the result of the event
 
-`...` : *any* <BadgeOptional />
+`...` : *mixed* <BadgeOptional />
 > The list of the parameter to send to the callback event
 
 
