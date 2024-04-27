@@ -106,6 +106,10 @@ a.box-button {
   padding-top: 32px;
   padding-left: 0px;
   background: transparent;
+  .p-breadcrumb-list {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
 }
 @media (max-width: 1110px){
   .preview-img {
