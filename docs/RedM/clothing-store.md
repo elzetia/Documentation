@@ -429,31 +429,31 @@ end)
 Go in `rsg-apperance\client\functions.lua` line 531 and add edit these line :
 ```lua:line-numbers=530
 TriggerServerEvent("rsg-appearance:SetPlayerBucket" , 0)
-TriggerServerEvent("rsg-appearance:SaveSkin", CreatorCache, ClothesCache) // [!code --]
-local newClothesData = {}  // [!code ++]
-for k, v in pairs(ClothesCache) do   // [!code ++]
-		local id = tonumber(v.model)   // [!code ++]
-		if id >= 1 then   // [!code ++]
-				if IsPedMale(PlayerPedId()) then   // [!code ++]
-						if clothing["male"][k] ~= nil then   // [!code ++]
-								if clothing["male"][k][id] ~= nil then   // [!code ++]
-										if clothing["male"][k][id][tonumber(v.texture)] ~= nil then   // [!code ++]
-												newClothesData[k] = {hash = tonumber(clothing["male"][k][id[tonumber(v.texture)].hash)}   // [!code ++]
-										end   // [!code ++]
-								end   // [!code ++]
-						end   // [!code ++]
-				else   // [!code ++]
-						if clothing["female"][k] ~= nil then   // [!code ++]
-								if clothing["female"][k][id] ~= nil then   // [!code ++]
-										if clothing["female"][k][id][tonumber(v.texture)] ~= nil then   // [!code ++]
-												newClothesData[k] = {hash = tonumber(clothing["male"][k][id][tonumber(v.texture)].hash)}   // [!code ++]
-										end   // [!code ++]
-								end   // [!code ++]
-						end   // [!code ++]
-				end   // [!code ++]
-		end   // [!code ++]
-end   // [!code ++]
-TriggerServerEvent("rsg-appearance:SaveSkin", CreatorCache, newClothesData)   // [!code ++]
+TriggerServerEvent("rsg-appearance:SaveSkin", CreatorCache, ClothesCache) -- [!code --]
+local newClothesData = {}  -- [!code ++]
+for k, v in pairs(ClothesCache) do   -- [!code ++]
+		local id = tonumber(v.model)   -- [!code ++]
+		if id >= 1 then   -- [!code ++]
+				if IsPedMale(PlayerPedId()) then   -- [!code ++]
+						if clothing["male"][k] ~= nil then   -- [!code ++]
+								if clothing["male"][k][id] ~= nil then   -- [!code ++]
+										if clothing["male"][k][id][tonumber(v.texture)] ~= nil then   -- [!code ++]
+												newClothesData[k] = {hash = tonumber(clothing["male"][k][id[tonumber(v.texture)].hash)}   -- [!code ++]
+										end   -- [!code ++]
+								end   -- [!code ++]
+						end   -- [!code ++]
+				else   -- [!code ++]
+						if clothing["female"][k] ~= nil then   -- [!code ++]
+								if clothing["female"][k][id] ~= nil then   -- [!code ++]
+										if clothing["female"][k][id][tonumber(v.texture)] ~= nil then   -- [!code ++]
+												newClothesData[k] = {hash = tonumber(clothing["male"][k][id][tonumber(v.texture)].hash)}   -- [!code ++]
+										end   -- [!code ++]
+								end   -- [!code ++]
+						end   -- [!code ++]
+				end   -- [!code ++]
+		end   -- [!code ++]
+end   -- [!code ++]
+TriggerServerEvent("rsg-appearance:SaveSkin", CreatorCache, newClothesData)   -- [!code ++]
 ```
 ### <Badge type="rsg" text="RSG" /> Fix rsg-bathing
 Go in `rsg-bathing\fxmanifest.lua` line 24 and remove the `rsg-wardrobe` dependency
@@ -461,7 +461,7 @@ Go in `rsg-bathing\fxmanifest.lua` line 24 and remove the `rsg-wardrobe` depende
 dependencies {
     'rsg-core',
     'rsg-appearance', 
-    'rsg-wardrobe' // [!code --]
+    'rsg-wardrobe' -- [!code --]
 }
 ```
 Go in `rsg-bathing\client\client.lua` line 367 and edit `UndressCharacter` function
@@ -475,7 +475,7 @@ UndressCharacter = function()
     for i = 1, #EquippedWeapons do
         RemoveWeaponFromPed(ped, EquippedWeapons[i])
     end
-    TriggerEvent('rsg-wardrobe:client:removeAllClothing') // [!code --]
-    TriggerEvent('kd_clothingstore:removeAllClothes') // [!code ++]
+    TriggerEvent('rsg-wardrobe:client:removeAllClothing') -- [!code --]
+    TriggerEvent('kd_clothingstore:removeAllClothes') -- [!code ++]
 end
 ```

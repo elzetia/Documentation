@@ -29,13 +29,13 @@ Add this Shared functions in `redemrp_inventory/server/sv_main.lua`
   return data
 end
 
-function SharedInventoryFunctions.addItemLocker(name, amount, meta, lockerId) // [!code ++]
-  if not Locker[lockerId] then Locker[lockerId] = {} end // [!code ++]
-  addItemLocker(name, amount, meta, lockerId) // [!code ++]
-end // [!code ++]
-function SharedInventoryFunctions.getLocker(lockerId) // [!code ++]
-  return PrepareToOutput(Locker[lockerId]) // [!code ++]
-end // [!code ++]
+function SharedInventoryFunctions.addItemLocker(name, amount, meta, lockerId) -- [!code ++]
+  if not Locker[lockerId] then Locker[lockerId] = {} end -- [!code ++]
+  addItemLocker(name, amount, meta, lockerId) -- [!code ++]
+end -- [!code ++]
+function SharedInventoryFunctions.getLocker(lockerId) -- [!code ++]
+  return PrepareToOutput(Locker[lockerId]) -- [!code ++]
+end -- [!code ++]
 
 ----=======================SHARED FUNCTIONS  ================================
 ```
@@ -47,13 +47,13 @@ Add this Shared functions in `redemrp_inventory/server/main.lua`
   return data
 end
 
-function SharedInventoryFunctions.addItemStash(source, name, amount, meta, stashId) // [!code ++]
-    if not Stash[stashId] then Stash[stashId] = {} end // [!code ++]
-    addItemStash(source, name, amount, meta, stashId) // [!code ++]
-end // [!code ++]
-function SharedInventoryFunctions.getStash(stashId) // [!code ++]
-    return PrepareToOutput(Stash[stashId]) // [!code ++]
-end // [!code ++]
+function SharedInventoryFunctions.addItemStash(source, name, amount, meta, stashId) -- [!code ++]
+    if not Stash[stashId] then Stash[stashId] = {} end -- [!code ++]
+    addItemStash(source, name, amount, meta, stashId) -- [!code ++]
+end -- [!code ++]
+function SharedInventoryFunctions.getStash(stashId) -- [!code ++]
+    return PrepareToOutput(Stash[stashId]) -- [!code ++]
+end -- [!code ++]
 
 RegisterServerEvent("redemrp_inventory:deleteInv",
 ```

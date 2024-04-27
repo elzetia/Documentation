@@ -93,7 +93,7 @@ You can fix this issue before its approval by adding this line in `vorp_characte
 	LoadComps(ped, components, set)
 	SetPedScale(ped, skin.Scale)
 	UpdatePedVariation(ped)
-	TriggerEvent("vorpcharacter:loadAlllistener", ped, pedskin, components) // [!code ++]
+	TriggerEvent("vorpcharacter:loadAlllistener", ped, pedskin, components) -- [!code ++]
 	return skin
 end
 ```
