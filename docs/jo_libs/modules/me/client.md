@@ -21,9 +21,17 @@ print(jo.meCoords)
 
 ## jo.me
 Return the last cached PlayerPedId() value
+### Example
+```lua
+print(jo.me,PlayerPedId())
+```
 
 ## jo.meCoords
 Return the last cached location of the player
+### Example
+```lua
+print(jo.meCoords,GetEntityCoords(PlayerPedId()))
+```
 
 ## jo.updateMeTimer()
 Change the speed of the updater

@@ -21,6 +21,15 @@ function OWFunctions.getUser(source)
 end
 ```
 :::
+:::details List of compatible frameworks
+* VORP
+* RedEM:RP old
+* RedEM:RP 2023 (reboot)
+* QBR
+* QR
+* RSG
+* RPX
+:::
 
 ## jo.framework:addItemInInventory
 Add a specific item in a custom inventory
