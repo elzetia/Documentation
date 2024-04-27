@@ -2,6 +2,32 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import fs from 'node:fs/promises';
+import { createCommentNotationTransformer } from '@shikijs/transformers'
+
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function transformerLuaComment() {
+  const classMap = {
+    "++": "diff add",
+    "--": "diff remove"
+  }
+  const classActivePre= "has-diff"
+  return createCommentNotationTransformer(
+    "custom-lua-comment",
+    new RegExp(`\\s*(?:--)\\s+\\[!code (${Object.keys(classMap).map(escapeRegExp).join("|")})(:\\d+)?\\]\\s*(?:\\*/|-->)?`),
+    function([_, match, range = ":1"], _line, _comment, lines, index) {
+      const lineNum = Number.parseInt(range.slice(1), 10);
+      lines.slice(index, index + lineNum).forEach((line) => {
+        this.addClassToHast(line, classMap[match]);
+      });
+      if (classActivePre)
+        this.addClassToHast(this.pre, classActivePre);
+      return true;
+    }
+  );
+}
 
 function isFile(filename) {
   return filename.split('.').length > 1;
@@ -102,7 +128,10 @@ export default defineConfig({
   markdown: {
     config(md) {
       md.use(tabsMarkdownPlugin)
-    }
+    },
+    codeTransformers: [
+      transformerLuaComment()
+    ]
   },
   base: "/",
   title: "Jump On Docs",
