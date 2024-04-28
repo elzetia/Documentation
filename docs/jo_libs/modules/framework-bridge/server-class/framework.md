@@ -164,6 +164,29 @@ local frameworkName = jo.framework:get()
 print(frameworkName)
 ```
 
+## jo.framework:getIdentifiers()
+Shortcut for [User:getIdentifiers()](./user/getIdentifiers.md) method
+### Syntax
+```lua
+jo.framework:getIdentifiers(source)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+
+#### Return value
+Type: *table*
+> Return the same value than [User:getIdentifiers()](./user/getIdentifiers.md) method
+  
+
+### Example
+```lua
+local source = 1
+local identifiers = jo.framework:getIdentifiers(source)
+print(identifiers.charid)
+```
+
 ## jo.framework:getItemsFromInventory()
 Get the list of items included in a custom inventory
 ### Syntax
