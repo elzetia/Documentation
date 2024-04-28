@@ -31,6 +31,28 @@ local tbl = {
 local tbl2 = table.copy(tbl)
 ```
 
+## table.count()
+Return the number of value inside a table
+### Syntax
+```lua
+table.count(tbl)
+```
+#### Parameters
+`tbl` : *table/object*
+> The table you want copy
+  
+
+#### Return value
+Type: *integer*
+> Return the number of value inside tbl 
+  
+### Example
+```lua
+local tbl = {a=3, b=4}
+local count = table.count(tbl)
+-- Expected output : 2
+```
+
 ## table.isEmpty()
 A function to know if a table/object is empty
 ### Syntax
