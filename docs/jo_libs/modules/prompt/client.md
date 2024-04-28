@@ -218,7 +218,7 @@ end)
 A function to test if the prompt is pressed and completed
 ### Syntax
 ```lua
-jo.prompt.isCompleted(group,key)
+jo.prompt.isCompleted(group,key,fireMultipleTimes)
 ```
 #### Parameters
 `group` : *string*
@@ -227,6 +227,11 @@ jo.prompt.isCompleted(group,key)
 `key` : *string*
 > The [input](https://github.com/femga/rdr3_discoveries/tree/a63669efcfea34915c53dbd29724a2a7103f822f/Controls) of the key
   
+`fireMultipleTimes` : *boolean* <BadgeOptional />
+> Fire true if the prompt is completed and until another prompt is completed
+> default : false
+  
+
 #### Return value
 Type: *boolean*
 > Return `true` if the key is pressed and completed
