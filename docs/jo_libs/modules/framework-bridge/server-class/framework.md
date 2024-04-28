@@ -5,10 +5,11 @@ outline: 2
 
 A powerfull library to build a script compatible with all Frameworks.  
 ::: info
-The class is automatically initiated when you load the library under the `jo.framework` global variable
+The class is automatically initiated when you load the library under the `jo.framework` global variable.
 :::
 ::: tip
-If you have a custom framework, you can overwrite methods by added them in the overwrite-functions.lua file
+If you have a custom framework, you can overwrite methods by added them in the overwrite-functions.lua file.  
+Read more about [OWFunctions](./OWFunctions.md).
 #### Syntax
 ```lua
 function OWFunctions.<MethodName>()

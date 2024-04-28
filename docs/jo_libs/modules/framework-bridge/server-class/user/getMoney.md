@@ -15,7 +15,7 @@ User:getMoney(moneyType)
 
 #### Return value
 Type: *float*
-> Return `value`   
+> Return the amount for this kind of money   
   
 
 ### Example
