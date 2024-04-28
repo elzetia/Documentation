@@ -133,6 +133,31 @@ CreateThread(function()
 end)
 ```
 
+## jo.prompt.doesLastCompletedIs()
+Return true if it's the last prompt completed
+### Syntax
+```lua
+jo.prompt.doesLastCompletedIs(group,key)
+```
+#### Parameters
+`group` : *string*
+> The name of the group
+  
+`key` : *string*
+> The [input](https://github.com/femga/rdr3_discoveries/tree/a63669efcfea34915c53dbd29724a2a7103f822f/Controls) of the key
+  
+#### Return value
+Type: *boolean*
+> Return `true` if key is the last input completed
+  
+
+### Example
+```lua
+local group = "shop"
+local key = "INPUT_ENTER"
+print(jo.prompt.doesLastCompletedIs(group,key))
+```
+
 ## jo.prompt.editKeyLabel()
 A function to edit the label of a key
 ### Syntax
