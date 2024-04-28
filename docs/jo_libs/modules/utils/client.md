@@ -3,23 +3,7 @@ outline: 2
 ---
 # Utils functions
 
-A library with utils function to create a script
-
-## jo.deleteEntity()
-A function to delete an entity only if exist
-### Syntax
-```lua
-jo.deleteEntity(entity)
-```
-#### Parameters
-`entity` : *integer*
-> The entity ID
-
-### Example
-```lua
-local entity = 23494
-jo.deleteEntity(entity)
-```
+A library with util functions to create a script
 
 ## jo.loadGameData()
 A function to load a game file
@@ -59,20 +43,4 @@ jo.releaseGameData(name)
 ```lua
 local model = 'A_C_Horse_Morgan_Bay'
 jo.releaseGameData(model)
-```
-
-## jo.requestControl()
-A function to request the control of entity and wait after it
-### Syntax
-```lua
-jo.requestControl(entity)
-```
-#### Parameters
-`entity` : *integer*
-> The entity ID
-  
-### Example
-```lua
-local entity = 23494
-jo.requestControl(entity)
 ```
