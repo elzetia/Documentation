@@ -174,6 +174,61 @@ CreateThread(function()
 end)
 ```
 
+## jo.prompt.isGroupExist()
+A function to know if a prompt group exist
+### Syntax
+```lua
+jo.prompt.isGroupExist(group)
+```
+#### Parameters
+`group` : *string*
+> The name of the group
+  
+
+#### Return value
+Type: *boolean*
+> Return `true` if the group exist
+  
+### Example
+```lua
+local group = "interaction"
+local keyLabel = "The key"
+local key = "INPUT_JUMP"
+jo.prompt.create(group,keyLabel,key)
+print(jo.prompt.isGroupExist('interaction'))
+-- Expected output : true
+print(jo.prompt.isGroupExist('new_group'))
+-- Expected output : false
+```
+## jo.prompt.isPromptExist()
+A function to know if a prompt group exist
+### Syntax
+```lua
+jo.prompt.isPromptExist(group,key)
+```
+#### Parameters
+`group` : *string*
+> The name of the group
+  
+`key` : *string*
+> The [input](https://github.com/femga/rdr3_discoveries/tree/a63669efcfea34915c53dbd29724a2a7103f822f/Controls) of the key
+  
+#### Return value
+Type: *boolean*
+> Return `true` if the prompt exist
+  
+### Example
+```lua
+local group = "interaction"
+local keyLabel = "The key"
+local key = "INPUT_JUMP"
+jo.prompt.create(group,keyLabel,key)
+print(jo.prompt.isPromptExist('interaction','INPUT_JUMP'))
+-- Expected output : true
+print(jo.prompt.isGroupExist('new_group','INPUT_RELOAD'))
+-- Expected output : false
+```
+
 ## jo.prompt.setVisible()
 Turn on/off a prompt
 ### Syntax
