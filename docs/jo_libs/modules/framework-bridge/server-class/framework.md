@@ -148,6 +148,37 @@ local definition = {
 jo.framework:createInventory(id,label,definition)
 ```
 
+## jo.framework:doesUserCanBuy()
+A function to know if a specific user has enough money
+### Syntax
+```lua
+jo.framework:doesUserCanBuy(source,amount,moneyType)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+`amount` : *float*
+> The amount of money the player need to have
+  
+`moneyType` : *integer* <BadgeOptional />
+> moneyType = 1 > dollar  
+> moneyType = 2 > gold  
+> moneyType = 3 > rol  
+> default : 1
+
+#### Return value
+Type: *boolean*
+> Return `true` if the player has more money than `amount`
+  
+### Example
+```lua
+local price = 103
+local source = 1
+print(jo.framework:doesUserCanBuy(source,103))
+-- Expected output : true if the player has more than $103
+```
+
 ## jo.framework:get()
 Get the framework name
 ### Syntax
@@ -220,7 +251,6 @@ for key,item in pairs (items) do
   print(item.item)
 end
 ```
-
 
 ## jo.framework:getUser()
 Get the user data
