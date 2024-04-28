@@ -38,6 +38,12 @@ Return the last cached PlayerId() of the player
 ```lua
 print(jo.mePlayerId,PlayerId())
 ```
+## jo.meServerId
+Return the last cached GetPlayerServerId(PlayerId()) of the player
+### Example
+```lua
+print(jo.meServerId,GetPlayerServerId(PlayerId()))
+```
 
 ## jo.updateMeTimer()
 Change the speed of the updater
