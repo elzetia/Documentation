@@ -225,6 +225,31 @@ CreateThread(function()
 end)
 ```
 
+## jo.prompt.isEnabled()
+A function to know if the prompt is enabled
+### Syntax
+```lua
+jo.prompt.isEnabled(group,key)
+```
+#### Parameters
+`group` : *string*
+> The name of the group
+  
+`key` : *string*
+> The [input](https://github.com/femga/rdr3_discoveries/tree/a63669efcfea34915c53dbd29724a2a7103f822f/Controls) of the key
+  
+#### Return value
+Type: *boolean*
+> Return `true` if the prompt is enabled
+  
+### Example
+```lua
+local group = "interaction"
+local keyLabel = "The key"
+jo.prompt.isEnabled(group,key)
+-- Expected output : false
+```
+
 ## jo.prompt.isGroupExist()
 A function to know if a prompt group exist
 ### Syntax
@@ -278,6 +303,29 @@ print(jo.prompt.isPromptExist('interaction','INPUT_JUMP'))
 -- Expected output : true
 print(jo.prompt.isGroupExist('new_group','INPUT_RELOAD'))
 -- Expected output : false
+```
+
+## jo.prompt.setEnabled
+A function to define if the prompt is enabled or not
+### Syntax
+```lua
+jo.prompt.setEnabled(group,key,value)
+```
+#### Parameters
+`group` : *string*
+> The name of the group
+  
+`key` : *string*
+> The [input](https://github.com/femga/rdr3_discoveries/tree/a63669efcfea34915c53dbd29724a2a7103f822f/Controls) of the key
+  
+`isVisible` : *boolean*
+> If the prompt is enabled or not
+  
+### Example
+```lua
+local group = "shop"
+local key = "INPUT_JUMP"
+jo.prompt.setEnabled(group,key,false)
 ```
 
 ## jo.prompt.setVisible()
