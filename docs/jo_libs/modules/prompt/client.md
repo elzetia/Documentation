@@ -138,6 +138,37 @@ local label = "The new label"
 jo.prompt.editKeyLabel(group,key,label)
 ```
 
+## jo.prompt.getPromptProgress()
+A function to return the progress of a prompt
+### Syntax
+```lua
+jo.prompt.getPromptProgress(group,key)
+```
+#### Parameters
+`group` : *string*
+> The name of the group
+  
+`key` : *string*
+> The [input](https://github.com/femga/rdr3_discoveries/tree/a63669efcfea34915c53dbd29724a2a7103f822f/Controls) of the key
+  
+#### Return value
+Type: *float*
+> Return the percent of the prompt progress
+  
+### Example
+```lua
+local group = "interaction"
+local keyLabel = "The key"
+local key = "INPUT_JUMP"
+jo.prompt.create(group,keyLabel,key)
+CreateThread(function()
+  while true do
+    print(jo.prompt.getPromptProgress(group,key))
+    Wait(0)
+  end
+end)
+```
+
 ## jo.prompt.isCompleted()
 A function to test if the prompt is pressed and completed
 ### Syntax
