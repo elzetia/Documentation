@@ -43,6 +43,26 @@ local duration = 1000
 jo.prompt.create(group,keyLabel,key, duration)
 ```
 
+## jo.prompt.deleteAllGroups()
+A function to delete all prompts created in the script
+### Syntax
+```lua
+jo.prompt.deleteAllGroups()
+```
+#### Parameters
+None.
+### Example
+```lua
+local group = "interaction"
+local keyLabel = "The key"
+local key = "INPUT_JUMP"
+local duration = 1000
+jo.prompt.create(group,keyLabel,key, duration)
+jo.prompt.deleteAllGroups()
+print(jo.prompt.isGroupExist('interaction'))
+-- Expected output : false
+```
+
 ## jo.prompt.deleteGroup()
 A function to delete a group and all its prompts
 ### Syntax
