@@ -164,11 +164,11 @@ local frameworkName = jo.framework:get()
 print(frameworkName)
 ```
 
-## jo.framework:getIdentifiers()
+## jo.framework:getUserIdentifiers()
 Shortcut for [User:getIdentifiers()](./user/getIdentifiers.md) method
 ### Syntax
 ```lua
-jo.framework:getIdentifiers(source)
+jo.framework:getUserIdentifiers(source)
 ```
 #### Parameters
 `source` : *integer*
@@ -183,7 +183,7 @@ Type: *table*
 ### Example
 ```lua
 local source = 1
-local identifiers = jo.framework:getIdentifiers(source)
+local identifiers = jo.framework:getUserIdentifiers(source)
 print(identifiers.charid)
 ```
 

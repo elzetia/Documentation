@@ -46,5 +46,5 @@ None.
 ```lua
 jo.waitLibLoading()
 local source = 1
-jo.framework:getIdentifiers(source)
+jo.framework:getUserIdentifiers(source)
 ```

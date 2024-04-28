@@ -177,11 +177,11 @@ Type: *string*
 > Return the name of the framework   
   
 
-## OWFunctions.getIdentifiers()
+## OWFunctions.getUserIdentifiers()
 Get the user's identifers
 ### Syntax
 ```lua
-function OWFunctions.getIdentifiers(source)
+function OWFunctions.getUserIdentifiers(source)
 end
 ```
 #### Arguments
