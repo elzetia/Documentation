@@ -83,7 +83,7 @@ local key = "INPUT_JUMP"
 jo.prompt.deletePrompt(group,key)
 ```
 
-## jo.displayGroup()
+## jo.prompt.displayGroup()
 Display the group of prompt during.
 Need to be call each frame.
 ### Syntax
@@ -199,7 +199,7 @@ CreateThread(function()
     if jo.prompt.isCompleted(group,key) then
       print('Key completed !')
     end
-    jo.displayGroup(group,title)
+    jo.prompt.displayGroup(group,title)
     Wait(0)
   end
 end)
@@ -309,7 +309,7 @@ CreateThread(function()
       jo.prompt.waitRelease(key)
       print('Key released !')
     end
-    jo.displayGroup(group,title)
+    jo.prompt.displayGroup(group,title)
     Wait(0)
   end
 end)
