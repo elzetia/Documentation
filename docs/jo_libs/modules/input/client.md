@@ -18,7 +18,7 @@ jo.input.native(label, placeholder, maxStringLenght)
 `placeholder` : *string*
 > An Example Text, what it should say in the typing field
   
-`maxStringLenght` : *integer* <BadgeOptional
+`maxStringLenght` : *integer* <BadgeOptional />
 > Maximum String Lenght  
 > default: 60
   
