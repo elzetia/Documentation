@@ -1,3 +1,6 @@
+---
+outline: 2
+---
 # Jump On Library
 
 A standalone library for providing reusable code to increase the compatibility between scrips.
@@ -29,3 +32,19 @@ jo_libs {
 }
 ```
 You can now use the libraries inside of your resource with the `jo` global variable.
+
+## jo.waitLibLoading()
+A function to wait the full loading of all libraries
+### Syntax
+```lua
+jo.waitLibLoading()
+```
+#### Parameters
+None.
+
+### Example
+```lua
+jo.waitLibLoading()
+local source = 1
+jo.framework:getIdentifiers(source)
+```
