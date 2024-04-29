@@ -9,15 +9,15 @@ The class is automatically initiated when you load the library under the `jo.fra
 :::
 ::: tip
 If you have a custom framework, you can overwrite methods by added them in the overwrite-functions.lua file.  
-Read more about [OWFunctions](./OWFunctions.md).
+Read more about [OWFramework](./OWFramework.md).
 #### Syntax
 ```lua
-function OWFunctions.<MethodName>()
+function OWFramework.<MethodName>()
 ```
 #### Example
 ```lua
 --Overwrite the getUser method
-function OWFunctions.getUser(source)
+function OWFramework.getUser(source)
   return yourFramework:getUser(source)
 end
 ```

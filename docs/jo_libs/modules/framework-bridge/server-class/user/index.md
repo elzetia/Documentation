@@ -9,12 +9,12 @@ A class to get all the user information.
 If you have a custom framework, you can overwrite methods by added them in the overwrite-functions.lua file
 #### Syntax
 ```lua
-function OWFunctions.<MethodName>()
+function OWFramework.<MethodName>()
 ```
 #### Example
 ```lua
 --Overwrite the getUser method
-function OWFunctions.addMoney(source)
+function OWFramework.addMoney(source)
   return yourFramework:addMoney(source)
 end
 ```

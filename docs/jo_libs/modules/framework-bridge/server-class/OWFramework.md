@@ -1,9 +1,9 @@
 ---
 outline: 2
 ---
-# OWFunctions
+# OWFramework
 
-OWFunctions is an object to allow you to overwrite all framework functions.  
+OWFramework is an object to allow you to overwrite all framework functions.  
 You can overwrite all method from Framework & User class.
 
 :::tip
@@ -16,11 +16,11 @@ Because some server customize their framework to add/edit features. The framewor
 You can also add the link to your fully custom framework with these functions.  
 By overwrite the framework function in this file, all scripts that used the framework-bridge library will be compatible with your framework.
 
-To overwrite a framework function, create the OWFunctions in the `@jo_libs/modules/framework-bridge/overwrite-functions.lua` file. 
+To overwrite a framework function, create the OWFramework in the `@jo_libs/modules/framework-bridge/overwrite-functions.lua` file. 
 
 ### Syntax
 ```lua
-function OWFunctions.<NameOfTheMethod>(...)
+function OWFramework.<NameOfTheMethod>(...)
 end
 ```
 #### Arguments
@@ -35,11 +35,11 @@ end
 You have to return the same type of value than the native method to keep the scripts compatibility. 
   
 
-## OWFunctions.addItemInInventory
+## OWFramework.addItemInInventory
 Add a specific item in a custom inventory
 ### Syntax
 ```lua
-function OWFunctions.addItemInInventory(source,id,item,quantity,metadata,needWait)
+function OWFramework.addItemInInventory(source,id,item,quantity,metadata,needWait)
 end
 ```
 #### Arguments
@@ -63,11 +63,11 @@ end
 > default: false
   
 
-## OWFunctions.addMoney()
+## OWFramework.addMoney()
 Add money from player
 ### Syntax
 ```lua
-function OWFunctions.addMoney(source,amount,moneyType)
+function OWFramework.addMoney(source,amount,moneyType)
 ```
 #### Arguments
 `amount` : *float*
@@ -78,12 +78,12 @@ function OWFunctions.addMoney(source,amount,moneyType)
 > moneyType = 2 > gold  
 > moneyType = 3 > rol  
 
-## OWFunctions.addSecondMoney()
+## OWFramework.addSecondMoney()
 Add the user second money (gold in many framework)
 Only for : RedEM:RP, QBR, RSG, QR framework
 ### Syntax
 ```lua
-function OWFunctions.addSecondMoney(source, amount)
+function OWFramework.addSecondMoney(source, amount)
 end
 ```
 #### Arguments
@@ -94,12 +94,12 @@ end
 > The amount of money added
   
 
-## OWFunctions.addThirdMoney()
+## OWFramework.addThirdMoney()
 Add the user third money (rol in VORP framework)
 Only for : RedEM:RP, QBR, RSG, QR framework
 ### Syntax
 ```lua
-function OWFunctions.addThirdMoney(source)
+function OWFramework.addThirdMoney(source)
 end
 ```
 #### Arguments
@@ -109,11 +109,11 @@ end
 `amount` : *float*
 > The amount of money added
 
-## OWFunctions.canUseItem()
+## OWFramework.canUseItem()
 If the user has enough quantity of a specific item in his inventory
 ### Syntax
 ```lua
-function OWFunctions.canUseItem(source,item,amount,meta,remove)
+function OWFramework.canUseItem(source,item,amount,meta,remove)
 end
 ```
 #### Arguments
@@ -139,11 +139,11 @@ Type: *boolean*
 > Return `true` if the player has enough quantity of the item
   
 
-## OWFunctions.createInventory()
+## OWFramework.createInventory()
 Function to create an inventory
 ### Syntax
 ```lua
-function OWFunctions.createInventory(id,label,definition)
+function OWFramework.createInventory(id,label,definition)
 end
 ```
 #### Arguments
@@ -165,11 +165,11 @@ end
 >
 > Configuration of the inventory  
 
-## OWFunctions.get()
+## OWFramework.get()
 Get the framework name
 ### Syntax
 ```lua
-function OWFunctions.get()
+function OWFramework.get()
 end
 ```
 #### Return value
@@ -177,11 +177,11 @@ Type: *string*
 > Return the name of the framework   
   
 
-## OWFunctions.getUserIdentifiers()
+## OWFramework.getUserIdentifiers()
 Get the user's identifers
 ### Syntax
 ```lua
-function OWFunctions.getUserIdentifiers(source)
+function OWFramework.getUserIdentifiers(source)
 end
 ```
 #### Arguments
@@ -195,11 +195,11 @@ Type: *table*
 `identifiers.charid`
 > Unique id of the player  
 
-## OWFunctions.getItemsFromInventory()
+## OWFramework.getItemsFromInventory()
 Get the list of items included in a custom inventory
 ### Syntax
 ```lua
-function OWFunctions.getItemsFromInventory(source,id)
+function OWFramework.getItemsFromInventory(source,id)
 end
 ```
 #### Arguments
@@ -220,11 +220,11 @@ Type: *table*
 > `item.item` : *string* - The name of the item  
 > `item.metadata` : *table* - The metadata of the item  
   
-## OWFunctions.getJob()
+## OWFramework.getJob()
 
 ### Syntax
 ```lua
-function OWFunctions.getJob(source)
+function OWFramework.getJob(source)
 end
 ```
 #### Arguments
@@ -236,11 +236,11 @@ Type: *string*
 > Return the job name of the player  
   
 
-## OWFunctions.getMoney()
+## OWFramework.getMoney()
 Get the user money
 ### Syntax
 ```lua
-function OWFunctions.getMoney(source,moneyType)
+function OWFramework.getMoney(source,moneyType)
 end
 ```
 #### Arguments
@@ -256,11 +256,11 @@ end
 Type: *float*
 > Return the amount for this kind of money   
 
-## OWFunctions.getRPName()
+## OWFramework.getRPName()
 
 ### Syntax
 ```lua
-function OWFunctions.getRPName(source)
+function OWFramework.getRPName(source)
 end
 ```
 #### Arguments
@@ -271,12 +271,12 @@ end
 Type: *string*
 > Return the name of the player  
 
-## OWFunctions.getSecondMoney()
+## OWFramework.getSecondMoney()
 Get the user second money (gold in many framework)
 Only for : RedEM:RP, QBR, RSG, QR framework
 ### Syntax
 ```lua
-function OWFunctions.getSecondMoney(source)
+function OWFramework.getSecondMoney(source)
 end
 ```
 #### Arguments
@@ -287,12 +287,12 @@ end
 Type: *float*
 > Return the amount of money for the second currency  
 
-## OWFunctions.getThirdMoney()
+## OWFramework.getThirdMoney()
 Get the user third money (rol in VORP framework)
 Only for : RedEM:RP, QBR, RSG, QR framework
 ### Syntax
 ```lua
-function OWFunctions.getThirdMoney(source)
+function OWFramework.getThirdMoney(source)
 end
 ```
 #### Arguments
@@ -303,11 +303,11 @@ end
 Type: *float*
 > Return the amount of money for the third currency  
 
-## OWFunctions.getUser()
+## OWFramework.getUser()
 Get the user data
 ### Syntax
 ```lua
-function OWFunctions.getUser(source)
+function OWFramework.getUser(source)
 end
 ```
 #### Arguments
@@ -320,11 +320,11 @@ type: *User*
 > Return a [User](./user/) class
   
 
-## OWFunctions.giveItem()
+## OWFramework.giveItem()
 Give an item to the user
 ### Syntax
 ```lua
-function OWFunctions.giveItem(source,item,amount,meta)
+function OWFramework.giveItem(source,item,amount,meta)
 end
 ```
 #### Arguments
@@ -346,22 +346,22 @@ Type: *boolean*
 > Return `true` if the item is successfully gave
   
 
-## OWFunctions.initFramework()
+## OWFramework.initFramework()
 A function fired to initialize the framework.
 You can initialize the Core value here.
 ### Syntax
 ```lua
-function OWFunctions.initFramework()
+function OWFramework.initFramework()
 end
 ```
 #### Arguments
 None.
 
-## OWFunctions.openInventory()
+## OWFramework.openInventory()
 Open a specific inventory
 ### Syntax
 ```lua
-function OWFunctions.openInventory(source,id, name, definition)
+function OWFramework.openInventory(source,id, name, definition)
 end
 ```
 #### Arguments
@@ -386,11 +386,11 @@ end
 >
 > Configuration of the inventory  
 
-## OWFunctions.registerUseItem()
+## OWFramework.registerUseItem()
 Register an item has usable and attach a function to it
 ### Syntax
 ```lua
-function OWFunctions.registerUseItem(item,closeAfterUsed,cb)
+function OWFramework.registerUseItem(item,closeAfterUsed,cb)
 end
 ```
 #### Arguments
@@ -407,22 +407,22 @@ end
 > 2nd argument: metadata of the item
   
 
-## OWFunctions.removeInventory()
+## OWFramework.removeInventory()
 Remove the inventory from the **server cache**. Usefull to reload the inventory from the database
 ### Syntax
 ```lua
-function OWFunctions.removeInventory(id)
+function OWFramework.removeInventory(id)
 end
 ```
 #### Arguments
 `id` : *string*
 > Unique id of the inventory
   
-## OWFunctions.removeMoney()
+## OWFramework.removeMoney()
 Remove money from player
 ### Syntax
 ```lua
-function OWFunctions.removeMoney(source,amount,moneyType)
+function OWFramework.removeMoney(source,amount,moneyType)
 ```
 #### Arguments
 `amount` : *float*
@@ -433,12 +433,12 @@ function OWFunctions.removeMoney(source,amount,moneyType)
 > moneyType = 2 > gold  
 > moneyType = 3 > rol  
 
-## OWFunctions.removeSecondMoney()
+## OWFramework.removeSecondMoney()
 Remove the user second money (gold in many framework)
 Only for : RedEM:RP, QBR, RSG, QR framework
 ### Syntax
 ```lua
-function OWFunctions.removeSecondMoney(source, amount)
+function OWFramework.removeSecondMoney(source, amount)
 end
 ```
 #### Arguments
@@ -449,12 +449,12 @@ end
 > The amount of money removed
   
 
-## OWFunctions.removeThirdMoney()
+## OWFramework.removeThirdMoney()
 Remove the user third money (rol in VORP framework)
 Only for : RedEM:RP, QBR, RSG, QR framework
 ### Syntax
 ```lua
-function OWFunctions.removeThirdMoney(source)
+function OWFramework.removeThirdMoney(source)
 end
 ```
 #### Arguments
