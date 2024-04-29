@@ -165,6 +165,29 @@ end
 >
 > Configuration of the inventory  
 
+## OWFramework.doesUserCanBuy()
+A function to know if a specific user has enough money
+### Syntax
+```lua
+OWFramework.doesUserCanBuy(source,amount,moneyType)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+`amount` : *float*
+> The amount of money the player need to have
+  
+`moneyType` : *integer* <BadgeOptional />
+> moneyType = 1 > dollar  
+> moneyType = 2 > gold  
+> moneyType = 3 > rol  
+> default : 1
+
+#### Return value
+Type: *boolean*
+> Return `true` if the player has more money than `amount`
+
 ## OWFramework.get()
 Get the framework name
 ### Syntax
