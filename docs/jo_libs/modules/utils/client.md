@@ -5,11 +5,11 @@ outline: 2
 
 A library with util functions to create a script
 
-## jo.loadGameData()
+## jo.utils.loadGameData()
 A function to load a game file
 ### Syntax
 ```lua
-jo.loadGameData(name,waitLoading)
+jo.utils.loadGameData(name,waitLoading)
 ```
 #### Parameters
 `name` : *string/integer*
@@ -26,14 +26,14 @@ jo.loadGameData(name,waitLoading)
 ### Example
 ```lua
 local model = 'A_C_Horse_Morgan_Bay'
-jo.loadGameData(model,true)
+jo.utils.loadGameData(model,true)
 ```
 
-## jo.releaseGameData()
+## jo.utils.releaseGameData()
 A function to release a game file
 ### Syntax
 ```lua
-jo.releaseGameData(name)
+jo.utils.releaseGameData(name)
 ```
 #### Parameters
 `name` : *string*
@@ -42,5 +42,5 @@ jo.releaseGameData(name)
 ### Example
 ```lua
 local model = 'A_C_Horse_Morgan_Bay'
-jo.releaseGameData(model)
+jo.utils.releaseGameData(model)
 ```
