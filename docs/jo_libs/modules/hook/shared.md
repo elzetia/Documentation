@@ -10,11 +10,11 @@ Two kinds of hook exist :
 
 ## Actions
 
-## jo.doActions()
+## jo.hook.doActions()
 Calls the functions that have been added to an action hook
 ### Syntax
 ```lua
-jo.doActions(name,...)
+jo.hook.doActions(name,...)
 ```
 #### Parameters
 `name` : *string*
@@ -27,14 +27,14 @@ jo.doActions(name,...)
 ```lua
 local distance = 10
 local price = 500
-jo.doActions('action_name', 10, 50)
+jo.hook.doActions('action_name', 10, 50)
 ```
 
-## jo.registerAction()
+## jo.hook.registerAction()
 Register a function to an action hook
 ### Syntax
 ```lua
-jo.registerAction(name,cb,prority)
+jo.hook.registerAction(name,cb,prority)
 ```
 #### Parameters
 `name` : *string*
@@ -52,7 +52,7 @@ jo.registerAction(name,cb,prority)
 ### Example
 From the same resource:
 ```lua
-jo.registerAction('action_name', function(distance,price)
+jo.hook.registerAction('action_name', function(distance,price)
   print(distance,price)
 end,10)
 ```
@@ -65,11 +65,11 @@ end,10)
 
 ## Filters
 
-## jo.applyFilters()
+## jo.hook.applyFilters()
 Calls the functions that have been added to a filter hook
 ### Syntax
 ```lua
-jo.applyFilters(name,value,...)
+jo.hook.applyFilters(name,value,...)
 ```
 #### Parameters
 `name` : *string*
@@ -86,15 +86,15 @@ jo.applyFilters(name,value,...)
 local distance = 500
 local price = 10
 print(price)
-price = jo.applyFilters('filter_name', price, distance)
+price = jo.hook.applyFilters('filter_name', price, distance)
 print(price)
 ```
 
-## jo.registerFilter()
+## jo.hook.registerFilter()
 Register a function to a filter hook
 ### Syntax
 ```lua
-jo.registerFilter(name,cb,prority)
+jo.hook.registerFilter(name,cb,prority)
 ```
 #### Parameters
 `name` : *string*
@@ -112,7 +112,7 @@ jo.registerFilter(name,cb,prority)
 ### Example
 From the same resource:
 ```lua
-jo.registerFilter('filter_name', function(price,distance)
+jo.hook.registerFilter('filter_name', function(price,distance)
   if distance > 100 then
     price = price/2
   end
