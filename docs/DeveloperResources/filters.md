@@ -17,7 +17,7 @@ The script determines the order that callback functions are run based on two thi
 A Filter with a priority of 11 will run after a filter with a priority of 10; and a filter with a priority of 9 will run before a filter with a priority of 10.
 
 
-You will use the RegisterFilter() function, passing at least two parameters:
+You will use the registerFilter() function, passing at least two parameters:
 
 1. `string $hook_name` which is the name of the filter you’re hooking to, and
 2. `callable $callback` the name of your callback function.
@@ -29,7 +29,7 @@ The example below will run when the `kd_stable:client:menuTitle` filter is execu
 function filter_menu_title(title)
   return "The "..title.." was filtered"
 end
-exports.kd_stable:RegisterFilter('kd_stable:client:menuTitle',filter_menu_title,10)
+exports.kd_stable:registerFilter('kd_stable:client:menuTitle',filter_menu_title,10)
 ```
 Lets say we have a menu title, “My horses”, the above example will modify it to be “The My horses was filtered”.
 

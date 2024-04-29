@@ -12,7 +12,7 @@ The script determines the order that callback functions are run based on two thi
 
 An action with a priority of 11 will run after an action with a priority of 10; and an action with a priority of 9 will run before an action with a priority of 10.
 
-You will use the RegisterAction() function, passing at least two parameters:
+You will use the registerAction() function, passing at least two parameters:
 
 1. `string $hook_name` which is the name of the action you’re hooking to, and
 2. `callable $callback` the name of your callback function.
@@ -24,7 +24,7 @@ The example below will run when the `kd_stable:client:stableHorse` action is exe
 function action_stable_horse()
   -- Do something
 end
-exports.kd_stable:RegisterAction('kd_stable:client:stableHorse',action_stable_horse,10)
+exports.kd_stable:registerAction('kd_stable:client:stableHorse',action_stable_horse,10)
 ```
 The `action_stable_horse` will be executed each time when the player stable his horse.
 

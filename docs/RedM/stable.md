@@ -629,14 +629,14 @@ exports.kd_stable:getWagons(wagonID)
 ```lua
 -- @param <actionName> - name of the action
 -- @param <argumentList> - list of arguments which are passed
-exports.kd_stable:RegisterAction(<actionName>, function(<argumentList>)
+exports.kd_stable:registerAction(<actionName>, function(<argumentList>)
   -- Add your new feature here
 end)
 ```
 
 - Example :
 ```lua
-exports.kd_stable:RegisterAction('spawnHorse', function(source,horse,horseID)
+exports.kd_stable:registerAction('spawnHorse', function(source,horse,horseID)
   local horseData = Horses[source][horseID]
   local lanternID = horseData.components.saddle_lanterns?.id or false
   if lanternID then
@@ -650,14 +650,14 @@ Fires when the horse prompt is initialized
 ```lua
 -- @param promptGroupId - prompt group ID
 -- @param entity - entity ID of the target
-exports.kd_stable:RegisterAction('initHorsePrompt', function(promptGroupId,entity)
+exports.kd_stable:registerAction('initHorsePrompt', function(promptGroupId,entity)
 end)
 ```
 #### <Badge type="client" text="Client" /> letterBox
 Fires when the letter box state is switched
 ```lua
 -- @param show - state of letter box: true/false
-exports.kd_stable:RegisterAction('letterBox', function(show)
+exports.kd_stable:registerAction('letterBox', function(show)
 end)
 ```
 #### <Badge type="client" text="Client" /> loopTargeting
@@ -665,7 +665,7 @@ Fires when the player targets a registered horse
 ```lua
 -- @param target - entity ID of the target
 -- @param distance - distance between the player and the entity
-exports.kd_stable:RegisterAction('loopTargeting', function(target,distance)
+exports.kd_stable:registerAction('loopTargeting', function(target,distance)
 end)
 ```
 #### <Badge type="client" text="Client" /> refreshPreviewMyHorse
@@ -673,14 +673,14 @@ Fires when the horse components are refreshed
 ```lua
 -- @param entity - entity ID of the horse
 -- @param horseData - all horse's datas
-exports.kd_stable:RegisterAction('refreshPreviewMyHorse', function(entity,horseData)
+exports.kd_stable:registerAction('refreshPreviewMyHorse', function(entity,horseData)
 end)
 ```
 #### <Badge type="client" text="Client" /> updatePreview
 Fires when user select a new item in the menu
 ```lua
 -- @param itemMenuData - all data of menu's item
-exports.kd_stable:RegisterAction('updatePreview', function(itemMenuData)
+exports.kd_stable:registerAction('updatePreview', function(itemMenuData)
 end)
 ```
 #### <Badge type="server" text="Server" /> bequeathHorse
@@ -689,7 +689,7 @@ Fires when the player bequeaths the horse to another player
 -- @param source - serverID of the player
 -- @param horseID - ID of the horse
 -- @param targetID - serverID of the player targeted
-exports.kd_stable:RegisterAction('bequeathHorse', function(source,horseID,targetID)
+exports.kd_stable:registerAction('bequeathHorse', function(source,horseID,targetID)
 end)
 ```
 #### <Badge type="server" text="Server" /> bequeatWagon
@@ -698,7 +698,7 @@ Fires when the player bequeaths the wagon to another player
 -- @param source - serverID of the player
 -- @param wagonID - ID of the horse
 -- @param targetID - serverID of the player targeted
-exports.kd_stable:RegisterAction('bequeathWagon', function(source,wagonID,targetID)
+exports.kd_stable:registerAction('bequeathWagon', function(source,wagonID,targetID)
 end)
 ```
 #### <Badge type="server" text="Server" /> buyComponent
@@ -710,7 +710,7 @@ Fires when the player buys a new component
 -- componentData.hash - hash of the component
 -- @param price - price of the horse
 -- @param moneyType - devise of the price : 0 for normal & 1 for gold
-exports.kd_stable:RegisterAction('buyComponent', function(source,componentData,price,moneyType)
+exports.kd_stable:registerAction('buyComponent', function(source,componentData,price,moneyType)
 end)
 ```
 #### <Badge type="server" text="Server" /> buyHorse
@@ -732,7 +732,7 @@ Fires when the player buys a new horse
 -- horseData.deathAge - (need aging add-on) horse's age of death
 -- @param price - price of the horse
 -- @param moneyType - devise of the price : 0 for normal & 1 for gold
-exports.kd_stable:RegisterAction('buyHorse', function(source,horseData,price,moneyType)
+exports.kd_stable:registerAction('buyHorse', function(source,horseData,price,moneyType)
 end)
 ```
 #### <Badge type="server" text="Server" /> buyWagon
@@ -751,7 +751,7 @@ Fires when the player buys a new wagon
 -- wagonData.vehicle_liveries - livery of the wagon
 -- @param price - price of the wagon
 -- @param moneyType - devise of the price : 0 for normal & 1 for gold
-exports.kd_stable:RegisterAction('buyWagon', function(source,wagonData,price,moneyType)
+exports.kd_stable:registerAction('buyWagon', function(source,wagonData,price,moneyType)
 end)
 ```
 #### <Badge type="server" text="Server" /> deleteHorse
@@ -759,7 +759,7 @@ Fires when the player deletes a horse
 ```lua
 -- @param source - serverID of the player
 -- @param horseID - ID of the horse
-exports.kd_stable:RegisterAction('deleteHorse', function(source,horseID)
+exports.kd_stable:registerAction('deleteHorse', function(source,horseID)
 end)
 ```
 #### <Badge type="server" text="Server" /> deleteWagon
@@ -767,26 +767,26 @@ Fires when the player deletes a wagon
 ```lua
 -- @param source - serverID of the player
 -- @param wagonID - ID of the wagon
-exports.kd_stable:RegisterAction('deleteWagon', function(source,wagonID)
+exports.kd_stable:registerAction('deleteWagon', function(source,wagonID)
 end)
 ```
 #### <Badge type="server" text="Server" /> horseDying
 Fires when a horse is dying
 ```lua
 -- @param horseID - ID of the horse
-exports.kd_stable:RegisterAction('horseDying', function(horseID)
+exports.kd_stable:registerAction('horseDying', function(horseID)
 end)
 ```
 #### <Badge type="server" text="Server" /> horsesLoaded
 Fires when the list of horses is loaded
 ```lua
-exports.kd_stable:RegisterAction('horsesLoaded', function()
+exports.kd_stable:registerAction('horsesLoaded', function()
 end)
 ```
 #### <Badge type="server" text="Server" /> initSQLValues
 Fires when all database values are updated after the script is started
 ```lua
-exports.kd_stable:RegisterAction('initSQLValues', function()
+exports.kd_stable:registerAction('initSQLValues', function()
 end)
 ```
 #### <Badge type="server" text="Server" /> newFavorite
@@ -794,7 +794,7 @@ Fires when the player assigns a new favourite horse
 ```lua
 -- @param source - serverID of the player
 -- @param horseID - ID of the horse
-exports.kd_stable:RegisterAction('newFavorite', function(source,horseID)
+exports.kd_stable:registerAction('newFavorite', function(source,horseID)
 end)
 ```
 #### <Badge type="server" text="Server" /> openSaddlebag
@@ -802,7 +802,7 @@ Fires when the player opens a saddlebag
 ```lua
 -- @param source - serverID of the player
 -- @param saddleID - ID of the saddlebag
-exports.kd_stable:RegisterAction('openSaddlebag', function(source,saddleID)
+exports.kd_stable:registerAction('openSaddlebag', function(source,saddleID)
 end)
 ```
 #### <Badge type="server" text="Server" /> openWagonLocker
@@ -810,7 +810,7 @@ Fires when the player opens a wagon locker
 ```lua
 -- @param source - serverID of the player
 -- @param wagonID - ID of the wagon
-exports.kd_stable:RegisterAction('openWagonLocker', function(source,wagonID)
+exports.kd_stable:registerAction('openWagonLocker', function(source,wagonID)
 end)
 ```
 #### <Badge type="server" text="Server" /> outHorse
@@ -819,7 +819,7 @@ Fires when the player get out a horse
 -- @param source - serverID of the player
 -- @param horse - entity ID of the horse (server entity)
 -- @param horseID - ID of the horse
-exports.kd_stable:RegisterAction('outHorse', function(source,horse,horseID)
+exports.kd_stable:registerAction('outHorse', function(source,horse,horseID)
 end)
 ```
 #### <Badge type="server" text="Server" /> putSaddlebag
@@ -828,7 +828,7 @@ Fires when the player puts a saddlebag on a horse
 -- @param source - serverID of the player
 -- @param horseID - ID of the horse
 -- @param saddleID - ID of the saddlebag
-exports.kd_stable:RegisterAction('putSaddlebag', function(source,horseID,saddleID)
+exports.kd_stable:registerAction('putSaddlebag', function(source,horseID,saddleID)
 end)
 ```
 #### <Badge type="server" text="Server" /> reviveHorse
@@ -838,7 +838,7 @@ Fires when the player revives a horse
 -- @param horseID - ID of the horse
 -- @param price - price of the wagon
 -- @param moneyType - devise of the price : 0 for normal & 1 for gold
-exports.kd_stable:RegisterAction('reviveHorse', function(source,horseID,price,moneyType)
+exports.kd_stable:registerAction('reviveHorse', function(source,horseID,price,moneyType)
 end)
 ```
 #### <Badge type="server" text="Server" /> spawnWagon
@@ -847,7 +847,7 @@ Fires when the player spawns a wagon
 -- @param source - serverID of the player
 -- @param wagon - entity ID of the wagon (server entity)
 -- @param wagonID - ID of the wagon
-exports.kd_stable:RegisterAction('spawnWagon', function(source,wagon,wagonID)
+exports.kd_stable:registerAction('spawnWagon', function(source,wagon,wagonID)
 end)
 ```
 #### <Badge type="server" text="Server" /> stableHorse
@@ -856,7 +856,7 @@ Fires when the player stables a horse
 -- @param source - serverID of the player
 -- @param horseID - ID of the horse
 -- @param stableID - ID of the stable
-exports.kd_stable:RegisterAction('stableHorse', function(source,horseID,stableID)
+exports.kd_stable:registerAction('stableHorse', function(source,horseID,stableID)
 end)
 ```
 #### <Badge type="server" text="Server" /> stableWagon
@@ -865,7 +865,7 @@ Fires when the player stables a wagon
 -- @param source - serverID of the player
 -- @param wagonID - ID of the wagon
 -- @param stableID - ID of the stable
-exports.kd_stable:RegisterAction('stableWagon', function(source,wagonID,stableID)
+exports.kd_stable:registerAction('stableWagon', function(source,wagonID,stableID)
 end)
 ```
 #### <Badge type="server" text="Server" /> takeSaddlebag
@@ -874,19 +874,19 @@ Fires when the player takes a saddlebag off a horse
 -- @param source - serverID of the player
 -- @param horseID - ID of the horse
 -- @param saddleID - ID of the saddlebag
-exports.kd_stable:RegisterAction('takeSaddlebag', function(source,horseID,saddleID)
+exports.kd_stable:registerAction('takeSaddlebag', function(source,horseID,saddleID)
 end)
 ```
 #### <Badge type="server" text="Server" /> updateSQLStructure
 Fires when the MySQL is initialized
 ```lua
-exports.kd_stable:RegisterAction('updateSQLStructure', function()
+exports.kd_stable:registerAction('updateSQLStructure', function()
 end)
 ```
 #### <Badge type="server" text="Server" /> wagonsLoaded
 Fires when the list of wagons is fully loaded from the database
 ```lua
-exports.kd_stable:RegisterAction('wagonsLoaded', function()
+exports.kd_stable:registerAction('wagonsLoaded', function()
 end)
 ```
 
@@ -898,7 +898,7 @@ end)
 ```lua
 -- @param <actionName> - name of the action
 -- @param <argumentList> - list of arguments which are passed
-exports.kd_stable:RegisterFilter(<actionName>, function(variable)
+exports.kd_stable:registerFilter(<actionName>, function(variable)
   -- Add your new data here
 	return variable -- Don't forget to return the value
 end)
@@ -906,7 +906,7 @@ end)
 
 - Example :
 ```lua
-kd_stable:RegisterFilter('filterHorseData', function(horseData)
+kd_stable:registerFilter('filterHorseData', function(horseData)
   horseData = "New name"
   return horseData
 end)
@@ -917,7 +917,7 @@ Fires before display of the stable prompt
 ```lua
 -- @param canAccess - boolean
 -- @param stable - stable data
-exports.kd_stable:RegisterFilter('canAccessToStable', function(canAccess, stable)
+exports.kd_stable:registerFilter('canAccessToStable', function(canAccess, stable)
 	return canAccess
 end)
 ```
@@ -926,7 +926,7 @@ Overwrite the player's ability to make the horse flee
 ```lua
 -- @param canFlee - boolean
 -- @param entity - entity ID of the horse
-exports.kd_stable:RegisterFilter('canFleeHorse', function(canFlee,entity)
+exports.kd_stable:registerFilter('canFleeHorse', function(canFlee,entity)
 	return canFlee
 end)
 ```
@@ -934,7 +934,7 @@ end)
 Fires before display of the fix horse prompt with the command
 ```lua
 -- @param canUse - boolean
-exports.kd_stable:RegisterFilter('canUseFixHorseCommand', function(canUse)
+exports.kd_stable:registerFilter('canUseFixHorseCommand', function(canUse)
 	return canUse
 end)
 ```
@@ -942,7 +942,7 @@ end)
 Fires before fixing a wagon with the command
 ```lua
 -- @param canUse - boolean
-exports.kd_stable:RegisterFilter('canUseFixWagonCommand', function(canUse)
+exports.kd_stable:registerFilter('canUseFixWagonCommand', function(canUse)
 	return canUse
 end)
 ```
@@ -950,7 +950,7 @@ end)
 Fires before generate horse item in menu
 ```lua
 -- @param horseData - horse's datas
-exports.kd_stable:RegisterFilter('filterHorseData', function(horseData)
+exports.kd_stable:registerFilter('filterHorseData', function(horseData)
 	return horseData
 end)
 ```
@@ -968,7 +968,7 @@ filter the notification messages
 -- @param message.soundset_ref - string : dictionary of the sound
 -- @param message.soundset_name - string : sound name
 	}
-exports.kd_stable:RegisterFilter('filterNotification', function(message)
+exports.kd_stable:registerFilter('filterNotification', function(message)
 	--return false to turn off the notification
 	return message
 end)
@@ -978,7 +978,7 @@ Fires after generated horse item in menu
 ```lua
 -- @param item - menu item
 -- @param horseData - horse's datas
-exports.kd_stable:RegisterFilter('filterYourHorseLine', function(item,horseData)
+exports.kd_stable:registerFilter('filterYourHorseLine', function(item,horseData)
 	return item
 end)
 ```
@@ -987,7 +987,7 @@ Fires before the display of the horse statistics in the menu
 ```lua
 -- @param stats - table of horse's statistics 
 -- @param horseData - horse's datas
-exports.kd_stable:RegisterFilter('generateHorseStatisticsForMenu', function(stats,horseData)
+exports.kd_stable:registerFilter('generateHorseStatisticsForMenu', function(stats,horseData)
 	return stats
 end)
 ```
@@ -997,7 +997,7 @@ Fires before do update actions when user select new item in menu
 -- @param same - boolean value
 -- same = true - Do update actions
 -- same = false - Cancel all update actions
-exports.kd_stable:RegisterFilter('isSameMenu', function(same)
+exports.kd_stable:registerFilter('isSameMenu', function(same)
 	return same
 end)
 ```
@@ -1005,7 +1005,7 @@ end)
 Fires before spawn an horse
 ```lua
 -- @param horseData - horse's datas
-exports.kd_stable:RegisterFilter('updateHorseDataBeforeSpawn', function(horseData)
+exports.kd_stable:registerFilter('updateHorseDataBeforeSpawn', function(horseData)
 	return item
 end)
 ```
@@ -1014,7 +1014,7 @@ Fires before display horse owned line in the menu
 ```lua
 -- @param item - menu item
 -- @param horseID - horse ID in the database
-exports.kd_stable:RegisterFilter('updateItemHorseAvailable', function(item, horseID)
+exports.kd_stable:registerFilter('updateItemHorseAvailable', function(item, horseID)
 	return item
 end)
 ```
@@ -1024,7 +1024,7 @@ Fires before update translated string
 -- @param _lang - array of translated script
 -- <key> is the key of string (don't edit them)
 -- <value> is the translated string
-exports.kd_stable:RegisterFilter('updateLangForNUI', function(_lang)
+exports.kd_stable:registerFilter('updateLangForNUI', function(_lang)
 	return _lang
 end)
 ```
@@ -1033,7 +1033,7 @@ Fires after all update action to edit the current prompt
 ```lua
 -- @param currentPrompt - name of the current prompt
 -- @param itemMenuData - all data of menu's item
-exports.kd_stable:RegisterFilter('updatePreviewPrompt', function(currentPrompt,itemMenuData)
+exports.kd_stable:registerFilter('updatePreviewPrompt', function(currentPrompt,itemMenuData)
 	return currentPrompt
 end)
 ```
@@ -1043,7 +1043,7 @@ Fires when player buy a new horse, just before the 'buyHorse' action
 -- @param horseData - horse's datas filtered
 -- @param horseID - horse ID in Config.horses table
 -- @param source - serverID of the player
-exports.kd_stable:RegisterFilter('buyHorse', function(horseData,horseID,source)
+exports.kd_stable:registerFilter('buyHorse', function(horseData,horseID,source)
 	return horseData
 end)
 ```
@@ -1057,7 +1057,7 @@ Manage the access to a specific wagon locker
 -- @param size - table : size of the wagon locker
 -- size.maxWeight
 -- size.maxSlots
-exports.kd_stable:RegisterFilter('canUseWagonLocker', function(canUse, source, wagonID, model, size )
+exports.kd_stable:registerFilter('canUseWagonLocker', function(canUse, source, wagonID, model, size )
 	return canUse
 end)
 ```
@@ -1066,7 +1066,7 @@ Fires at the start of the script after all horses data is loaded
 ```lua
 -- @param horseData - horse's datas filtered
 -- @param itemMenuData - horse's datas filtered from database
-exports.kd_stable:RegisterFilter('loadHorseData', function(horseData,horseDataFromDB)
+exports.kd_stable:registerFilter('loadHorseData', function(horseData,horseDataFromDB)
 	return horseData
 end)
 ```
@@ -1075,7 +1075,7 @@ Fires when player rides a horse to update his experience
 ```lua
 -- @param configWinExpByWalk - Config.winExpByWalk
 -- @param horseID - ID of the horse
-exports.kd_stable:RegisterFilter('updateExpByWalk', function(configWinExpByWalk,horseID)
+exports.kd_stable:registerFilter('updateExpByWalk', function(configWinExpByWalk,horseID)
 	return configWinExpByWalk
 end)
 ```
@@ -1085,7 +1085,7 @@ Fires when player opens a saddlebag
 -- @param maxAmount - maximum of slot
 -- @param source - serverID of the player
 -- @param typeOrder - 'horse' or 'wagon'
-exports.kd_stable:RegisterFilter('updateMaxStableSlot', function(maxAmount,source,typeOrder)
+exports.kd_stable:registerFilter('updateMaxStableSlot', function(maxAmount,source,typeOrder)
 	return maxAmount
 end)
 ```
@@ -1099,7 +1099,7 @@ Fires when player opens a saddlebag
 -- @param source - serverID of the player
 -- @param horseID - ID of the horse
 -- @paran invName - ID of the inventory
-exports.kd_stable:RegisterFilter('updateSaddlebagConfig', function(saddlebagConfig,hash,source, horseID, invName)
+exports.kd_stable:registerFilter('updateSaddlebagConfig', function(saddlebagConfig,hash,source, horseID, invName)
 	return saddlebagConfig
 end)
 ```
