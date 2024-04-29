@@ -195,6 +195,49 @@ local frameworkName = jo.framework:get()
 print(frameworkName)
 ```
 
+## jo.framework:getJob()
+Return the playe rjob
+### Syntax
+```lua
+jo.framework:getJob(source)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+
+#### Return value
+Type: *string*
+> Return the job name
+  
+
+### Example
+```lua
+local source = 1
+print(jo.framework:getJob(source))
+```
+
+## jo.framework:getRPName()
+Return the first & last name of tha player
+### Syntax
+```lua
+jo.framework:getRPName(source)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+
+#### Return value
+Type: *string*
+> Return the first & last name of a player 
+  
+### Example
+```lua
+local source = 1
+print(jo.framework:getRPName(source))
+```
+
 ## jo.framework:getUserIdentifiers()
 Shortcut for [User:getIdentifiers()](./user/getIdentifiers.md) method
 ### Syntax
