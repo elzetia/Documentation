@@ -12,7 +12,7 @@ Coming soon
 To install jo_mdt:
 - Drag and drop the resource into your resources folder
   - jo_mdt
-- Download the last update of the library : [jo_libs](https://github.com/kaddarem-tebex/RedM-jo_libs/releases)
+- Download the last update of the library : [jo_libs](https://github.com/Jump-On-Studios/RedM-jo_libs/releases)
 - Drag and drop the library into your resources folder
   - jo_libs
 - Add these ensure in your server.cfg

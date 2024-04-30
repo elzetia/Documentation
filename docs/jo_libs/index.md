@@ -6,13 +6,13 @@ outline: 2
 A standalone library for providing reusable code to increase the compatibility between scrips.
 
 <div class="flex-buttons">
-<a class="box-button" href="https://github.com/kaddarem-tebex/RedM-jo_libs" target="_blank"><i class="pi pi-github" />Github</a>
-<a class="box-button" href="https://github.com/kaddarem-tebex/RedM-jo_libs/releases/latest" target="_blank"><i class="pi pi-download" />Download</a>
+<a class="box-button" href="https://github.com/Jump-On-Studios/RedM-jo_libs" target="_blank"><i class="pi pi-github" />Github</a>
+<a class="box-button" href="https://github.com/Jump-On-Studios/RedM-jo_libs/releases/latest" target="_blank"><i class="pi pi-download" />Download</a>
 </div>
 
 ## Installation
 
-1. Download the [last release](https://github.com/kaddarem-tebex/RedM-jo_libs/releases/latest) of the library
+1. Download the [last release](https://github.com/Jump-On-Studios/RedM-jo_libs/releases/latest) of the library
 2. Add the resource `jo_libs` in your resources folder
 3. Add `ensure jo_libs` in your server.cfg
 

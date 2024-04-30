@@ -141,7 +141,7 @@ export default defineConfig({
   head: [
     [
       "link",
-      { rel: "icon", href: "https://raw.githubusercontent.com/kaddarem-tebex/Documentation/main/docs/public/logo.png" },
+      { rel: "icon", href: "https://raw.githubusercontent.com/Jump-On-Studios/Documentation/main/docs/public/logo.png" },
     ],
   ],
   themeConfig: {
@@ -243,7 +243,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/kaddarem-tebex' },
+      { icon: 'github', link: 'https://github.com/Jump-On-Studios' },
       { icon: 'discord', link: 'https://discord.com/invite/8rqVHnSb2K' },
     ],
     footer : {

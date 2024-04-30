@@ -21,7 +21,7 @@ To install kd_clothingstore:
 ::: details For RedEM:RP (old only)
 You have to edit the keep the ensure of redemrp_clothing and replace it with this empty resource :
 
-https://github.com/kaddarem-tebex/redemrp_clothing/releases
+https://github.com/Jump-On-Studios/redemrp_clothing/releases
 :::
 
 ⚠ If you want to use clothes as items. You have to create some items. The list of items is in Config.clothesItem variable in the config file. ⚠
