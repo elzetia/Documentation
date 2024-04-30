@@ -63,52 +63,6 @@ end
 > default: false
   
 
-## OWFramework.addMoney()
-Add money from player
-### Syntax
-```lua
-function OWFramework.addMoney(source,amount,moneyType)
-```
-#### Arguments
-`amount` : *float*
-> The amount of money added
-  
-`moneyType` : *integer*
-> moneyType = 1 > dollar  
-> moneyType = 2 > gold  
-> moneyType = 3 > rol  
-
-## OWFramework.addSecondMoney()
-Add the user second money (gold in many framework)
-Only for : RedEM:RP, QBR, RSG, QR framework
-### Syntax
-```lua
-function OWFramework.addSecondMoney(source, amount)
-end
-```
-#### Arguments
-`source` : *integer*
-> The source ID of the player  
-
-`amount` : *float*
-> The amount of money added
-  
-
-## OWFramework.addThirdMoney()
-Add the user third money (rol in VORP framework)
-Only for : RedEM:RP, QBR, RSG, QR framework
-### Syntax
-```lua
-function OWFramework.addThirdMoney(source)
-end
-```
-#### Arguments
-`source` : *integer*
-> The source ID of the player
-  
-`amount` : *float*
-> The amount of money added
-
 ## OWFramework.canUseItem()
 If the user has enough quantity of a specific item in his inventory
 ### Syntax
@@ -165,29 +119,6 @@ end
 >
 > Configuration of the inventory  
 
-## OWFramework.doesUserCanBuy()
-A function to know if a specific user has enough money
-### Syntax
-```lua
-OWFramework.doesUserCanBuy(source,amount,moneyType)
-```
-#### Parameters
-`source` : *integer*
-> The source ID of the player
-  
-`amount` : *float*
-> The amount of money the player need to have
-  
-`moneyType` : *integer* <BadgeOptional />
-> moneyType = 1 > dollar  
-> moneyType = 2 > gold  
-> moneyType = 3 > rol  
-> default : 1
-
-#### Return value
-Type: *boolean*
-> Return `true` if the player has more money than `amount`
-
 ## OWFramework.get()
 Get the framework name
 ### Syntax
@@ -199,24 +130,6 @@ end
 Type: *string*
 > Return the name of the framework   
   
-
-## OWFramework.getUserIdentifiers()
-Get the user's identifers
-### Syntax
-```lua
-function OWFramework.getUserIdentifiers(source)
-end
-```
-#### Arguments
-`source` : *integer*
-> The source ID of the player
-#### Return value
-Type: *table*  
-`identifiers.identifier`  
-> Unique identifier of the player  
-
-`identifiers.charid`
-> Unique id of the player  
 
 ## OWFramework.getItemsFromInventory()
 Get the list of items included in a custom inventory
@@ -242,106 +155,6 @@ Type: *table*
 > `item.id` : *integer* - The id of the item  
 > `item.item` : *string* - The name of the item  
 > `item.metadata` : *table* - The metadata of the item  
-  
-## OWFramework.getJob()
-
-### Syntax
-```lua
-function OWFramework.getJob(source)
-end
-```
-#### Arguments
-`source` : *integer*
-> The source ID of the player
-
-#### Return value
-Type: *string*
-> Return the job name of the player  
-  
-
-## OWFramework.getMoney()
-Get the user money
-### Syntax
-```lua
-function OWFramework.getMoney(source,moneyType)
-end
-```
-#### Arguments
-`source` : *integer*
-> The source ID of the player
-  
-`moneyType` : *integer*
-> moneyType = 1 > dollar  
-> moneyType = 2 > gold  
-> moneyType = 3 > rol  
-  
-#### Return value
-Type: *float*
-> Return the amount for this kind of money   
-
-## OWFramework.getRPName()
-
-### Syntax
-```lua
-function OWFramework.getRPName(source)
-end
-```
-#### Arguments
-`source` : *integer*
-> The source ID of the player
-
-#### Return value
-Type: *string*
-> Return the name of the player  
-
-## OWFramework.getSecondMoney()
-Get the user second money (gold in many framework)
-Only for : RedEM:RP, QBR, RSG, QR framework
-### Syntax
-```lua
-function OWFramework.getSecondMoney(source)
-end
-```
-#### Arguments
-`source` : *integer*
-> The source ID of the player
-  
-#### Return value
-Type: *float*
-> Return the amount of money for the second currency  
-
-## OWFramework.getThirdMoney()
-Get the user third money (rol in VORP framework)
-Only for : RedEM:RP, QBR, RSG, QR framework
-### Syntax
-```lua
-function OWFramework.getThirdMoney(source)
-end
-```
-#### Arguments
-`source` : *integer*
-> The source ID of the player
-  
-#### Return value
-Type: *float*
-> Return the amount of money for the third currency  
-
-## OWFramework.getUser()
-Get the user data
-### Syntax
-```lua
-function OWFramework.getUser(source)
-end
-```
-#### Arguments
-`source` : *integer*
-> The source ID of the player  
-  
-
-#### Return value
-type: *User*
-> Return a [User](./user/) class
-  
 
 ## OWFramework.giveItem()
 Give an item to the user
@@ -440,12 +253,160 @@ end
 #### Arguments
 `id` : *string*
 > Unique id of the inventory
+
   
-## OWFramework.removeMoney()
+## OWFramework.User.getJob()
+Get the user job
+### Syntax
+```lua
+function OWFramework.User.getJob(source)
+end
+```
+#### Arguments
+`source` : *integer*
+> The source ID of the player
+
+#### Return value
+Type: *string*
+> Return the job name of the player  
+  
+
+## OWFramework.User.getMoney()
+Get the user money
+### Syntax
+```lua
+function OWFramework.User.getMoney(source,moneyType)
+end
+```
+#### Arguments
+`source` : *integer*
+> The source ID of the player
+  
+`moneyType` : *integer*
+> moneyType = 1 > dollar  
+> moneyType = 2 > gold  
+> moneyType = 3 > rol  
+  
+#### Return value
+Type: *float*
+> Return the amount for this kind of money   
+
+## OWFramework.User.getRPName()
+Get the first & last name
+### Syntax
+```lua
+function OWFramework.User.getRPName(source)
+end
+```
+#### Arguments
+`source` : *integer*
+> The source ID of the player
+
+#### Return value
+Type: *string*
+> Return the name of the player  
+
+## OWFramework.User.getSecondMoney()
+Get the user second money (gold in many framework)
+Only for : RedEM:RP, QBR, RSG, QR framework
+### Syntax
+```lua
+function OWFramework.User.getSecondMoney(source)
+end
+```
+#### Arguments
+`source` : *integer*
+> The source ID of the player
+  
+#### Return value
+Type: *float*
+> Return the amount of money for the second currency  
+
+## OWFramework.User.getThirdMoney()
+Get the user third money (rol in VORP framework)
+Only for : RedEM:RP, QBR, RSG, QR framework
+### Syntax
+```lua
+function OWFramework.User.getThirdMoney(source)
+end
+```
+#### Arguments
+`source` : *integer*
+> The source ID of the player
+  
+#### Return value
+Type: *float*
+> Return the amount of money for the third currency  
+
+## OWFramework.User.getUser()
+Get the user data
+### Syntax
+```lua
+function OWFramework.User.getUser(source)
+end
+```
+#### Arguments
+`source` : *integer*
+> The source ID of the player  
+  
+
+#### Return value
+type: *User*
+> Return a [User](./user/) class
+  
+
+## OWFramework.User.addMoney()
+Add money from player
+### Syntax
+```lua
+function OWFramework.User.addMoney(source,amount,moneyType)
+```
+#### Arguments
+`amount` : *float*
+> The amount of money added
+  
+`moneyType` : *integer*
+> moneyType = 1 > dollar  
+> moneyType = 2 > gold  
+> moneyType = 3 > rol  
+
+## OWFramework.User.addSecondMoney()
+Add the user second money (gold in many framework)
+Only for : RedEM:RP, QBR, RSG, QR framework
+### Syntax
+```lua
+function OWFramework.User.addSecondMoney(source, amount)
+end
+```
+#### Arguments
+`source` : *integer*
+> The source ID of the player  
+
+`amount` : *float*
+> The amount of money added
+  
+
+## OWFramework.User.addThirdMoney()
+Add the user third money (rol in VORP framework)
+Only for : RedEM:RP, QBR, RSG, QR framework
+### Syntax
+```lua
+function OWFramework.User.addThirdMoney(source)
+end
+```
+#### Arguments
+`source` : *integer*
+> The source ID of the player
+  
+`amount` : *float*
+> The amount of money added
+
+  
+## OWFramework.User.removeMoney()
 Remove money from player
 ### Syntax
 ```lua
-function OWFramework.removeMoney(source,amount,moneyType)
+function OWFramework.User.removeMoney(source,amount,moneyType)
 ```
 #### Arguments
 `amount` : *float*
@@ -456,12 +417,12 @@ function OWFramework.removeMoney(source,amount,moneyType)
 > moneyType = 2 > gold  
 > moneyType = 3 > rol  
 
-## OWFramework.removeSecondMoney()
+## OWFramework.User.removeSecondMoney()
 Remove the user second money (gold in many framework)
 Only for : RedEM:RP, QBR, RSG, QR framework
 ### Syntax
 ```lua
-function OWFramework.removeSecondMoney(source, amount)
+function OWFramework.User.removeSecondMoney(source, amount)
 end
 ```
 #### Arguments
@@ -472,12 +433,12 @@ end
 > The amount of money removed
   
 
-## OWFramework.removeThirdMoney()
+## OWFramework.User.removeThirdMoney()
 Remove the user third money (rol in VORP framework)
 Only for : RedEM:RP, QBR, RSG, QR framework
 ### Syntax
 ```lua
-function OWFramework.removeThirdMoney(source)
+function OWFramework.User.removeThirdMoney(source)
 end
 ```
 #### Arguments
