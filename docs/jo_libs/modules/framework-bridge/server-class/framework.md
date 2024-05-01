@@ -162,9 +162,9 @@ jo.framework:doesUserCanBuy(source,amount,moneyType)
 > The amount of money the player need to have
   
 `moneyType` : *integer* <BadgeOptional />
-> moneyType = 1 > dollar  
-> moneyType = 2 > gold  
-> moneyType = 3 > rol  
+> moneyType = 0 > dollar  
+> moneyType = 1 > gold  
+> moneyType = 2 > rol  
 > default : 1
 
 #### Return value

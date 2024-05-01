@@ -11,9 +11,9 @@ User:canBuy(price, moneyType)
 > The amount to compare with the user money
 
 `moneyType` : *integer*
-> moneyType = 1 > dollar  
-> moneyType = 2 > gold  
-> moneyType = 3 > rol  
+> moneyType = 0 > dollar  
+> moneyType = 1 > gold  
+> moneyType = 2 > rol  
 
 #### Return value
 Type: *boolean*

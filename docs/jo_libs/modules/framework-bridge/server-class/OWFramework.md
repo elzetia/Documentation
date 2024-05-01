@@ -283,9 +283,9 @@ end
 > The source ID of the player
   
 `moneyType` : *integer*
-> moneyType = 1 > dollar  
-> moneyType = 2 > gold  
-> moneyType = 3 > rol  
+> moneyType = 0 > dollar  
+> moneyType = 1 > gold  
+> moneyType = 2 > rol  
   
 #### Return value
 Type: *float*
@@ -366,9 +366,9 @@ function OWFramework.User.addMoney(source,amount,moneyType)
 > The amount of money added
   
 `moneyType` : *integer*
-> moneyType = 1 > dollar  
-> moneyType = 2 > gold  
-> moneyType = 3 > rol  
+> moneyType = 0 > dollar  
+> moneyType = 1 > gold  
+> moneyType = 2 > rol  
 
 ## OWFramework.User.addSecondMoney()
 Add the user second money (gold in many framework)
@@ -413,9 +413,9 @@ function OWFramework.User.removeMoney(source,amount,moneyType)
 > The amount of money removed
   
 `moneyType` : *integer*
-> moneyType = 1 > dollar  
-> moneyType = 2 > gold  
-> moneyType = 3 > rol  
+> moneyType = 0 > dollar  
+> moneyType = 1 > gold  
+> moneyType = 2 > rol  
 
 ## OWFramework.User.removeSecondMoney()
 Remove the user second money (gold in many framework)

@@ -11,9 +11,9 @@ User:removeMoney(amount, moneyType)
 > The amount of money removed
   
 `moneyType` : *integer*
-> moneyType = 1 > dollar  
-> moneyType = 2 > gold  
-> moneyType = 3 > rol  
+> moneyType = 0 > dollar  
+> moneyType = 1 > gold  
+> moneyType = 2 > rol  
 
 ### Example
 ```lua
