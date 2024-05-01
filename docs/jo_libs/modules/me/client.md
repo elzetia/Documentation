@@ -32,6 +32,14 @@ Return the last cached location of the player
 ```lua
 print(jo.meCoords,GetEntityCoords(PlayerPedId()))
 ```
+
+## jo.meIsMale
+Return if the player is a male or a female
+#### Example
+```lua
+print(jo.meIsMale,IsPedMale(PlayerPedId()))
+```
+
 ## jo.mePlayerId
 Return the last cached PlayerId() of the player
 ### Example
