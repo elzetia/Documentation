@@ -1,9 +1,9 @@
 ---
 outline: 2
 ---
-# Jump On Library
+# Jo Libraries
 
-A standalone library for providing reusable code to increase the compatibility between scrips.
+A standalone libraries for providing reusable code to increase the compatibility between scrips.
 
 <div class="flex-buttons">
 <a class="box-button" href="https://github.com/Jump-On-Studios/RedM-jo_libs" target="_blank"><i class="pi pi-github" />Github</a>
