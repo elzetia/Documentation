@@ -9,14 +9,24 @@ Documentation relating to the kd_stable.
 :::
 
 ## 1. Installation
-To install kd_stable:
-- Drag and drop the resource into your resources folder
-  - kd_stable 
+kd_stable works on all frameworks compatible with jo_libs ([the list](/jo_libs/)).
+
+To install kd_stable :
+- Download the library: [jo_libs](https://github.com/Jump-On-Studios/RedM-jo_libs/releases/latest/download/jo_libs.zip)
+- Unzip the folder and drop it in your resource folder
+- Download kd_stable from your [keymaster](https://keymaster.fivem.net/asset-grants?search=stable)
+- Unzip the folder and drop it in your resource folder
 - Add this ensure in your server.cfg
+  - `ensure jo_libs`
   - `ensure kd_stable`
-- Be sure you remove your previous stable script
 
 Congratulation, the **Stable** script is ready to be used!
+:::warning
+Be sure you have oxmysql ensure in your server.cfg
+:::
+:::tip
+The script automatically creates all necessary database tables during its initial startup.
+:::
 
 ## 2. Usage
 Go to the store (blip on the map) to get the prompt. Press the key to open the menu.

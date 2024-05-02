@@ -9,8 +9,7 @@ Documentation relating to the kd_hairdresser.
 :::
 
 ## 1. Installation
-kd_hairdresser works on all frameworks compatible with jo_libs.  
-You can find the list on this [page](/jo_libs/).
+kd_hairdresser works on all frameworks compatible with jo_libs ([the list](/jo_libs/)).
 
 To install kd_hairdresser :
 - Download the library: [jo_libs](https://github.com/Jump-On-Studios/RedM-jo_libs/releases/latest/download/jo_libs.zip)
