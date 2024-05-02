@@ -12,13 +12,18 @@ Documentation relating to the kd_hairdresser.
 kd_hairdresser works on all frameworks. But the delivered version is setuped for RedEM:RP. For other frameworks, please read the #4
 
 To install kd_hairdresser :
-- Drag and drop the resource in your resources folder
-  - kd_hairdresser
+- Download the library: [jo_libs](https://github.com/Jump-On-Studios/RedM-jo_libs/releases/latest/download/jo_libs.zip)
+- Unzip the folder and drop it in your resource folder
+- Download kd_hairdresser from your [keymaster](https://keymaster.fivem.net/asset-grants?search=hairdresser)
+- Unzip the folder and drop it in your resource folder
 - Add this ensure in your server.cfg
+  - `ensure jo_libs`
   - `ensure kd_hairdresser`
-- Be sure you have oxmysql ensure in your server.cfg
-- The database will be automatically create when you will start the script for the first time.
-- Congratulation, the Hairdresser script is ready to be use !
+
+Congratulation, the Hairdresser script is ready to be use !
+:::warning
+Be sure you have oxmysql ensure in your server.cfg
+:::
 
 ## 2. Usage
 You have two way to use my script :
@@ -46,7 +51,6 @@ Config.commandName = "barber" --use false to disable it
 Config.audioVolume = 0.5 --value between 0.0 and 1.0
 Config.displayBlips = true --display blip on the map
 Config.displayPromptDistance = 3.0 -- distance to display the prompt (use false to disable it)
---Config.Framework = "Custom" --Only use on custom framework.
 
 Config.oldVORPChar = false --(Only for VORP users) to use the C# version of VORP Character
 
@@ -72,21 +76,8 @@ Config.displayTip = function(text)
   print(text)
 end
 ```
-## 4. Other frameworks
-As explain on the #1, the script is setuped for RedEM:RP. But you can use it with other framework buy change few lines :
-1. Edit the config file : Config.Functions.GetIdentifier & Config.Functions.canBuy
-2. Trigger the server event : `kd_hairdresser:loadDatabase` when player spawn with his right character
-   
-Done, your script is ready for another framework
-## 5. Other sql dependency
-By default, kd_hairdresser use oxmysql to save data in the database.
 
-1. Replace the `'@oxmysql/lib/MySQL.lua`', line in the fxmanifest.lua by your sql resource
-2. Edit the `server/server.lua` file if your script have not the same routine than oxmysql
-   
-Congratulation, your script is ready to use another sql resource
-
-## 6. For developper
+## 4. For developper
 Two client events are fired when you use the script :
 1. When you open the menu : `kd_hairdresser:event:Open`
 2. When you close the menu : `kd_hairdresser:event:Close`
