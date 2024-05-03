@@ -9,18 +9,24 @@ Coming soon
 :::
 
 ## 1. Installation
-To install jo_mdt:
-- Drag and drop the resource into your resources folder
-  - jo_mdt
-- Download the last update of the library : [jo_libs](https://github.com/Jump-On-Studios/RedM-jo_libs/releases)
-- Drag and drop the library into your resources folder
-  - jo_libs
-- Add these ensure in your server.cfg
+jo_mdt works on all frameworks compatible with jo_libs ([the list](/jo_libs/)).
+
+To install jo_mdt :
+- Download the library: [jo_libs](https://github.com/Jump-On-Studios/RedM-jo_libs/releases/latest/download/jo_libs.zip)
+- Unzip the folder and drop it in your resource folder
+- Download jo_mdt from your [keymaster](https://keymaster.fivem.net/asset-grants?search=mdt)
+- Unzip the folder and drop it in your resource folder
+- Add this ensure in your server.cfg
   - `ensure jo_libs`
   - `ensure jo_mdt`
-- *If you want use the MDT in the item configuration, add these two items in your inventory :*
-  - `mdt` for the MDT
-  - `mdt_report` for MDT reports
+
+Congratulation, the **MDT** script is ready to be used!
+:::warning
+Be sure you have oxmysql ensure in your server.cfg
+:::
+:::tip
+The script automatically creates all necessary database tables during its initial startup.
+:::
 
 :::details For RedEM:RP (old)
 Add this Shared functions in `redemrp_inventory/server/sv_main.lua`
