@@ -98,6 +98,23 @@ You can turn on the script again with the same client event
 TriggerClientEvent('kd_towtruck:CanUse', source, true)
 ```
 
+You can overwrite the notification function by added these functions in the `overwriteConfig.lua` file:
+```lua
+---@param texts table
+---Warning : Execute every frame
+Config.DisplayHelp(texts)
+  for _,text in pairs texts do
+    print(text)
+  end
+end
+
+---@param text string the content of the notification
+---@param color integer the color of the notification
+Config.Notif(text,color)
+  print(text,color)
+end
+```
+
 ## 6. Some Towtrucks configuration
 ### cortowmfd4
 ```lua
