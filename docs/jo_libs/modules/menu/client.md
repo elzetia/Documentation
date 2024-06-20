@@ -339,3 +339,8 @@ Replace the `rsg-menubase` resource by the one delivered with the library
   
 ### RedEM:RP
 Replace the `redemrp_menu_base` resource by the one delivered with the library  
+
+# New assets
+
+## Add a new icon
+Add you .png file in the `nui\menu\assets\images\icons` folder
