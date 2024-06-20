@@ -40,13 +40,13 @@ local data = {
   title = 'Menu', --The big title of the menu
   subtitle = 'Elements', --The subtitle of the menu
   numberOnScreen = 8, --The number of item display before add a scroll
-  onEnter = function()
+  onEnter = function(currentData)
     print('Enter in menu '..id)
   end,
-  onBack = function()
+  onBack = function(currentData)
     print('Backspace/Esc pressed in menu '..id)
   end,
-  onExit = function()
+  onExit = function(currentData)
     print('Exit menu '..id)
   end,
 }
@@ -139,32 +139,32 @@ local menu = jo.menu.create('menu',{})
 menu:addItem({
   title = "Item 1",
   price = {money = 10.2},
-  onActive = function()
+  onActive = function(currentData)
     print('Item 1 active')
   end,
-  onClick = function()
+  onClick = function(currentData)
     print('Clicked on item 1')
   end,
-  onChange = function()
+  onChange = function(currentData)
     print('Something change in the item 1')
   end,
-  onExit = function()
+  onExit = function(currentData)
     print('Exit the item 1')
   end
 })
 menu:addItem({
   title = "Item 2",
   price = {money = 10.2},
-  onActive = function()
+  onActive = function(currentData)
     print('Item 2 active')
   end,
-  onClick = function()
+  onClick = function(currentData)
     print('Clicked on item 2')
   end,
-  onChange = function()
+  onChange = function(currentData)
     print('Something change in the item 2')
   end,
-  onExit = function()
+  onExit = function(currentData)
     print('Exit the item 2')
   end
 })
@@ -326,6 +326,17 @@ local keepInput = true
 local hideRadar = true
 jo.menu.show(visible,keepInput,hideRadar)
 ```
+
+# Variables
+
+## CurrentData
+The argument pass on each function
+#### keys
+`CurrentData.menu` : *string*
+> The unique ID of the menu
+  
+`CurrentData.item` : *table*
+> The item active in the menu
 
 # Replace your old menu
 
