@@ -1,8 +1,9 @@
 <script setup>
   import DefaultTheme from 'vitepress/theme'
   import { useRoute } from 'vitepress'
-  import { computed, ref } from "vue";
+  import { computed, ref, onMounted } from "vue";
   import { useSidebar } from 'vitepress/theme'
+  import mediumZoom from 'medium-zoom/dist/pure'
   const route = useRoute()
 
   const { sidebar } = useSidebar()
@@ -51,6 +52,10 @@
     const text = tmp.textContent || tmp.innerText || "";
     return text.replace(/\p{Emoji}/gu, '');
   }
+
+  onMounted(() => {
+    mediumZoom('[data-zoomable]', { background: 'var(--zoom-bg)' });
+  });
 </script>
 
 <template>

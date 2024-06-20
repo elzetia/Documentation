@@ -105,7 +105,7 @@ menu:addItem({
 > display the price at the right of the item title  
 
 `statistics` : *table*  <BadgeOptional />
-> the list of statistics  
+> the list of [statistics](./Statistic.md)  
 
 `disabled` : *boolean*  <BadgeOptional />  
 > if the item is disabled (grey in the menu)  
@@ -344,3 +344,117 @@ Replace the `redemrp_menu_base` resource by the one delivered with the library
 
 ## Add a new icon
 Add you .png file in the `nui\menu\assets\images\icons` folder
+
+# Definition variations
+
+## Statistics
+Statistics table is displayed at the bottom of the menu. 5 types of statistics are available:
+[Bar](#bar), [Bar-style](#bar-style), [Icon](#icon), [Texts](#texts) and [Weapon-bar](#weapon-bar)  
+There is an example of this 5 types:
+<img src="/images/preview_statistics.jpg" class="data-zoomable" data-zoomable style="height:20em"/>
+
+### Bar
+A statistic with **10 bars**
+#### Syntax
+```lua
+{label = "", type = "bar", value = {current,max}}
+```
+#### Keys
+`label` : *string*
+> the left label
+  
+`type` : *string*
+  
+`value` : *table*
+> For the left to the right, `current` are white, `max` are grey, all the rest is dark grey  
+> `value.current` : *integer (0<>10* - the number of white bar  
+> `value.max` : *integer (0<>10* - the number of grey bar
+  
+
+#### Example
+![](/images/preview_statistics_bar.jpg){data-zoomable}
+```lua
+local menu = jo.menu.create('menu1',{})
+menu.addItem({
+  title = "Item",
+  statistics = {
+    {label = "The label", type = "bar", value = {3,8}}
+  }
+})
+menu:send()
+jo.menu.setCurrentMenu('menu1')
+jo.menu.show(true)
+```
+### Bar-style
+A statistic with unlimted bar defined with CSS classes
+#### Syntax
+```lua
+{label = "", type = "bar-style", value = {'','',''}}
+```
+#### Keys
+`label` : *string*
+> the left label
+  
+`type` : *string*
+  
+`value` : *table*
+> A list of string to define the CSS classes of bar, 1 string = 1 bar  
+> If the string is empty, the bar is dark grey.
+> CSS classes:  
+> * `active` : Opacity = 1 
+> * `fgold` : Gold  
+> * `fred` : Red  
+> * `possible` : Opacity = 0.5  
+>  
+> *CSS classes can be combinated*  
+  
+
+#### Example
+![](/images/preview_statistics_bar-style.jpg){data-zoomable}
+```lua
+local menu = jo.menu.create('menu1',{})
+menu.addItem({
+  title = "Item",
+  statistics = {
+    {label = "The label", type="bar-style", value = {
+      "active",       --the 1st bar: opacity = 1
+      "active fgold", --the 2nd bar: opacity = 1 + gold
+      "active fred",  --the 3rd bar: opacity = 1 + red
+      "possible fred",--the 4th bar: opacity = 0.5 + red
+      "possible",     --the 4th bar: opacity = 0.5
+      "",             --the 5th bar: opacity = 0.2
+    }},
+  }
+})
+menu:send()
+jo.menu.setCurrentMenu('menu1')
+jo.menu.show(true)
+```
+
+### Texts
+Basic statistic with two labels
+#### Syntax
+```lua
+{label = "", value = ""}
+```
+#### Keys
+`label` : *string*
+> The left label
+  
+`value` : *string*
+> The right label
+  
+#### Example
+![](/images/preview_statistics_text.jpg){data-zoomable}
+```lua
+local menu = jo.menu.create('menu1',{})
+menu.addItem({
+  title = "Item",
+  statistics = {
+    {label = "The label", value = "The value"}
+  }
+})
+menu:send()
+jo.menu.setCurrentMenu('menu1')
+jo.menu.show(true)
+```

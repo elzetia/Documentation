@@ -27,5 +27,5 @@ export default {
     components.forEach(component => {
       app.component(component.name, component)
     })
-  }
+  },
 }

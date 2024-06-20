@@ -425,36 +425,6 @@ end)
 
 ## 5. Compatibility issues
 
-### <Badge type="rsg" text="RSG" /> Fix clothes after character creation
-Go in `rsg-apperance\client\functions.lua` line 531 and add edit these line :
-```lua:line-numbers=530
-TriggerServerEvent("rsg-appearance:SetPlayerBucket" , 0)
-TriggerServerEvent("rsg-appearance:SaveSkin", CreatorCache, ClothesCache) -- [!code --]
-local newClothesData = {}  -- [!code ++]
-for k, v in pairs(ClothesCache) do   -- [!code ++]
-		local id = tonumber(v.model)   -- [!code ++]
-		if id >= 1 then   -- [!code ++]
-				if IsPedMale(PlayerPedId()) then   -- [!code ++]
-						if clothing["male"][k] ~= nil then   -- [!code ++]
-								if clothing["male"][k][id] ~= nil then   -- [!code ++]
-										if clothing["male"][k][id][tonumber(v.texture)] ~= nil then   -- [!code ++]
-												newClothesData[k] = {hash = tonumber(clothing["male"][k][id][tonumber(v.texture)].hash)}   -- [!code ++]
-										end   -- [!code ++]
-								end   -- [!code ++]
-						end   -- [!code ++]
-				else   -- [!code ++]
-						if clothing["female"][k] ~= nil then   -- [!code ++]
-								if clothing["female"][k][id] ~= nil then   -- [!code ++]
-										if clothing["female"][k][id][tonumber(v.texture)] ~= nil then   -- [!code ++]
-												newClothesData[k] = {hash = tonumber(clothing["female"][k][id][tonumber(v.texture)].hash)}   -- [!code ++]
-										end   -- [!code ++]
-								end   -- [!code ++]
-						end   -- [!code ++]
-				end   -- [!code ++]
-		end   -- [!code ++]
-end   -- [!code ++]
-TriggerServerEvent("rsg-appearance:SaveSkin", CreatorCache, newClothesData)   -- [!code ++]
-```
 ### <Badge type="rsg" text="RSG" /> Fix rsg-bathing
 Go in `rsg-bathing\fxmanifest.lua` line 24 and remove the `rsg-wardrobe` dependency
 ```lua:line-numbers=21

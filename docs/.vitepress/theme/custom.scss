@@ -111,9 +111,28 @@ a.box-button {
     row-gap: 10px;
   }
 }
+
+.vp-doc blockquote > * {
+  color: var(--vp-c-text-2);
+}
+
+@import 'medium-zoom/dist/style.css';
+:root {
+  --zoom-bg: black;
+}
+.medium-zoom--opened .medium-zoom-overlay {
+  z-index: 999;
+  opacity: 0.5;
+}
+
+.medium-zoom-image--opened {
+  z-index: 1000;
+}
+
 @media (max-width: 1110px){
   .preview-img {
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
 }
+
