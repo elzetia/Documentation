@@ -126,6 +126,10 @@ export default defineConfig({
     }
   },
   markdown: {
+    theme: {
+      light: 'light-plus',
+      dark: 'slack-dark'
+    },
     config(md) {
       md.use(tabsMarkdownPlugin)
     },

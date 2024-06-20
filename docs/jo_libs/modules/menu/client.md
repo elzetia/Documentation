@@ -105,7 +105,7 @@ menu:addItem({
 > display the price at the right of the item title  
 
 `statistics` : *table*  <BadgeOptional />
-> the list of [statistics](./Statistic.md)  
+> the list of [statistics](#statistics)  
 
 `disabled` : *boolean*  <BadgeOptional />  
 > if the item is disabled (grey in the menu)  
@@ -350,7 +350,8 @@ Add you .png file in the `nui\menu\assets\images\icons` folder
 ## Statistics
 Statistics table is displayed at the bottom of the menu. 5 types of statistics are available:
 [Bar](#bar), [Bar-style](#bar-style), [Icon](#icon), [Texts](#texts) and [Weapon-bar](#weapon-bar)  
-There is an example of this 5 types:
+Multiple statistics can be use for the same item.  
+Here is an example of an item with 5 statistics of the 5 types:
 <img src="/images/preview_statistics.jpg" class="data-zoomable" data-zoomable style="height:20em"/>
 
 ### Bar
@@ -431,6 +432,43 @@ jo.menu.setCurrentMenu('menu1')
 jo.menu.show(true)
 ```
 
+### Icon
+A statistic with icons on the right
+#### Syntax
+```lua
+{label = "", type = "icon", value = {{icon = '', opacity = 1.0}}}
+```
+#### Keys
+`label` : *string*
+> the left label
+  
+`type` : *string*
+  
+`value` : *table*
+> A list of table to define the icon from left to right, 1 table = 1 icon  
+> `icon` : *string* - Icon filename from `nui\menu\assets\images\icons\` folder  
+> `opacity` : *float (0.0<>1.0)* - The opacity of the icon  
+  
+
+#### Example
+![](/images/preview_statistics_icon.jpg){data-zoomable}
+```lua
+local menu = jo.menu.create('menu1',{})
+menu.addItem({
+  title = "Item",
+  statistics = {
+    {label = "The label", type="icon", value = {
+      {icon = "player_health", opacity = 1},    --the 1st icon
+      {icon = "player_health", opacity = 0.75}, --the 2nd icon
+      {icon = "player_health", opacity = 0.3}   --the 3rd icon
+    }},
+  }
+})
+menu:send()
+jo.menu.setCurrentMenu('menu1')
+jo.menu.show(true)
+```
+
 ### Texts
 Basic statistic with two labels
 #### Syntax
@@ -452,6 +490,38 @@ menu.addItem({
   title = "Item",
   statistics = {
     {label = "The label", value = "The value"}
+  }
+})
+menu:send()
+jo.menu.setCurrentMenu('menu1')
+jo.menu.show(true)
+```
+
+### Weapon-bar
+A statistic with the weapon bar design. Useful to display a percent of completion
+#### Syntax
+```lua
+{label = "", type="weapon-bar", value = {current,max}}
+```
+#### Keys
+`label` : *string*
+> The left label
+  
+`type` : *string*
+  
+`value` : *table*
+> The percent of completion is calculated by `value.current\value.max`  
+> `value.current` : *float* - the current value of the statistic  
+> `value.max` : *float* - the max value the statistic can reach  
+  
+#### Example
+![](/images/preview_statistics_weapon-bar.jpg){data-zoomable}
+```lua
+local menu = jo.menu.create('menu1',{})
+menu.addItem({
+  title = "Item",
+  statistics = {
+    {label = "The label", type="weapon-bar", value = {60,100}}
   }
 })
 menu:send()
