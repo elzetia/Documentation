@@ -102,6 +102,9 @@ let sideBarModules = GenerateMenu(libModules)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  sitemap: {
+    hostname: 'https://docs.jumpon-studios.com'
+  },
   resolve: {
     alias: {
       '@vitepress': 'vitepress',
