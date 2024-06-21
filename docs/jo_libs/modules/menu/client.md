@@ -30,7 +30,9 @@ jo.menu.create(id,data)
   
 `data` : *table*
 > `data.title` : *string* - The big title of the menu  
+![The menu title](/images/previews/menu/bigTitle.jpg){data-zoomable}
 > `data.subtitle` : *string* - The subtitle of the menu  
+![The subtitle](/images/previews/menu/subtitle.jpg){data-zoomable}
 > `data.numberOnScreen` : *integer (default: 8)* - The subtitle of the menu <BadgeOptional />  
 > `data.onEnter` : *function* - Fired when the menu is opened <BadgeOptional />  
 > `data.onBack` : *function* - Fired when the backspace/Escape is pressed <BadgeOptional />  
@@ -92,13 +94,16 @@ menu:addItem({
 > the description  
 
 `prefix` : *string* <BadgeOptional />
-> the little icon before the title
+> the little icon before the title from `nui\menu\assets\images\icons` folder
+![prefix Icon](/images/previews/menu/prefixIcon.jpg){data-zoomable}
 
 `icon` : *string*  <BadgeOptional />
-> the left icon  
+> the left icon filename from `nui\menu\assets\images\icons` folder
+![Icon](/images/previews/menu/leftIcon.jpg){data-zoomable}
 
 `iconRight` : *string*  <BadgeOptional />
-> the right icon  
+> the right icon filename from `nui\menu\assets\images\icons` folder
+![icon right](/images/previews/menu/iconRight.jpg){data-zoomable}
 
 `iconClass` : *string*  <BadgeOptional />
 > CSS class for the icon  
@@ -108,28 +113,33 @@ menu:addItem({
 > default : false  
 > `price.money` : *float* - the price in $  <BadgeOptional />  
 > `price.gold` : *float* - the price in gold  <BadgeOptional />   
+![preview price](/images/previews/menu/price.jpg){data-zoomable}
 
 `priceTitle` : *string  <BadgeOptional />  
 > replace the "Price" label  
 
 `priceRight` : *boolean*  <BadgeOptional />  
 > display the price at the right of the item title  
+![price to the right](/images/previews/menu/priceRight.jpg){data-zoomable}
 
 `statistics` : *table*  <BadgeOptional />
 > the list of [statistics](#statistics)  
 
 `disabled` : *boolean*  <BadgeOptional />  
 > if the item is disabled (grey in the menu)  
+![disable item](/images/previews/menu/disableItem.jpg){data-zoomable}
 
 `textRight` : *string*  <BadgeOptional />
 > the label displayed at the right of the item  
+![Right text](/images/previews/menu/rightText.jpg){data-zoomable}
 
 `previewPalette` : *boolean*  <BadgeOptional />  
 > display a color square at the right of the item  
-> default: true
+> default: true  
+![preview palette](/images/previews/menu/previewPalette.jpg){data-zoomable}
   
 `sliders` : *table*
-> The list of sliders
+> The list of [sliders](#sliders)
   
 `onActive` : *function*
 > Fire when the item is enter
@@ -369,6 +379,180 @@ Add you .png file in the `nui\menu\assets\images\icons` folder
 
 # Item variations
 
+## Sliders
+4 types of sliders are available on the menu: [Default](#default), [Grid](#grid), [Palette](#palette) & [Switch](#switch).  
+You can use multiples sliders on the same item.  
+Use `currentData.item.sliders[X].value` to get the current value of the slider
+
+### Default
+The default slider based on the original game design. Usefull to choose between item variations like clothes.
+![The default slider](/images/previews/menu/slider_default.jpg){data-zoomable}
+#### Syntax
+```lua
+{title = "", current = 1, values = {item1,item2,..}}
+```
+#### Keys
+`title` : *string*
+> The label on the top of variations
+  
+`current` : *integer*
+> The current item selected
+  
+`values` : *table*
+> The table of item variations. 1 entry = 1 rectangle
+  
+#### Example
+```lua
+local menu = jo.menu.create('menu1',{})
+menu.addItem({
+  title = "Item",
+  sliders = {
+     {
+      title = 'Variations',
+      current = 2,
+      values = [
+        "value1",
+        {var = 4},
+        {yourKey = "your Value"},
+        'value2',
+        5,
+        10,
+      ]
+    },
+  }
+})
+menu:send()
+jo.menu.setCurrentMenu('menu1')
+jo.menu.show(true)
+```
+
+### Grid
+The grid slider is usefull to define a value between a min and max value.  
+You can use one or two dimensions of slider.  
+One dimension:
+![The grid slider one dimension](/images/previews/menu/slider_grid.jpg){data-zoomable}
+Two dimensions:
+![The grid slider two dimensions](/images/previews/menu/slider_grid2.jpg){data-zoomable}
+#### Syntax
+```lua
+{type = "grid", labels = {'left','right','up','down'}, values = {
+  {current = 0.5,max = 1.0, min = -1.0},
+  {current = 0.5,max = 10.0, min = 0.0}, --for two dimensions
+}}
+```
+#### Keys
+`type` : *string*
+> The type of slider
+  
+`labels` : *table*
+> The 4 labels in the order : left, right, top, bottom
+  
+`values` : *table*
+> The slider definitions.  
+> 1 entry = 1 dimension slider  
+> 2 entries = 2 dimensions sliders
+> `values[x].current` : *float* - the current value of the slider
+> `values[x].min` : *float* - the minimal value (cursor on the full left/top)
+> `values[x].max` : *float* - the minimal value (cursor on the full right/bottom)
+  
+#### Example
+```lua
+local menu = jo.menu.create('menu1',{})
+menu.addItem({
+  title = "Item",
+  sliders = {
+    {
+      type = "grid",
+      labels = {'left','right','up','down'},
+      values = {
+        {current = 0.5,max = 1.0, min = -1.0},
+        {current = 0.5,max = 10.0, min = 0.0}, --for two dimensions
+      }
+    },
+  }
+})
+menu:send()
+jo.menu.setCurrentMenu('menu1')
+jo.menu.show(true)
+```
+
+### Palette
+The palette slider is usefull to select a color.  
+![The palette slider](/images/previews/menu/slider_palette.jpg){data-zoomable}
+#### Syntax
+```lua
+{type = "palette", title = "tint", tint = "tint_makeup", max = 63, current = 14}
+```
+#### Keys
+`type` : *string*
+> The type of slider
+  
+`title` : *table*
+> The top label on the slider
+  
+`tint` : *string*
+> The name of the gradient :  
+> "tint_generic_clean", "tint_hair", "tint_horse", "tint_horse_leather", "tint_leather" & "tint_makeup"
+  
+`max` : *integer*
+> The number of varations
+  
+`current` : *integer*
+> The current variation
+  
+#### Example
+```lua
+local menu = jo.menu.create('menu1',{})
+menu.addItem({
+  title = "Item",
+  sliders = {
+    {type = "palette", title = "tint", tint = "tint_makeup", max = 63, current = 14}
+  }
+})
+menu:send()
+jo.menu.setCurrentMenu('menu1')
+jo.menu.show(true)
+```
+
+### Switch
+The switch slider is display on the right of the item label.  
+![The switch slider](/images/previews/menu/slider_switch.jpg){data-zoomable}
+#### Syntax
+```lua
+{type = "switch", current = 1, values = {
+  {label = "", data = {}},
+  {label = "", data = {}}
+}}
+```
+#### Keys
+`type` : *string*
+> The type of slider
+
+`current` : *integer*
+> The current variation
+  
+`values` : *table*
+> The list of variations  
+> `values[x].label` is the label displayed
+  
+
+#### Example
+```lua
+local menu = jo.menu.create('menu1',{})
+menu.addItem({
+  title = "Item",
+  sliders = {
+    { type = "switch", current = 1, values = {
+      {label = "value 1", myKey = 4},
+      {label = "value 2", data = "what you want"}
+    }
+  }
+})
+menu:send()
+jo.menu.setCurrentMenu('menu1')
+jo.menu.show(true)
+```
+
 ## Statistics
 Statistics table is displayed at the bottom of the menu. 5 types of statistics are available:
 [Bar](#bar), [Bar-style](#bar-style), [Icon](#icon), [Texts](#texts) and [Weapon-bar](#weapon-bar)  
@@ -378,7 +562,7 @@ Here is an example of an item with 5 statistics of the 5 types:
 
 ### Bar
 A statistic with **10 bars**
-![](/images/previews/menu/preview_statistics_bar.jpg){data-zoomable}
+![Statistic bar preview](/images/previews/menu/preview_statistics_bar.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", type = "bar", value = {current,max}}
@@ -410,7 +594,7 @@ jo.menu.show(true)
 ```
 ### Bar-style
 A statistic with unlimted bar defined with CSS classes
-![](/images/previews/menu/preview_statistics_bar-style.jpg){data-zoomable}
+![Statistic bar preview with CSS classes](/images/previews/menu/preview_statistics_bar-style.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", type = "bar-style", value = {'','',''}}
@@ -456,7 +640,7 @@ jo.menu.show(true)
 
 ### Icon
 A statistic with icons on the right
-![](/images/previews/menu/preview_statistics_icon.jpg){data-zoomable}
+![Statistics with icons](/images/previews/menu/preview_statistics_icon.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", type = "icon", value = {{icon = '', opacity = 1.0}}}
@@ -493,7 +677,7 @@ jo.menu.show(true)
 
 ### Texts
 Basic statistic with two labels
-![](/images/previews/menu/preview_statistics_text.jpg){data-zoomable}
+![Basic statistics](/images/previews/menu/preview_statistics_text.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", value = ""}
@@ -521,7 +705,7 @@ jo.menu.show(true)
 
 ### Weapon-bar
 A statistic with the weapon bar design. Useful to display a percent of completion
-![](/images/previews/menu/preview_statistics_weapon-bar.jpg){data-zoomable}
+![Statistics with weapon bar design](/images/previews/menu/preview_statistics_weapon-bar.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", type="weapon-bar", value = {current,max}}
