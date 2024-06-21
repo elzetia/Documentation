@@ -19,6 +19,8 @@ Your players will love the innovative features, including the grid layout, color
 
 # Usage
 
+[Download an example of menu resource](https://github.com/Jump-On-Studios/Documentation/tree/main/docs/public/snippets/menu)
+
 ## Constructor
 ##### Syntax
 ```lua

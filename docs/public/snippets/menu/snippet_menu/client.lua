@@ -3,6 +3,9 @@ RegisterCommand('menu', function()
 end)
 
 function CreateMenu()
+  -------------
+  -- Initialize the menu
+  -------------
   local menu = jo.menu.create('menu1',{
     title = "My title",
     subtitle = "The subtitle",
@@ -17,6 +20,10 @@ function CreateMenu()
       print('onExit menu1')
     end,
   })
+
+  -------------
+  -- Add items in the menu
+  -------------
 
   menu:addItem({
     title = "Statistic Item",
@@ -38,7 +45,19 @@ function CreateMenu()
     end
   })
 
+  menu:addItem({
+    title="Go to child menu",
+    child = "subMenu"
+  })
+
+  -------------
+  -- Send the menu to the NUI
+  -------------
   menu:send()
+
+  -------------
+  -- Create a second menu
+  -------------
 
   local subMenu = jo.menu.create('subMenu', {
     title = "SubMenu",
@@ -66,8 +85,13 @@ function CreateMenu()
   })
   subMenu:send()
 
-
+  -------------
+  -- Define the current menu
+  -------------
   jo.menu.setCurrentMenu('menu1',false,true)
 
+  -------------
+  -- Show the menu
+  -------------
   jo.menu.show(true)
 end
