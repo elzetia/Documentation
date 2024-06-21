@@ -1,9 +1,9 @@
 <script setup>
   import DefaultTheme from 'vitepress/theme'
-  import { onContentUpdated, useRoute } from 'vitepress'
-  import { computed, ref, onMounted } from "vue";
+  import { useRoute, useRouter } from 'vitepress'
+  import { computed, watch, onMounted, nextTick } from "vue";
   import { useSidebar } from 'vitepress/theme'
-  import mediumZoom from 'medium-zoom/dist/pure'
+  import mediumZoom from 'medium-zoom/dist/pure/medium-zoom.umd.js'
   const route = useRoute()
 
   const { sidebar } = useSidebar()
@@ -55,7 +55,23 @@
 
   onMounted(() => {
     mediumZoom('[data-zoomable]', { background: 'var(--zoom-bg)' });
+  })
+
+  let a = computed(() => {
+    console.log('a')
+    return Math.random()
+  })
+
+  const initZoom = () => {
+    mediumZoom('[data-zoomable]', { background: 'var(--zoom-bg)' });
+  };
+  onMounted(() => {
+    initZoom();
   });
+  watch(
+    () => route.path,
+    () => nextTick(() => initZoom())
+  );
 </script>
 
 <template>
