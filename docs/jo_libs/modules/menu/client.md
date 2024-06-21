@@ -384,7 +384,9 @@ Add you .png file in the `nui\menu\assets\images\icons` folder
 ## Sliders
 4 types of sliders are available on the menu: [Default](#default), [Grid](#grid), [Palette](#palette) & [Switch](#switch).  
 You can use multiples sliders on the same item.  
-Use `currentData.item.sliders[X].value` to get the current value of the slider
+Use `currentData.item.sliders[X].value` to get the current value of the slider.  
+Here is an example of an item with sliders of the 4 types:  
+<img src="/images/previews/menu/preview_sliders.jpg" class="data-zoomable" data-zoomable style="height:20em"/>
 
 ### Default
 The default slider based on the original game design. Usefull to choose between item variations like clothes.
