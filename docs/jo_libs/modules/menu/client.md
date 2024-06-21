@@ -19,7 +19,7 @@ Your players will love the innovative features, including the grid layout, color
 
 # Usage
 
-[Download an example of menu resource](https://github.com/Jump-On-Studios/Documentation/tree/main/docs/public/snippets/menu)
+[Download an example of menu resource](https://raw.githubusercontent.com/Jump-On-Studios/Documentation/main/docs/public/snippets/menu/snippet_menu.zip)
 
 ## Constructor
 ##### Syntax
