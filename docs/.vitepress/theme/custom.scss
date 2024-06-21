@@ -17,6 +17,12 @@ body {
   width: fit-content !important;
 }
 
+img.preview {
+  border-radius: 0.5em;
+  margin: auto;
+  width: 80%;
+}
+
 .VPBadge {
   &.server {
     background-color: #f8d094;

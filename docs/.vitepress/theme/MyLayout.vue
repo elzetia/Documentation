@@ -1,6 +1,6 @@
 <script setup>
   import DefaultTheme from 'vitepress/theme'
-  import { useRoute } from 'vitepress'
+  import { onContentUpdated, useRoute } from 'vitepress'
   import { computed, ref, onMounted } from "vue";
   import { useSidebar } from 'vitepress/theme'
   import mediumZoom from 'medium-zoom/dist/pure'

@@ -1,12 +1,23 @@
 ---
 outline: [1,3]
 ---
-# Menu
-A client side library to use the Jump On Menu in your scripts. 
+# JO Menu
+A client side library to use the JO Menu in your scripts.  
+JO Menu is a NUI menu fully optimized and mouse and keyboard ready.
 
-**Why you must switch to this new menu ?**
+**Introducing The Jump On Menu: Revolutionizing Menu Creation for Your RedM Script!**
 
-The Jump On Menu is a new way to build menu for your RedM Script. Its design match with the original design from Red Dead Redemption II. This new menu is way more flexible and easy to use than MenuAPI from your framework : action are linked to the button instead of to the global menu. Your players will love the new features like the grid, color picker and all the menu animations.
+The Jump On Menu offers a new way to build menus for your RedM script, seamlessly blending with the authentic design of Red Dead Redemption II. This new menu system is significantly more flexible and user-friendly compared to the MenuAPI in your current framework. Actions are now directly linked to individual buttons instead of the global menu, simplifying both setup and usage.  
+  
+Your players will love the innovative features, including the grid layout, color picker, and smooth menu animations. Enhance their gaming experience and rediscover the joy of development with The Jump On Menu.  
+
+# Previews
+<br>
+<img src="/images/previews/menu/menu_preview_1.jpg" class="data-zoomable preview" data-zoomable/>
+<br>
+<img src="/images/previews/menu/menu_preview_2.jpg" class="data-zoomable preview" data-zoomable/>
+
+# Usage
 
 ## Constructor
 ##### Syntax
@@ -356,17 +367,18 @@ Replace the `redemrp_menu_base` resource by the one delivered with the library
 ## Add a new icon
 Add you .png file in the `nui\menu\assets\images\icons` folder
 
-# Definition variations
+# Item variations
 
 ## Statistics
 Statistics table is displayed at the bottom of the menu. 5 types of statistics are available:
 [Bar](#bar), [Bar-style](#bar-style), [Icon](#icon), [Texts](#texts) and [Weapon-bar](#weapon-bar)  
 Multiple statistics can be use for the same item.  
 Here is an example of an item with 5 statistics of the 5 types:
-<img src="/images/preview_statistics.jpg" class="data-zoomable" data-zoomable style="height:20em"/>
+<img src="/images/previews/menu/preview_statistics.jpg" class="data-zoomable" data-zoomable style="height:20em"/>
 
 ### Bar
 A statistic with **10 bars**
+![](/images/previews/menu/preview_statistics_bar.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", type = "bar", value = {current,max}}
@@ -384,7 +396,6 @@ A statistic with **10 bars**
   
 
 #### Example
-![](/images/preview_statistics_bar.jpg){data-zoomable}
 ```lua
 local menu = jo.menu.create('menu1',{})
 menu.addItem({
@@ -399,6 +410,7 @@ jo.menu.show(true)
 ```
 ### Bar-style
 A statistic with unlimted bar defined with CSS classes
+![](/images/previews/menu/preview_statistics_bar-style.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", type = "bar-style", value = {'','',''}}
@@ -422,7 +434,6 @@ A statistic with unlimted bar defined with CSS classes
   
 
 #### Example
-![](/images/preview_statistics_bar-style.jpg){data-zoomable}
 ```lua
 local menu = jo.menu.create('menu1',{})
 menu.addItem({
@@ -445,6 +456,7 @@ jo.menu.show(true)
 
 ### Icon
 A statistic with icons on the right
+![](/images/previews/menu/preview_statistics_icon.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", type = "icon", value = {{icon = '', opacity = 1.0}}}
@@ -462,7 +474,6 @@ A statistic with icons on the right
   
 
 #### Example
-![](/images/preview_statistics_icon.jpg){data-zoomable}
 ```lua
 local menu = jo.menu.create('menu1',{})
 menu.addItem({
@@ -482,6 +493,7 @@ jo.menu.show(true)
 
 ### Texts
 Basic statistic with two labels
+![](/images/previews/menu/preview_statistics_text.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", value = ""}
@@ -494,7 +506,6 @@ Basic statistic with two labels
 > The right label
   
 #### Example
-![](/images/preview_statistics_text.jpg){data-zoomable}
 ```lua
 local menu = jo.menu.create('menu1',{})
 menu.addItem({
@@ -510,6 +521,7 @@ jo.menu.show(true)
 
 ### Weapon-bar
 A statistic with the weapon bar design. Useful to display a percent of completion
+![](/images/previews/menu/preview_statistics_weapon-bar.jpg){data-zoomable}
 #### Syntax
 ```lua
 {label = "", type="weapon-bar", value = {current,max}}
@@ -526,7 +538,6 @@ A statistic with the weapon bar design. Useful to display a percent of completio
 > `value.max` : *float* - the max value the statistic can reach  
   
 #### Example
-![](/images/preview_statistics_weapon-bar.jpg){data-zoomable}
 ```lua
 local menu = jo.menu.create('menu1',{})
 menu.addItem({
