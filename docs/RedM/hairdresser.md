@@ -82,3 +82,25 @@ Two client events are fired when you use the script :
 1. When you open the menu : `kd_hairdresser:event:Open`
 2. When you close the menu : `kd_hairdresser:event:Close`
 
+### Filters
+
+[Filters](/DeveloperResources/filters) are the new way to modify data used by the script. These filters are fired at a specific point in time during the execution of the script. But contrary to events, filters are **synchronous**. 
+
+- Syntax: 
+```lua
+-- @param <actionName> - name of the action
+-- @param <argumentList> - list of arguments which are passed
+exports.kd_haidresser:registerFilter(<actionName>, function(variable)
+  -- Add your new data here
+	return variable -- Don't forget to return the value
+end)
+```
+
+#### <Badge type="client" text="Client" /> canOpenMenu
+Fires before sit on the chair. Return false to disable the menu
+```lua
+-- @param canUse - boolean
+exports.kd_haidresser:registerFilter('canOpenMenu', function(canOpen)
+	return canOpen
+end)
+```
