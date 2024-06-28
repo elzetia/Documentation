@@ -178,7 +178,7 @@ Config.tamingHorses = {
 ```lua
 -- @param <actionName> - name of the action
 -- @param <argumentList> - list of arguments which are passed
-exports.kd_stable:RegisterFilter(<actionName>, function(variable)
+exports.kd_stable_taming:registerFilter(<actionName>, function(variable)
   -- Add your new data here
 	return variable -- Don't forget to return the value
 end)
@@ -187,7 +187,7 @@ end)
 Fires after completed the selling prompt
 ```lua
 -- @param canSell - boolean
-exports.kd_stable_taming:RegisterFilter('canSellWildHorse', function(canSell)
+exports.kd_stable_taming:registerFilter('canSellWildHorse', function(canSell)
 	return canSell
 end)
 ```
@@ -195,7 +195,7 @@ end)
 Fires after completed the taming prompt
 ```lua
 -- @param canTame - boolean
-exports.kd_stable_taming:RegisterFilter('canTameWildHorse', function(canTame)
+exports.kd_stable_taming:registerFilter('canTameWildHorse', function(canTame)
 	return canTame
 end)
 ```

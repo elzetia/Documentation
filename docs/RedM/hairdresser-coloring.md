@@ -71,7 +71,7 @@ Config.palettes = {
 ```lua
 -- @param <actionName> - name of the action
 -- @param <argumentList> - list of arguments which are passed
-exports.kd_hairdresser_coloring:RegisterFilter(<actionName>, function(variable)
+exports.kd_hairdresser_coloring:registerFilter(<actionName>, function(variable)
   -- Add your new data here
 	return variable -- Don't forget to return the value
 end)
@@ -80,7 +80,7 @@ end)
 Fires after completed the coloring prompt
 ```lua
 -- @param canUse - boolean
-exports.kd_hairdresser_coloring:RegisterFilter('canOpenColorPalette', function(canUse)
+exports.kd_hairdresser_coloring:registerFilter('canOpenColorPalette', function(canUse)
 	return canUse
 end)
 ```

@@ -139,7 +139,7 @@ Config.stations = {
 Fires before open the MDT
 ```lua
 ---@param canOpen - boolean
-exports.jo_mdt:RegisterFilter('canOpenMDT', function(canOpen, stable)
+exports.jo_mdt:registerFilter('canOpenMDT', function(canOpen)
 	return canAccess
 end)
 ```
@@ -147,7 +147,7 @@ end)
 Fires before update the NUI Lang
 ```lua
 ---@param Lang - table: list of lang strings
-exports.jo_mdt:RegisterFilter('updateLangForNUI', function(Lang)
+exports.jo_mdt:registerFilter('updateLangForNUI', function(Lang)
 	return Lang
 end)
 ```
@@ -157,7 +157,7 @@ Fires before give the MDT to the player
 ---@param canGet - boolean
 ---@param source - integer: server ID of the player
 ---@param stationKey - integer: key of the station from Config.stations
-exports.jo_mdt:RegisterFilter('canGetMDT', function(canGet,source,stationKey)
+exports.jo_mdt:registerFilter('canGetMDT', function(canGet,source,stationKey)
 	return canGet
 end)
 ```
@@ -166,7 +166,7 @@ Fires before open the file cabinet
 ```lua
 ---@param canManage - boolean
 ---@param source - integer: server ID of the player
-exports.jo_mdt:RegisterFilter('canManageFileLocker', function(canManage,source)
+exports.jo_mdt:registerFilter('canManageFileLocker', function(canManage,source)
 	return canManage
 end)
 ```
