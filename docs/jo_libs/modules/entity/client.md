@@ -5,6 +5,37 @@ outline: 2
 
 A library with usefull function to manage entity
 
+## jo.entity.create()
+a function to create a new entity
+### Syntax
+```lua
+jo.entity.create(model,coords,heading,networked)
+```
+#### Parameters
+`model` : *string*
+> The model of the entity
+  
+`coords` : *vector3*
+> The coordinate of the entity
+  
+`heading` : *float*
+> The heading of the entity
+  
+`networked` : *boolean*
+> If the entity needs to be networked
+  
+
+#### Return value
+Type: *integer*
+> Return ID of the entity 
+  
+
+### Example
+```lua
+local entity = jo.entity.create('re_kidnappedvictim_females_01',vec3(1294.0,-512.3, 30.0),90.0,true)
+print(entity)
+```
+
 ## jo.entity.delete()
 A function to delete an entity only if exist
 ### Syntax

@@ -80,7 +80,7 @@ jo.database.addTrigger(triggerName,definition)
 
 #### Return value
 Type: *boolean*
-> Return `true` if the  trigger is successfully created
+> Return `true` if the trigger is successfully created
   
 
 ### Example

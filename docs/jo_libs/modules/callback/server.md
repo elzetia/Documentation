@@ -1,10 +1,15 @@
-# Register Server Callback
+---
+outline: 2
+---
+# Callback
 
-## jo.registerServerCallback()
+A module to use callback module server side
+
+## jo.callback.register()
 
 ### Syntax
 ```lua
-jo.registerServerCallback(name, cb)
+jo.callback.register(name, cb)
 ```
 #### Parameters
 `name` : *string*
@@ -16,8 +21,39 @@ jo.registerServerCallback(name, cb)
 
 ### Example
 ```lua
-jo.registerServerCallback('yourResource:server:getExperience', function(source,job)
-  local experience = GetExperience(source,job)
-  return experience
+jo.callback.register('testServerCallback', function(source,value1,value2)
+  print(source,value1,value2)
+  return value1 + value2
 end)
+```
+
+## jo.callback.triggerClient()
+A function to trigger a client callback
+
+### Syntax
+```lua
+jo.callback.triggerClient(name, source, cb, ...)
+```
+#### Parameters
+`name` : *string*
+> The name of the callback event
+
+`source` : *integer*
+> The source of the client to trigger
+  
+`cb` : *function*
+> A function to receive the result of the event
+
+`...` : *mixed* <BadgeOptional />
+> The list of the parameter to send to the callback event
+
+
+### Example
+```lua
+local value1 = 5
+local value2 = 10
+local source =  1
+jo.callback.triggerClient('testClientCallback', source, function(returnValue)
+  print(returnValue)
+end, value1, value2)
 ```

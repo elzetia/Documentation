@@ -1,12 +1,38 @@
-# Trigger Server Callback
+---
+outline: 2
+---
+# Callback
 
-The trigger server callback is usefull to get server data from the client side
+A module to use callback module client side.
 
-## jo.triggerServerCallback()
+## jo.callback.register()
+A function to register a client callback
+### Syntax
+```lua
+jo.callback.register(name,cb)
+```
+#### Parameters
+`name` : *string*
+> The name of the callback event
+
+`cb` : *function*
+> The function executed when the callback is triggered  
+  
+
+### Example
+```lua
+jo.callback.register('testClientCallback', function(value1,value2)
+  print(value1, value2)
+  return value1 + value2
+end)
+```
+
+## jo.callback.triggerServer()
+A function to trigger a server callback
 
 ### Syntax
 ```lua
-jo.triggerServerCallback(name, cb, ...)
+jo.callback.triggerServer(name, cb, ...)
 ```
 #### Parameters
 `name` : *string*
@@ -21,8 +47,9 @@ jo.triggerServerCallback(name, cb, ...)
 
 ### Example
 ```lua
-local job = "sheriff"
-jo.triggerServerCallback('yourResource:server:getExperience', function(experience)
-  print(experience)
-end, job)
+local value1 = 10
+local value2 = 5
+jo.callback.triggerServer('testServerCallback', function(newValue)
+  print(newValue)
+end, value1,value2)
 ```
