@@ -39,7 +39,7 @@ jo.callback.triggerClient(name, source, cb, ...)
 > The name of the callback event
 
 `source` : *integer*
-> The source  of the client to trigger
+> The source of the client to trigger
   
 `cb` : *function*
 > A function to receive the result of the event

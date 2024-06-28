@@ -23,4 +23,4 @@ You can now use the library inside of your resource with the `jo.hook` global va
 
 ## Functions
 
-Documentation for the [Both side](./shared.md) side.  
+Documentation for the [Both](./shared.md) side.  
