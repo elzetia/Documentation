@@ -1,0 +1,94 @@
+{
+	// Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Default structure": {
+		"prefix": "####",
+		"body": [
+			"---",
+			"outline: 2",
+			"---",
+			"# ${1:Title}",
+			"",
+			"${2:Description}",
+			"",
+		],
+		"description": "Structure of the file"
+	},
+	"New parameter": {
+		"prefix": "param",
+		"body": [
+			"`${1:name}` : *${2:type}*",
+			"> ${3:Description}",
+			"  ",
+			"${4}"
+		],
+		"description": "Structure for parameter"
+	},
+	"New return": {
+		"prefix": "return",
+		"body": [
+			"Type: *${1:type}*",
+			"> Return `${3:value}` ${4}",
+			"  ",
+		],
+		"description": "Structure for parameter"
+	},
+	"Function": {
+		"prefix": "##",
+		"body": [
+			"## ${1:Function name}",
+			"${2:Description}",
+			"### Syntax",
+			"```lua",
+			"${3}",
+			"```",
+			"#### Parameters",
+			"${4}",
+			"#### Return value",
+			"${5}",
+			"### Example",
+			"```lua",
+			"${6}",
+			"```",
+		],
+		"description": "Structure of the file"
+	},
+	"Function2": {
+		"prefix": "###",
+		"body": [
+			"### ${1:Function name}",
+			"${2:Description}",
+			"#### Syntax",
+			"```lua",
+			"${3}",
+			"```",
+			"#### Parameters",
+			"${4}",
+			"#### Return value",
+			"${5}",
+			"#### Example",
+			"```lua",
+			"${6}",
+			"```",
+		],
+		"description": "Structure of the file"
+	},
+	"link": {
+		"prefix": "link",
+		"body":[
+			"### [`${1}`](./${2})",
+			"${3}",
+		]
+	}
+}
