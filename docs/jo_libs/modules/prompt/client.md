@@ -81,7 +81,7 @@ local group = "shop"
 jo.prompt.deleteGroup(group)
 ```
 
-## jo.prompt.deletePrompt()
+## jo.prompt.delete()
 A function to delete a prompt
 ### Syntax
 ```lua
@@ -183,7 +183,31 @@ local label = "The new label"
 jo.prompt.editKeyLabel(group,key,label)
 ```
 
-## jo.prompt.getPromptProgress()
+## jo.prompt.get()
+Return the prompt ID
+### Syntax
+```lua
+jo.prompt.get(group,key)
+```
+#### Parameters
+`group` : *string*
+> The name of the group
+  
+`key` : *string*
+> The [input](https://github.com/femga/rdr3_discoveries/tree/a63669efcfea34915c53dbd29724a2a7103f822f/Controls) of the key
+  
+#### Return value
+Type: *integer*
+> Return the prompt ID 
+  
+### Example
+```lua
+local group = "shop"
+local key = "INPUT_JUMP"
+print(jo.prompt.get(group,key))
+```
+
+## jo.prompt.getProgress()
 A function to return the progress of a prompt
 ### Syntax
 ```lua
@@ -212,6 +236,31 @@ CreateThread(function()
     Wait(0)
   end
 end)
+```
+
+## jo.prompt.isActive()
+A function to know if a prompt is active or not
+### Syntax
+```lua
+jo.prompt.isActive(group,key)
+```
+#### Parameters
+`group` : *string*
+> The name of the group
+  
+`key` : *string*
+> The [input](https://github.com/femga/rdr3_discoveries/tree/a63669efcfea34915c53dbd29724a2a7103f822f/Controls) of the key
+  
+#### Return value
+Type: *boolean*
+> Return `true` if the prompt is active
+  
+### Example
+```lua
+local group = "interaction"
+local keyLabel = "The key"
+jo.prompt.isActive(group,key)
+-- Expected output : false
 ```
 
 ## jo.prompt.isCompleted()
@@ -280,33 +329,7 @@ jo.prompt.isEnabled(group,key)
 -- Expected output : false
 ```
 
-## jo.prompt.isGroupExist()
-A function to know if a prompt group exist
-### Syntax
-```lua
-jo.prompt.isGroupExist(group)
-```
-#### Parameters
-`group` : *string*
-> The name of the group
-  
-
-#### Return value
-Type: *boolean*
-> Return `true` if the group exist
-  
-### Example
-```lua
-local group = "interaction"
-local keyLabel = "The key"
-local key = "INPUT_JUMP"
-jo.prompt.create(group,keyLabel,key)
-print(jo.prompt.isGroupExist('interaction'))
--- Expected output : true
-print(jo.prompt.isGroupExist('new_group'))
--- Expected output : false
-```
-## jo.prompt.isPromptExist()
+## jo.prompt.isExist()
 A function to know if a prompt group exist
 ### Syntax
 ```lua
@@ -335,7 +358,55 @@ print(jo.prompt.isGroupExist('new_group','INPUT_RELOAD'))
 -- Expected output : false
 ```
 
-## jo.prompt.setEnabled
+## jo.prompt.isGroupExist()
+A function to know if a prompt group exist
+### Syntax
+```lua
+jo.prompt.isGroupExist(group)
+```
+#### Parameters
+`group` : *string*
+> The name of the group
+  
+
+#### Return value
+Type: *boolean*
+> Return `true` if the group exist
+  
+### Example
+```lua
+local group = "interaction"
+local keyLabel = "The key"
+local key = "INPUT_JUMP"
+jo.prompt.create(group,keyLabel,key)
+print(jo.prompt.isGroupExist('interaction'))
+-- Expected output : true
+print(jo.prompt.isGroupExist('new_group'))
+-- Expected output : false
+```
+
+## jo.prompt.isPressed()
+A function to know if a key is pressed
+### Syntax
+```lua
+jo.prompt.isPressed(key)
+```
+#### Parameters
+`key` : *string*
+> The [input](https://github.com/femga/rdr3_discoveries/tree/a63669efcfea34915c53dbd29724a2a7103f822f/Controls) of the key
+  
+
+#### Return value
+Type: *boolean*
+> Return `true` if the key is pressed
+  
+### Example
+```lua
+local key =  "INPUT_FRONTEND_ACCEPT"
+print(jo.prompt.isPressed(key))
+```
+
+## jo.prompt.setEnabled()
 A function to define if the prompt is enabled or not
 ### Syntax
 ```lua
@@ -356,6 +427,23 @@ jo.prompt.setEnabled(group,key,value)
 local group = "shop"
 local key = "INPUT_JUMP"
 jo.prompt.setEnabled(group,key,false)
+```
+
+## jo.prompt.setGroups()
+A function to overwrite the prompt groups value
+### Syntax
+```lua
+jo.prompt.setGroups(groups)
+```
+#### Parameters
+`groups` : *table*
+> The prompt group value from other script get with jo.prompt.getAll()
+  
+
+### Example
+```lua
+local groups = exports.resourceName:getPrompt()
+jo.prompt.setGroups(groups)
 ```
 
 ## jo.prompt.setVisible()

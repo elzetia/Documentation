@@ -20,5 +20,5 @@ You can now use the library inside of your resource with the `jo.callback` globa
 
 ## Functions
 
-Documentation for  the [Client](./client.md) side.  
+Documentation for the [Client](./client.md) side.  
 Documentation for the [Server](./server.md) side  
