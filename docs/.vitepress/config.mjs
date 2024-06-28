@@ -89,6 +89,8 @@ function GenerateMenu(fileTree,key,parent) {
       else
         menu.items.push({text: firtToUpperCase(file), link: '/'+file})
     }
+    if (fileTree.files.length == 1)
+      menu.link = '/'+fileTree.files[0]
   }
   if (fileTree.children) {
     for (const child in fileTree.children) {
@@ -220,7 +222,7 @@ export default defineConfig({
       },
       {
         text: 'Developer Resources',
-        collapsed: true,
+        collapsed: false,
         items: [
           { text: 'Jo Libs',
             link: '/',
