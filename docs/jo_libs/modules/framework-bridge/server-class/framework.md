@@ -1,5 +1,5 @@
 ---
-outline: 2
+outline: [1,2]
 ---
 # Framework Class
 
@@ -148,11 +148,11 @@ local definition = {
 jo.framework:createInventory(id,label,definition)
 ```
 
-## jo.framework:doesUserCanBuy()
+## jo.framework:canUserBuy()
 A function to know if a specific user has enough money
 ### Syntax
 ```lua
-jo.framework:doesUserCanBuy(source,amount,moneyType)
+jo.framework:canUserBuy(source,amount,moneyType)
 ```
 #### Parameters
 `source` : *integer*
@@ -175,7 +175,7 @@ Type: *boolean*
 ```lua
 local price = 103
 local source = 1
-print(jo.framework:doesUserCanBuy(source,103))
+print(jo.framework:canUserBuy(source,103))
 -- Expected output : true if the player has more than $103
 ```
 
@@ -193,72 +193,6 @@ Type: *string*
 ```lua
 local frameworkName = jo.framework:get()
 print(frameworkName)
-```
-
-## jo.framework:getJob()
-Return the playe rjob
-### Syntax
-```lua
-jo.framework:getJob(source)
-```
-#### Parameters
-`source` : *integer*
-> The source ID of the player
-  
-
-#### Return value
-Type: *string*
-> Return the job name
-  
-
-### Example
-```lua
-local source = 1
-print(jo.framework:getJob(source))
-```
-
-## jo.framework:getRPName()
-Return the first & last name of tha player
-### Syntax
-```lua
-jo.framework:getRPName(source)
-```
-#### Parameters
-`source` : *integer*
-> The source ID of the player
-  
-
-#### Return value
-Type: *string*
-> Return the first & last name of a player 
-  
-### Example
-```lua
-local source = 1
-print(jo.framework:getRPName(source))
-```
-
-## jo.framework:getUserIdentifiers()
-Shortcut for [User:getIdentifiers()](./user/getIdentifiers.md) method
-### Syntax
-```lua
-jo.framework:getUserIdentifiers(source)
-```
-#### Parameters
-`source` : *integer*
-> The source ID of the player
-  
-
-#### Return value
-Type: *table*
-> Return the same value than [User:getIdentifiers()](./user/getIdentifiers.md) method
-  
-
-### Example
-```lua
-local source = 1
-local identifiers = jo.framework:getUserIdentifiers(source)
-print(identifiers.charid)
 ```
 
 ## jo.framework:getItemsFromInventory()
@@ -295,6 +229,50 @@ for key,item in pairs (items) do
 end
 ```
 
+## jo.framework:getJob()
+Return the playe rjob
+### Syntax
+```lua
+jo.framework:getJob(source)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+
+#### Return value
+Type: *string*
+> Return the job name
+  
+
+### Example
+```lua
+local source = 1
+print(jo.framework:getJob(source))
+```
+
+
+## jo.framework:getRPName()
+Return the first & last name of tha player
+### Syntax
+```lua
+jo.framework:getRPName(source)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+
+#### Return value
+Type: *string*
+> Return the first & last name of a player 
+  
+### Example
+```lua
+local source = 1
+print(jo.framework:getRPName(source))
+```
+
 ## jo.framework:getUser()
 Get the user data
 ### Syntax
@@ -315,6 +293,74 @@ type: *User*
 local source = 1
 local user = jo.framework:getUser(source)
 print(user.data.firstname)
+```
+
+
+## jo.framework:getUserClothes()
+Return the list of user's clothes with formated category names
+### Syntax
+```lua
+jo.framework:getUserClothes(source)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+
+#### Return value
+Type: *object*
+> return the list of clothes
+  
+
+### Example
+```lua
+local source = 1
+local clothes = jo.framework:getUserClothes(source)
+print(json.encode(clothes))
+```
+
+## jo.framework:getUserIdentifiers()
+Shortcut for [User:getIdentifiers()](./user/getIdentifiers.md) method
+### Syntax
+```lua
+jo.framework:getUserIdentifiers(source)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+
+#### Return value
+Type: *table*
+> Return the same value than [User:getIdentifiers()](./user/getIdentifiers.md) method
+  
+
+### Example
+```lua
+local source = 1
+local identifiers = jo.framework:getUserIdentifiers(source)
+print(identifiers.charid)
+```
+
+
+## jo.framework:getUserSkin()
+Return the user's skin data with formated key name
+### Syntax
+```lua
+jo.framework:getUserSkin(source)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+
+#### Return value
+Type: *object*
+> Return the skin data
+  
+### Example
+```lua
+local source = 1
+local skin =  jo.framework:getUserSkin(source)
+print(json.encode(skin))
 ```
 
 ## jo.framework:giveItem()
@@ -435,6 +481,92 @@ jo.framework:removeInventory(id)
 ```lua
 local id = "locker:sheriff"
 jo.framework:removeInventory(id)
+```
+
+## jo.framework:updateUserClothes()
+Save new clothes.  
+The function has two ways to works:
+* With 2 argument to save multiples clothes
+* With 3 argument to save one clothes
+### Syntax
+```lua
+jo.framework:updateUserClothes(source,clothesArray)
+-- OR --
+jo.framework:updateUserClothes(source,category,clothes)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+`clothesArray` : *object*
+> The list of clothes to apply. The key is the category name and the value is the clothes data
+  
+`category` : *string*
+> The category name of the clothes
+  
+`clothes` : *table*
+> The clothes data
+  
+
+### Example
+```lua
+local source = 1
+local clothes = {
+  pants = {hash = 2450348132},
+  boots = {hash = 3596743543}
+}
+jo.framework:updateUserClothes(source,clothes)
+-- OR  --
+local source = 1
+local category = pants
+local clothes = {hash = 2450348132}
+jo.framework:updateUserClothes(source,category,clothes)
+```
+
+
+## jo.framework:updateUserSkin()
+Save new skin values.
+The function has two ways to works:
+* With 3 arguments to save multiple skin datas
+* With 4 argument to save only one skin data
+### Syntax
+```lua
+jo.framework:updateUserSkin(source, skinData, overwrite)
+-- OR --
+jo.framework:updateUserSkin(source,category, data, overwrite)
+```
+#### Parameters
+`source` : *integer*
+> The source ID of the player
+  
+`skinData` : *object*
+> The list of skin datas with category for key skin data for value
+  
+`category` : *string*
+> The category of the skin data
+  
+`data` : *table*
+> The skin data
+  
+`overwrite` : *boolean*
+> If `true`, the new value overwrites the previous skin. Else, it's merged.
+  
+
+### Example
+```lua
+local source = 1
+local skin = {
+  head = 394785690,
+  torso = 345823423
+}
+local overwrite = false
+jo.framework:updateUserSkin(source,skin,overwrite)
+-- OR --
+local source = 1
+local category = "head"
+local data = 394785690
+local overwrite = false
+jo.framework:updateUserSkin(source,category,data,overwrite)
 ```
 
 # User class
