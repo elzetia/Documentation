@@ -20,6 +20,21 @@ bprint(text)
 bprint('This is a blue message')
 ```
 
+## dprint
+Print a debug message, only if `Config.debug = true`
+### Syntax
+```lua
+dprint(text)
+```
+#### Parameters
+`text` : *string*
+> Your message
+  
+### Example
+```lua
+dprint('This is a debug message')
+```
+
 ## eprint
 Print a red message
 ### Syntax
