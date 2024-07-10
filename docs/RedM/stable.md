@@ -335,39 +335,38 @@ Config.wagons = {
 ```
 :::
 ## 4. Add new activity
-You can add more activity to train your horse by edit the file : `modules/horseTraining/client/activities.lua`
+You can add more activity to train your horse by edit the file : `overwriteActivities.lua`
 ```lua
-trainingTracks = {
-  {
-    type = "handling", -- Type of training : "handling", "speed" or "acceleration"
-    start = vec4(-386.273, 788.489, 115.865, 93.648), -- location of the start
-    camPreview = { -- Camera for the trailer
-      { -- Start position
-        coords = vec3(-386.293, 800.838, 117.883),
-        rot = vec3(-7.000,0.000,155.131),
-      },
-      { -- End position
-        coords = vec3(-388.248, 800.757, 117.926),
-        rot = vec3(-7.000,0.000,165.14),
-      },
-    },
-    props = { -- list of props to spawn for the training
-      {
-        model = `mp001_p_mp_jump_sackshort01`,
-        coords = vec3(-392.630, 768.967, 114.730),
-        rotation = vec3(0, 0, -85.999),
-      },
-    },
-    checkpoints = { -- list of checkpoints
-      {
-        coords = vec3(-392.8, 768.856, 116.826),
-        marker = "ring", -- optional : Type of marker "ring", "cylinder" or marker hash
-        size = vec2(1.0,1.0), -- optional : Size of the marker
-        rotation = vec3(0,0,-85) -- optional : Rotation of the marker
-        distance = 3.0 -- optional : Distance to valid the checkpoint
-      },
-    }
-  },
+trainingTracks[#trainingTracks+1] = {
+	type = "handling", -- Type of training : "handling", "speed" or "acceleration"
+	start = vec4(-386.273, 788.489, 115.865, 93.648), -- location of the start
+	camPreview = { -- Camera for the trailer
+		{ -- Start position
+			coords = vec3(-386.293, 800.838, 117.883),
+			rot = vec3(-7.000,0.000,155.131),
+		},
+		{ -- End position
+			coords = vec3(-388.248, 800.757, 117.926),
+			rot = vec3(-7.000,0.000,165.14),
+		},
+	},
+	props = { -- list of props to spawn for the training
+		{
+			model = `mp001_p_mp_jump_sackshort01`,
+			coords = vec3(-392.630, 768.967, 114.730),
+			rotation = vec3(0, 0, -85.999),
+		},
+	},
+	checkpoints = { -- list of checkpoints
+		{
+			coords = vec3(-392.8, 768.856, 116.826),
+			marker = "ring", -- optional : Type of marker "ring", "cylinder" or marker hash
+			size = vec2(1.0,1.0), -- optional : Size of the marker
+			rotation = vec3(0,0,-85) -- optional : Rotation of the marker
+			distance = 3.0 -- optional : Distance to valid the checkpoint
+		},
+	}
+}
 ```
 ## 5. For developers
 
