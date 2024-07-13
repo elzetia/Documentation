@@ -414,14 +414,14 @@ menu.addItem({
      {
       title = 'Variations',
       current = 2,
-      values = [
+      values = {
         "value1",
         {var = 4},
         {yourKey = "your Value"},
         'value2',
         5,
         10,
-      ]
+      } 
     },
   }
 })
