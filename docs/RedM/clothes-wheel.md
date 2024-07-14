@@ -9,7 +9,6 @@ Documentation relating to the kd_clotheswheel.
 :::
 
 ## 1. Installation
-kd_clotheswheel works with VORPcore, RedEM:RP and QBR. Be sure you installed one of these frameworks. For custom framework, please read the #4
 
 - Drag and drop the resource in your resources folder
   - kd_clotheswheel
