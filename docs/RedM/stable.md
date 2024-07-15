@@ -1055,7 +1055,34 @@ Fires when player buy a new horse, just before the 'buyHorse' action
 exports.kd_stable:registerFilter('buyHorse', function(horseData,horseID,source)
 	return horseData
 end)
+
 ```
+#### <Badge type="server" text="Server" /> canBuyTraining
+Fires when player try to buy a training
+```lua
+-- @param canBuy - boolean
+-- @param source - serverID of the player
+-- @param activity - activity data
+-- @param moneyType - the type of money used to buy the training
+-- @param horseNetID - the net ID of the horse
+-- @param activityIndex - The index of the activity in Config.trainings
+exports.kd_stable:registerFilter('canBuyTraining', function(canBuy, source,activity,moneyType,horseNetID,activityIndex)
+	return canBuy
+end)
+```
+
+#### <Badge type="server" text="server" /> canTrainHorse
+Fires when player open the training menu
+```lua
+-- @param canOpen - boolean
+-- @param source - serverID of the player
+-- @param trainingID - the training ID
+-- @param horseID - ID of the horse
+exports.kd_stable:registerFilter('canTrainHorse', function(canOpen,source,trainingID,horseID)
+	return canOpen
+end)
+```
+
 #### <Badge type="server" text="server" /> canUseWagonLocker
 Manage the access to a specific wagon locker
 ```lua
