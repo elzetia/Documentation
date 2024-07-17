@@ -437,6 +437,12 @@ One dimension:
 ![The grid slider one dimension](/images/previews/menu/slider_grid.jpg){data-zoomable}
 Two dimensions:
 ![The grid slider two dimensions](/images/previews/menu/slider_grid2.jpg){data-zoomable}
+
+:::tip
+To get the values of the slider, `.value` is a table with two arguments:  
+`currentData.item.sliders[X].value[1]` for the horizontal axe (or for one dimension slider)  
+`currentData.item.sliders[X].value[2]` for the vertical axe
+:::
 #### Syntax
 ```lua
 {type = "grid", labels = {'left','right','up','down'}, values = {
