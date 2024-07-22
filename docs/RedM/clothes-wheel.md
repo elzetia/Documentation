@@ -231,3 +231,22 @@ It's possible to force the reload of the clothes equiped by using this client ev
 --@param category : category of clothes you need to reload. Set nil to reload all clothes
 TriggerClientEvent('kd_clotheswheel:updateClothes',source,category)
 ```
+
+## 5. For developers
+
+### Filters
+
+[Filters](/DeveloperResources/filters) are the new way to modify data used by the script added in the `v1.2.0`. These filters are fired at a specific point in time during the execution of the script. But contrary to events, filters are **synchronous**. 
+
+::: tip  
+You can create a filter in another resource. To do that, replace `jo.hook.registerFilter()` by `exports.kd_clotheswheel:registerFilter()`
+:::
+
+#### <Badge type="client" text="Client" /> canOpenWheel
+Fired before open the clothes wheel
+```lua
+jo.hook.registerFilter('canOpenWheel', function(canOpen)
+    --return false to cancel the opening of the clothes wheel
+    return canOpen
+end)
+```
