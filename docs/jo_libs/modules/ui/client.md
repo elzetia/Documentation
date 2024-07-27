@@ -48,6 +48,8 @@ jo.ui.initTimer()
 ## jo.ui.startTimer()
 A function to start the timer's UI.
 
+<img src="/images/previews/ui/startTimer.png" />
+
 ### Syntax
 ```lua
 jo.ui.startTimer(time, low)
