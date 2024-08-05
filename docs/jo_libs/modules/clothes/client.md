@@ -6,7 +6,7 @@ outline: 2
 
 Clothes is a very usefull module to manage ped clothes. The module is designed to create a persistence of clothes colors if you defined a custom colorway.
 
-## jo.clothes.apply
+## jo.clothes.apply()
 A function to apply a clothes component on the ped
 ### Syntax
 ```lua
