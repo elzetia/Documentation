@@ -82,11 +82,11 @@ menu:addItem({
 > The item label
   
 `child` : *string*  <BadgeOptional />  
-> the menu to open when Enter is pressed
+> the menu to open when Enter is pressed  
 > default: false  
 
 `visible` : *boolean (default: true)* <BadgeOptional />  
-> if the item is visible (hide in the menu)
+> if the item is visible (hide in the menu)  
 > default: true
 
 `data` : *table*  <BadgeOptional />  
@@ -273,11 +273,11 @@ jo.menu.setCurrentMenu(id, keepHistoric, resetMenu)
 > The unique ID of the menu
   
 `keepHistoric` : *boolean*
-> If you want keep the menu historic to open the previous menu when backspace/esc is pressed
+> If you want keep the menu historic to open the previous menu when backspace/esc is pressed  
 > default: true
   
 `resetMenu` : *boolean*
-> If you want reset the cursor to the first item of the menu
+> If you want reset the cursor to the first item of the menu  
 > default: true
   
 
@@ -334,11 +334,11 @@ jo.menu.show(visible, keepInput, hideRadar)
 > If the menu is visible or not
   
 `keepInput` : *boolean*
-> If you want keep the control on the game
+> If you want keep the control on the game  
 > default: true
   
 `hideRadar` : *boolean*
-> If you want hide the radar
+> If you want hide the radar  
 > default: true
   
 
