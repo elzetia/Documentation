@@ -103,7 +103,7 @@ You can overwrite the notification function by added these functions in the `ove
 ---@param texts table
 ---Warning : Execute every frame
 Config.DisplayHelp(texts)
-  for _,text in pairs texts do
+  for _,text in pairs (texts) do
     print(text)
   end
 end
