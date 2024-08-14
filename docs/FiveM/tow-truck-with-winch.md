@@ -102,7 +102,7 @@ You can overwrite the notification function by added these functions in the `ove
 ```lua
 ---@param texts table
 ---Warning : Execute every frame
-Config.DisplayHelp(texts)
+function Config.DisplayHelp(texts)
   for _,text in pairs (texts) do
     print(text)
   end
@@ -110,7 +110,7 @@ end
 
 ---@param text string the content of the notification
 ---@param color integer the color of the notification
-Config.Notif(text,color)
+function Config.Notif(text,color)
   print(text,color)
 end
 ```
