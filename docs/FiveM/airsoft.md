@@ -116,6 +116,20 @@ Maps = {
       WeaponChoisi = GetHashKey("WEAPON_ADVANCEDRIFLE")
   }
 }
+
+-------------
+-- SERVER SIDE
+-------------
+if IsDuplicityVersion() then
+  --Fired when the player select "Start the game"
+  ---@param source integer player ID
+  ---@param party table setup of the party
+  ---@param party.joueurs table list of players in the lobby
+  function CanStartParty(source,party)
+    --return false to cancel the starting of the game
+    return true
+  end
+end
 ```
 ## 4. Add a new map
 You can add as many maps as you want. Copy a default map and edit the configuration.
