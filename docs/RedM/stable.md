@@ -585,25 +585,28 @@ end
 You can job lock some horses by add this snippet in your `overwriteConfig.lua` file:
 ```lua
 if IsDuplicityVersion() then
-	--job lock the horse number 1 & 2
-	Config.horses[1].job = "horseTrainer"
-	Config.horses[2].job = "horseTrainer"
+ jo.onReady(function()
+	 --job lock the horse number 1 & 2
+	 Config.horses[1].job = "horseTrainer"
+	 Config.horses[2].job = "horseTrainer"
 
-	--Function to restrict the horse buying
-	Config.restrictHorseBuying = function(source,horseKey)
-		--Get the horse configuration
-		local horse = Config.horses[horseKey]
-		--Allow buy if the job lock is not set
-		if not horse.job then return true end
-		--Get the player job
-		local job = jo.framework:getJob(source)
-		--Compare the job
-		if job ~= horse.job then
-			--Lock the order because the player's job is not the right
-			return false
-		end
-		--Allow buy
-    return false
+	 --Function to restrict the horse buying
+	 Config.restrictHorseBuying = function(source,horseKey)
+		 --Get the horse configuration
+	 	local horse = Config.horses[horseKey]
+		 --Allow buy if the job lock is not set
+	 	if not horse.job then return true end
+		 --Get the player job
+	 	local job = jo.framework:getJob(source)
+ 		--Compare the job
+ 		if job ~= horse.job then
+ 			--Lock the order because the player's job is not the right
+		 	return false
+ 		end
+ 		--Allow buy
+   return true
+  end
+ end) 
 end
 ```
 :::
