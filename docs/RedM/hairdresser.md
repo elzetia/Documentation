@@ -25,6 +25,128 @@ Congratulation, the Hairdresser script is ready to be use !
 Be sure you have oxmysql ensure in your server.cfg
 :::
 
+::: details For VORP
+To fixed clothes and skin, you have to edit two files :
+* `vorp_character/client/client.lua` - line 185
+```lua:line-numbers=185
+function LoadAll(gender, ped, pedskin, components, set)
+	RemoveMetaTags(ped)
+	IsPedReadyToRender(ped)
+	ResetPedComponents(ped)
+	local skin = SetDefaultSkin(gender, pedskin)
+	ApplyShopItemToPed(skin.HeadType, ped)
+	ApplyShopItemToPed(skin.BodyType, ped)
+	ApplyShopItemToPed(skin.LegsType, ped)
+	ApplyShopItemToPed(skin.Eyes, ped)
+	ApplyShopItemToPed(skin.Legs, ped)
+	ApplyShopItemToPed(skin.Hair, ped)
+	ApplyShopItemToPed(skin.Beard, ped)
+	ApplyShopItemToPed(skin.Torso, ped)
+	EquipMetaPedOutfit(skin.Waist, ped)
+	EquipMetaPedOutfit(skin.Body, ped)
+	Citizen.InvokeNative(0xAAB86462966168CE, ped, 1)
+	LoadFaceFeatures(ped, skin)
+	UpdatePedVariation(ped)
+	IsPedReadyToRender(ped)
+	LoadComps(ped, components, set)
+	SetPedScale(ped, skin.Scale)
+	UpdatePedVariation(ped)
+	TriggerServerEvent("jo_libs:server:applySkinAndClothes",ped,skin,components) -- [!code ++]
+	return skin
+end
+```
+* `vorp_character/server/server.lua` - line 8
+```lua:line-numbers=8
+function ConvertTable(comps, compTints)
+	local NewComps = {}
+
+	for k, comp in pairs(comps) do
+		NewComps[k] = { comp = comp, tint0 = 0, tint1 = 0, tint2 = 0, palette = 0 }
+
+		if compTints and compTints[k] and compTints[k][tostring(comp)] then
+			local compTint = compTints[k][tostring(comp)]
+			NewComps[k].tint0 = compTint.tint0 or 0
+			NewComps[k].tint1 = compTint.tint1 or 0
+			NewComps[k].tint2 = compTint.tint2 or 0
+			NewComps[k].palette = compTint.palette or 0
+			NewComps[k].state = compTint.state or nil -- [!code ++]
+		end
+	end
+
+	return NewComps
+end
+```
+:::
+
+::: details for RSG
+To fixed skin, you have to edit one files :
+* `rsg-appearance\client\creator.lua` - line 197
+```lua:line-numbers=197
+function ApplySkin()
+    local _Target = PlayerPedId()
+    local citizenid = RSGCore.Functions.GetPlayerData().citizenid
+    local PlayerData = RSGCore.Functions.GetPlayerData()
+    local currentHealth = PlayerData.metadata["health"]
+
+    RSGCore.Functions.TriggerCallback('rsg-multicharacter:server:getAppearance', function(data)
+        local _SkinData = data.skin
+        local _Clothes = data.clothes
+        if _Target == PlayerPedId() then
+            local model = GetPedModel(tonumber(_SkinData.sex))
+            LoadModel(PlayerPedId(), model)
+            _Target = PlayerPedId()
+            SetEntityAlpha(_Target, 0)
+            LoadedComponents = _SkinData
+        end
+        FixIssues(_Target)
+        LoadHeight(_Target, _SkinData)
+        LoadBoody(_Target, _SkinData)
+        LoadHead(_Target, _SkinData)
+        LoadHair(_Target, _SkinData)
+        LoadBeard(_Target, _SkinData)
+        LoadEyes(_Target, _SkinData)
+        LoadFeatures(_Target, _SkinData)
+        LoadBodyFeature(_Target, _SkinData.body_size, Data.Appearance.body_size)
+        LoadBodyFeature(_Target, _SkinData.body_waist, Data.Appearance.body_waist)
+        LoadBodyFeature(_Target, _SkinData.chest_size, Data.Appearance.chest_size)
+        LoadOverlays(_Target, _SkinData)
+        SetEntityAlpha(_Target, 255)
+        SetAttributeCoreValue(_Target, 0, 100)
+        SetAttributeCoreValue(_Target, 1, 100)
+        SetEntityHealth(_Target, currentHealth, 0)
+        Citizen.InvokeNative(0x8899C244EBCF70DE, _Target, 0.0)
+        Citizen.InvokeNative(0xDE1B1907A83A1550, _Target, 0.0)
+        if _Target == PlayerPedId() then
+            TriggerEvent('rsg-appearance:client:ApplyClothes', _Clothes, _Target)  -- [!code --]
+            TriggerEvent('rsg-appearance:client:ApplyClothes', _Clothes, _Target, _SkinData)  -- [!code ++]
+        else
+            for i, m in pairs(Overlays.overlay_all_layers) do
+                Overlays.overlay_all_layers[i] =
+                { name = m.name, visibility = 0, tx_id = 1, tx_normal = 0, tx_material = 0, tx_color_type = 0, tx_opacity = 1.0, tx_unk = 0, palette = 0, palette_color_primary = 0, palette_color_secondary = 0, palette_color_tertiary = 0, var = 0, opacity = 0.0 }
+            end
+        end
+    end, citizenid)
+end
+
+local function ApplySkinMultiChar(SkinData, Target, ClothesData)
+    FixIssues(Target)
+    LoadHeight(Target, SkinData)
+    LoadBoody(Target, SkinData)
+    LoadHead(Target, SkinData)
+    LoadHair(Target, SkinData)
+    LoadBeard(Target, SkinData)
+    LoadEyes(Target, SkinData)
+    LoadFeatures(Target, SkinData)
+    LoadBodyFeature(Target, SkinData.body_size, Data.Appearance.body_size)
+    LoadBodyFeature(Target, SkinData.body_waist, Data.Appearance.body_waist)
+    LoadBodyFeature(Target, SkinData.chest_size, Data.Appearance.chest_size)
+    LoadOverlays(Target, SkinData)
+    TriggerEvent('rsg-appearance:client:ApplyClothes', ClothesData, Target) -- [!code --]
+    TriggerEvent('rsg-appearance:client:ApplyClothes', ClothesData, Target, SkinData)  -- [!code ++]
+end
+```
+:::
+
 ## 2. Usage
 You have two way to use my script :
 
