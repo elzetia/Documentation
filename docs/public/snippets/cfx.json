@@ -1,0 +1,115 @@
+{
+  // Place your GLOBAL snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "ClientEvent": {
+    "scope": "lua",
+    "prefix": "rc",
+    "description": "Client Event",
+    "body": [
+      "RegisterNetEvent(\"${1:threadFunction}\")",
+      "AddEventHandler(\"${1:threadFunction}\", function($2)",
+      "$3",
+      "end)",
+    ],
+  },
+  "ServerEvent": {
+    "scope": "lua",
+    "prefix": "rs",
+    "description": "Server Event",
+    "body": [
+      "RegisterServerEvent(\"${1:threadFunction}\")",
+      "AddEventHandler(\"${1:threadFunction}\", function($2)",
+      "  local source = source",
+      "  $3",
+      "end)",
+    ]
+  },
+  "Thread": {
+    "scope": "lua",
+    "prefix": "CreateThread",
+    "description": "CreateThread",
+    "body": [
+      "CreateThread(function()",
+      "$1",
+      "end)",
+    ],
+  },
+  "pt": {
+    "scope": "lua",
+    "prefix": "pt",
+    "description": "Server Print",
+    "body": "TriggerServerEvent(\"print\",$1)",
+  },
+  "PrettyPrint": {
+    "scope": "lua",
+    "prefix": "pp",
+    "description": "Server PrettyPrint",
+    "body": "TriggerServerEvent(\"PrettyPrint\",$1)",
+  },
+  "TriggerServerEvent": {
+    "scope": "lua",
+    "prefix": "ts",
+    "description": "TriggerServerEvent",
+    "body": "TriggerServerEvent(\"${1:Event}\",$2)",
+  },
+  "TriggerEvent": {
+    "scope": "lua",
+    "prefix": "te",
+    "description": "TriggerEvent",
+    "body": "TriggerEvent(\"${1:Event}\",$2)",
+  },
+  "TriggerClientEvent": {
+    "scope": "lua",
+    "prefix": "tc",
+    "description": "TriggerClientEvent",
+    "body": "TriggerClientEvent(\"${1:Event}\",source,$2)",
+  },
+  "InvokeNative": {
+    "scope": "lua",
+    "prefix": "InvokeNative",
+    "description": "InvokeNative",
+    "body": "Citizen.InvokeNative(${1:Native}$2)",
+  },
+  "CreateNative": {
+    "scope": "lua",
+    "prefix": "cn",
+    "description": "CreateNative",
+    "body": [
+      "function ${1:Native}(...)",
+      " return Citizen.InvokeNative(${2:Hash},...)",
+      "end"
+    ]
+  },
+  "CommentTitle": {
+    "scope": "lua",
+    "prefix": "--",
+    "description": "Comment Title",
+    "body": [
+      "-------------",
+      "-- ${1:Title}",
+      "-------------"
+    ]
+  },
+  "SetTimeout": {
+    "scope": "lua",
+    "prefix": "settimeout",
+    "description": "Timeout",
+    "body": [
+      "SetTimeout(${1},${2})"
+    ]
+  }
+}
