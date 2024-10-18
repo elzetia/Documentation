@@ -1,5 +1,5 @@
 ---
-outline: 2
+outline: [2,3]
 ---
 # Jo Libraries
 
@@ -33,12 +33,40 @@ jo_libs {
 ```
 You can now use the libraries inside of your resource with the `jo` global variable.
 
-### Compatible Frameworks
-The **framework bridge** module is compatible with these frameworks:
-* VORP  
-* RedEM:RP (old/new)  
-* RSG  
-* QBR  
-* QR  
+## Functions
+Some functions are automatically added when you use jo_libs in your script.
+
+### jo.ready()
+A function fired when all modules are loaded
+#### Syntax
+```lua
+jo.ready(cb)
+```
+#### Parameters
+`cb` : *function*
+> The function to execute
   
-*All other modules are standalone and have no dependencies on any framework.*
+
+#### Example
+```lua
+jo.ready(function()
+  print('All modules are loaded')
+end)
+```
+
+### jo.stopped()
+A function fired when the script is stopped
+#### Syntax
+```lua
+jo.stopped(cb)
+```
+#### Parameters
+`cb` : *function*
+> The function to execute
+  
+#### Example
+```lua
+jo.stopped(function()
+  print(GetCurrentResourceName()..' has been stopped')
+end)
+```

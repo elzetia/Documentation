@@ -18,6 +18,15 @@ jo_libs {
 ```
 You can now use the library inside of your resource with the `jo.framework` global variable.
 
+## Compatible Frameworks
+The **framework bridge** module is compatible with these frameworks:
+* VORP  
+* RedEM:RP (old/new)  
+* RSG  
+* QBR  
+* QR  
+  
 ## Functions
 
 Documentation for the [Server](./server-class/framework.md) side  
+
