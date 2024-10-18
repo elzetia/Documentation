@@ -57,3 +57,35 @@ jo.callback.triggerClient('testClientCallback', source, function(returnValue)
   print(returnValue)
 end, value1, value2)
 ```
+
+## jo.callback.triggerServer()
+A function to trigger a server callback
+
+### Syntax
+```lua
+jo.callback.triggerServer(name, cb, source, ...)
+```
+#### Parameters
+`name` : *string*
+> The name of the callback event
+  
+`cb` : *function*
+> A function to receive the result of the event
+
+`source` : *integer*
+> The source of the client to trigger
+  
+
+`...` : *mixed* <BadgeOptional />
+> The list of the parameter to send to the callback event
+
+
+### Example
+```lua
+local value1 = 5
+local value2 = 10
+local source =  1
+jo.callback.triggerServer('testServerCallback', function(returnValue)
+  print(returnValue)
+end, source, value1, value2)
+```
