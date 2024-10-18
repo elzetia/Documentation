@@ -585,7 +585,7 @@ end
 You can job lock some horses by add this snippet in your `overwriteConfig.lua` file:
 ```lua
 if IsDuplicityVersion() then
- jo.onReady(function()
+ jo.ready(function()
 	 --job lock the horse number 1 & 2
 	 Config.horses[1].job = "horseTrainer"
 	 Config.horses[2].job = "horseTrainer"
