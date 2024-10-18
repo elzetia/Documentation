@@ -6,11 +6,69 @@ outline: 2
 
 Animation is a powerfull module to play animations in your script.
 
+## jo.animation.goToCoords()
+Function to move a ped to a destination
+### Syntax
+```lua
+jo.animation.goToCoords(ped, destination, speed, waiter, distanceToStop)
+```
+#### Parameters
+`ped` : *integer*
+> The ped to move
+  
+`destination` : *vector3/vector4*
+> The coordinate of the destination  
+> If vector4 is used, the ped will stop at the end and turn to the desired heading
+  
+`speed` : *float* <BadgeOptional />
+> The speed of the walk  
+> Default: 1.0
+  
+`waiter` : *boolean* <BadgeOptional />
+> If need to wait the reach of location to end the function  
+> Default: false
+  
+`distanceToStop` : *float* <BadgeOptional />
+> The distance between the ped and the destination to stop it  
+> Default: 0.0
+  
+
+### Example
+```lua
+local ped = PlayerPedId()
+local destination = vec4(1324.0,234.0,50.0,180.0)
+local speed = 2.0
+local waiter = true
+local distanceToStop = 3.0
+jo.animation.goToCoords(ped, destination, speed, waiter, distanceToStop)
+```
+
+## jo.animation.load()
+Load the dictionnary of animation
+### Syntax
+```lua
+jo.animation.load(dict,waiter)
+```
+#### Parameters
+`dict` : *string*
+> The dictionnary of the animation
+  
+`waiter` : *boolean* <BadgeOptional />
+> If need to wait the loading to end the function  
+> default: false
+  
+### Example
+```lua
+local dict = "cnv_camp@rchso@cnv@ccdtc33@player_karen"
+local waiter = true
+jo.animation.load(dict,waiter)
+```
+
 ## jo.animation.play()
 Play animation. The function load automatically necessary resources.
 ### Syntax
 ```lua
-jo.animation.play(ped,dict,name,duration,flag,offset)
+jo.animation.play(ped, dict, name, duration, flag, offset)
 ```
 #### Parameters
 `ped` : *integer*
@@ -44,5 +102,31 @@ local dict = "cnv_camp@rchso@cnv@ccdtc33@player_karen"
 local name = "arthur_dance_loop"
 local duration = -1
 local flag = 1
-jo.animation.play(ped,dict,name,duration,flag)
+jo.animation.play(ped, dict, name, duration, flag)
+```
+
+## jo.animation.setDesiredHeading()
+Turn the ped to the desired heading
+### Syntax
+```lua
+jo.animation.setDesiredHeading(ped, heading, waiter)
+```
+#### Parameters
+`ped` : *integer*
+> The ped to turn
+  
+`heading` : *float*
+> The desired heading
+  
+`waiter` : *boolean* <BadgeOptional />
+> If need to reach the heading to end the function  
+> Default: true
+  
+
+### Example
+```lua
+local ped = PlayerPedId()
+local heading = 180.0
+local waiter = true
+jo.animation.setDesiredHeading(ped, heading, waiter)
 ```
