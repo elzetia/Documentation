@@ -4,7 +4,7 @@ Callback module is a module to create easy links between your client and server 
 
 ## Include Callback in your script
 
-1. To use the callback library, just add the initiator as a shared script inside of your `fxmanifest.lua` file.
+1. To use the Callback library, just add the initiator as a shared script inside of your `fxmanifest.lua` file.
 ```lua
 shared_scripts {
   '@jo_libs/init.lua'

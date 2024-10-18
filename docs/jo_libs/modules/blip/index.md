@@ -4,7 +4,7 @@ Blip is a module to add blips in your map. Blips are automatically removed if yo
 
 ## Include Blip in your script
 
-1. To use the nimation library, just add the initiator as a shared script inside of your `fxmanifest.lua` file.
+1. To use the Blip library, just add the initiator as a shared script inside of your `fxmanifest.lua` file.
 ```lua
 shared_scripts {
   '@jo_libs/init.lua'

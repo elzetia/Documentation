@@ -4,7 +4,7 @@ Clothes is a very usefull module to manage ped clothes.
 
 ## Include Clothes in your script
 
-1. To use the clothes library, just add the initiator as a shared script inside of your `fxmanifest.lua` file.
+1. To use the Clothes library, just add the initiator as a shared script inside of your `fxmanifest.lua` file.
 ```lua
 shared_scripts {
   '@jo_libs/init.lua'

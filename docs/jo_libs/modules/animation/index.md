@@ -4,7 +4,7 @@ Animation is a module to play animations in your script.
 
 ## Include Animation in your script
 
-1. To use the nimation library, just add the initiator as a shared script inside of your `fxmanifest.lua` file.
+1. To use the Animation library, just add the initiator as a shared script inside of your `fxmanifest.lua` file.
 ```lua
 shared_scripts {
   '@jo_libs/init.lua'
