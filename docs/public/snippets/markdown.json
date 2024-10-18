@@ -90,5 +90,15 @@
 			"### [`${1}`](./${2})",
 			"${3}",
 		]
+	},
+	"ped Parameter": {
+		"prefix": "ped",
+		"body": [
+			"`ped` : *integer*",
+			"> The entity ID",
+			"  ",
+			"${1}"
+		],
+		"description": "Ped parameter"
 	}
 }

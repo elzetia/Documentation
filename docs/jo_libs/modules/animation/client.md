@@ -1,14 +1,28 @@
 ---
-outline: 2
+outline: [2,3]
 ---
 
 # Animation
 
 Animation is a powerfull module to play animations in your script.
 
-## jo.animation.goToCoords()
+## Variables
+
+### jo.animation.easeIn
+Type : *float*:  
+> A variable to set the ease **in** speed of animations  
+> Default: 4.0
+
+### jo.animation.easeOut
+Type : *float*  
+> A variable to set the ease **out** speed of animations  
+> Default: -4.0
+
+## Functions
+
+### jo.animation.goToCoords()
 Function to move a ped to a destination
-### Syntax
+#### Syntax
 ```lua
 jo.animation.goToCoords(ped, destination, speed, waiter, distanceToStop)
 ```
@@ -33,7 +47,7 @@ jo.animation.goToCoords(ped, destination, speed, waiter, distanceToStop)
 > Default: 0.0
   
 
-### Example
+#### Example
 ```lua
 local ped = PlayerPedId()
 local destination = vec4(1324.0,234.0,50.0,180.0)
@@ -43,9 +57,9 @@ local distanceToStop = 3.0
 jo.animation.goToCoords(ped, destination, speed, waiter, distanceToStop)
 ```
 
-## jo.animation.load()
+### jo.animation.load()
 Load the dictionnary of animation
-### Syntax
+#### Syntax
 ```lua
 jo.animation.load(dict,waiter)
 ```
@@ -57,16 +71,16 @@ jo.animation.load(dict,waiter)
 > If need to wait the loading to end the function  
 > default: false
   
-### Example
+#### Example
 ```lua
 local dict = "cnv_camp@rchso@cnv@ccdtc33@player_karen"
 local waiter = true
 jo.animation.load(dict,waiter)
 ```
 
-## jo.animation.play()
+### jo.animation.play()
 Play animation. The function load automatically necessary resources.
-### Syntax
+#### Syntax
 ```lua
 jo.animation.play(ped, dict, name, duration, flag, offset)
 ```
@@ -95,7 +109,7 @@ jo.animation.play(ped, dict, name, duration, flag, offset)
 > default: 0.0
   
 
-### Example
+#### Example
 ```lua
 local ped = PlayerPedId()
 local dict = "cnv_camp@rchso@cnv@ccdtc33@player_karen"
@@ -105,9 +119,9 @@ local flag = 1
 jo.animation.play(ped, dict, name, duration, flag)
 ```
 
-## jo.animation.setDesiredHeading()
+### jo.animation.setDesiredHeading()
 Turn the ped to the desired heading
-### Syntax
+#### Syntax
 ```lua
 jo.animation.setDesiredHeading(ped, heading, waiter)
 ```
@@ -123,7 +137,7 @@ jo.animation.setDesiredHeading(ped, heading, waiter)
 > Default: true
   
 
-### Example
+#### Example
 ```lua
 local ped = PlayerPedId()
 local heading = 180.0
