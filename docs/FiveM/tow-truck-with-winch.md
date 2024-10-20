@@ -11,11 +11,11 @@ Documentation relating to the kd_towtruck.
 ## 1. Installation
 Tow Truck with WINCH is a standalone script. So you don't need a specific framework to use it. It's also mean it works with all framework (Esx, QBCore, VRP, DRP, …).
 
-- Drag and drop this 4 resources in your resources folder
+- Drag and drop this 3 resources in your resources folder
   - kd_custom_native
   - kd_hud-event
   - kd_towtruck
-- Add this 4 ensures in your server.cfg
+- Add this 3 ensures in your server.cfg
   - `ensure kd_custom-native`
   - `ensure kd_hud-event`
   - `ensure kd_towtruck`
