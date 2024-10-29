@@ -199,3 +199,23 @@ exports.kd_stable_taming:registerFilter('canTameWildHorse', function(canTame)
 	return canTame
 end)
 ```
+
+:::details Example of job lock for VORP
+```lua
+AllowedJobs = {
+    rhdHorsetrainer = true,
+    blwHorsetrainer = true,
+    valHorsetrainer = true,
+}
+
+exports.kd_stable_taming:registerFilter('canTameWildHorse', function(canTame)
+    local job = LocalPlayer.state.Character.Job
+    if AllowedJobs[job] then
+      return canTame
+    else
+      jo.notif.rightError("You don't have the right job to tame wild horses")
+      return false
+    end
+end)
+```
+:::
