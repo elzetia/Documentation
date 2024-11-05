@@ -6,7 +6,7 @@ Documentation relating to the **kd_stable_taming** add-on for [Stable script](st
 
 :::tabs
 == BUY
-[Buy the add-on](https://shop.jumpon-studios.com/redm/horse-taming)
+[Buy the add-on](https://jumpon-studios.com/redm/horse-taming)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QthVc5bYAhg?si=i6YuwlZLQy8m0oqe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

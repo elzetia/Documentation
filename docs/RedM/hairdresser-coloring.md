@@ -3,7 +3,7 @@ Documentation relating to the **kd_haidresser_coloring** add-on for [Hairdresser
 
 :::tabs
 == BUY
-[Buy the add-on](https://shop.jumpon-studios.com/redm/hair-coloring)
+[Buy the add-on](https://jumpon-studios.com/redm/hair-coloring)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/L59H6mLFu_Y?si=WpVh0x8uw5KuyYEX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

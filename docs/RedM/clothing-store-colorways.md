@@ -3,7 +3,7 @@ Documentation relating to the **kd_clothingstore_colorways** add-on for [Clothin
 
 :::tabs
 == BUY
-[Buy the add-on](https://shop.jumpon-studios.com/redm/clothes-colorways)
+[Buy the add-on](https://jumpon-studios.com/redm/clothes-colorways)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GR9xSUI8GC4?si=Lrqr9_NxGr0R86RB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

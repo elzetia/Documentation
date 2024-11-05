@@ -3,7 +3,7 @@ Documentation relating to the kd_realistic_mining.
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/fivem/mining-job)
+[Buy the script](https://jumpon-studios.com/fivem/mining-job)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1Tfnyto1sdQ?si=fIWIkDhi_nfuF8sr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

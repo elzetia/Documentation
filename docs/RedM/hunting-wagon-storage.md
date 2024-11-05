@@ -3,7 +3,7 @@ Documentation relating to the kd_huntingwagon.
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/redm/hunting-wagon)
+[Buy the script](https://jumpon-studios.com/redm/hunting-wagon)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CA1v7WScf_U?si=i_uMbhvL92IlO7Db" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::

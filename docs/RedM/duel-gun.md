@@ -3,11 +3,11 @@ Documentation relating to the kd_gun_duel.
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/redm/gun-duel)
+[Buy the script](https://jumpon-studios.com/redm/gun-duel)
 == PREVIEW
 
 | <iframe width="560" height="315" src="https://www.youtube.com/embed/DezsrBqHb2g?si=flkm6OHmcw9pXAC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> | <iframe width="560" height="315" src="https://www.youtube.com/embed/5wicXmBjlXQ?si=l0dj4UUvFV3Me1IU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> |
-|-|-|
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 :::
 
 ## 1. Installation

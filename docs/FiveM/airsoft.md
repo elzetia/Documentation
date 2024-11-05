@@ -3,7 +3,7 @@ Documentation relating to the kd_airsoft.
 
 :::tabs
 == BUY
-[Buy the script](https://shop.jumpon-studios.com/fivem/airsoft-game)
+[Buy the script](https://jumpon-studios.com/fivem/airsoft-game)
 == PREVIEW
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qNjlH7Z-9ek?si=dAgoUv36ZaZqiRts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::
