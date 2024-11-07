@@ -221,7 +221,8 @@ export default defineConfig({
             text: "🐴 Stable", link: '/RedM/stable', items: [
               { text: 'Main script', link: '/RedM/stable' },
               { text: 'Horse Aging', link: '/RedM/stable-horseaging' },
-              { text: 'Horse Taming', link: '/RedM/stable-horsetaming' }
+              { text: 'Horse Taming', link: '/RedM/stable-horsetaming' },
+              { text: 'Horse Breeding', link: '/RedM/stable-horsebreeding' },
             ]
           },
         ]
