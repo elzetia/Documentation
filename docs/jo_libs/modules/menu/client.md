@@ -408,7 +408,7 @@ The default slider based on the original game design. Usefull to choose between 
 #### Example
 ```lua
 local menu = jo.menu.create('menu1',{})
-menu.addItem({
+menu:addItem({
   title = "Item",
   sliders = {
      {
@@ -468,7 +468,7 @@ To get the values of the slider, `.value` is a table with two arguments:
 #### Example
 ```lua
 local menu = jo.menu.create('menu1',{})
-menu.addItem({
+menu:addItem({
   title = "Item",
   sliders = {
     {
@@ -513,7 +513,7 @@ The palette slider is usefull to select a color.
 #### Example
 ```lua
 local menu = jo.menu.create('menu1',{})
-menu.addItem({
+menu:addItem({
   title = "Item",
   sliders = {
     {type = "palette", title = "tint", tint = "tint_makeup", max = 63, current = 14}
@@ -549,7 +549,7 @@ The switch slider is display on the right of the item label.
 #### Example
 ```lua
 local menu = jo.menu.create('menu1',{})
-menu.addItem({
+menu:addItem({
   title = "Item",
   sliders = {
     { type = "switch", current = 1, values = {
@@ -592,7 +592,7 @@ A statistic with **10 bars**
 #### Example
 ```lua
 local menu = jo.menu.create('menu1',{})
-menu.addItem({
+menu:addItem({
   title = "Item",
   statistics = {
     {label = "The label", type = "bar", value = {3,8}}
@@ -630,7 +630,7 @@ A statistic with unlimted bar defined with CSS classes
 #### Example
 ```lua
 local menu = jo.menu.create('menu1',{})
-menu.addItem({
+menu:addItem({
   title = "Item",
   statistics = {
     {label = "The label", type="bar-style", value = {
@@ -670,7 +670,7 @@ A statistic with icons on the right
 #### Example
 ```lua
 local menu = jo.menu.create('menu1',{})
-menu.addItem({
+menu:addItem({
   title = "Item",
   statistics = {
     {label = "The label", type="icon", value = {
@@ -702,7 +702,7 @@ Basic statistic with two labels
 #### Example
 ```lua
 local menu = jo.menu.create('menu1',{})
-menu.addItem({
+menu:addItem({
   title = "Item",
   statistics = {
     {label = "The label", value = "The value"}
@@ -734,7 +734,7 @@ A statistic with the weapon bar design. Useful to display a percent of completio
 #### Example
 ```lua
 local menu = jo.menu.create('menu1',{})
-menu.addItem({
+menu:addItem({
   title = "Item",
   statistics = {
     {label = "The label", type="weapon-bar", value = {60,100}}
