@@ -69,7 +69,7 @@ local menu = jo.menu.create(id,data)
 ```
 
 ## Instance Methods
-### menu:addItem
+### menu:addItem()
 A method to add an item to the menu
 #### Syntax
 ```lua
@@ -196,7 +196,7 @@ jo.menu.setCurrentMenu('menu')
 jo.menu.show(true)
 ```
 
-### menu:addItems
+### menu:addItems()
 A method to add multiples items
 #### Syntax
 ```lua
