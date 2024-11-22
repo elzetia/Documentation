@@ -2,25 +2,25 @@
 outline: [2,3]
 ---
 
-# Clothes
+# Component
 
-Clothes is a very usefull module to manage ped clothes. The module is designed to create a persistence of clothes colors if you defined a custom colorway.
+Component is a very usefull module to manage entity component. The module is designed to create a persistence of component colors if you defined a custom colorway.
 
 ## Variables
 
-### jo.clothes.categoryName
+### jo.component.categoryName
 Type : *table*  
 > Links between the hash and name of a category.  
 >> key: category hash  
 >> value: category name
 
-### jo.clothes.order
+### jo.component.order
 Type : *table*  
-> The order to apply the clothes  
->> key: order to apply the clothes  
+> The order to apply the component  
+>> key: order to apply the component  
 >> value: category name
 
-### jo.clothes.wearableStates
+### jo.component.wearableStates
 Type : *table*  
 > The list of available wearable state by category  
 >> key: category name  
@@ -28,11 +28,11 @@ Type : *table*
 
 ## Functions
 
-### jo.clothes.apply()
-A function to apply a clothes component on the ped
+### jo.component.apply()
+A function to apply a component component on the ped
 #### Syntax
 ```lua
-jo.clothes.apply(ped,category,data)
+jo.component.apply(ped,category,data)
 ```
 #### Parameters
 `ped` : *integer*
@@ -62,14 +62,14 @@ jo.clothes.apply(ped,category,data)
 local ped = PlayerPedId()
 local category = "hats"
 local data = {hash = "CLOTHING_ITEM_F_HAT_241_PANTHER_VAR_001"}
-jo.clothes.apply(ped,category,data)
+jo.component.apply(ped,category,data)
 ```
 
-### jo.clothes.bootsAreUnderPant()
+### jo.component.bootsAreUnderPant()
 A function to know if the boots are under the pant
 #### Syntax
 ```lua
-jo.clothes.bootsAreUnderPant(ped)
+jo.component.bootsAreUnderPant(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -82,37 +82,37 @@ Type: *booleant*
 #### Example
 ```lua
 local ped = PlayerPedId()
-local isUnder = jo.clothes.bootsAreUnderPant(ped)
+local isUnder = jo.component.bootsAreUnderPant(ped)
 print(isUnder)
 ```
 
-### jo.clothes.collarClose()
+### jo.component.collarClose()
 A function to close the collar
 #### Syntax
 ```lua
-jo.clothes.collarClose(ped,data)
+jo.component.collarClose(ped,data)
 ```
 #### Parameters
 `ped` : *integer*
 > The entity ID
   
 `data` : *object*
-> The clothes data  
-> see the structure in [jo.clothes.apply()](#jo-clothes-apply)
+> The component data  
+> see the structure in [jo.component.apply()](#jo-component-apply)
 
 #### Example
 ```lua
 local ped = PlayerPedId()
 local data = {hash = joaat('CLOTHING_ITEM_M_SHIRT_209_TINT_005')}
-jo.clothes.collarClose(ped,data)
+jo.component.collarClose(ped,data)
 ```
 
 
-### jo.clothes.collarIsOpened()
+### jo.component.collarIsOpened()
 Return if the collar is opened
 #### Syntax
 ```lua
-jo.clothes.collarIsOpened(ped)
+jo.component.collarIsOpened(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -125,36 +125,36 @@ Type: *boolean*
 #### Example
 ```lua
 local ped = PlayerPedId()
-local isOpened = jo.clothes.collarIsOpened(ped)
+local isOpened = jo.component.collarIsOpened(ped)
 print(isOpened)
 ```
 
-### jo.clothes.collarOpen()
+### jo.component.collarOpen()
 A function to open the collar
 #### Syntax
 ```lua
-jo.clothes.collarOpen(ped,data)
+jo.component.collarOpen(ped,data)
 ```
 #### Parameters
 `ped` : *integer*
 > The entity ID
   
 `data` : *object*
-> The clothes data  
-> see the structure in [jo.clothes.apply()](#jo-clothes-apply)
+> The component data  
+> see the structure in [jo.component.apply()](#jo-component-apply)
 
 #### Example
 ```lua
 local ped = PlayerPedId()
 local data = {hash = joaat('CLOTHING_ITEM_M_SHIRT_209_TINT_005')}
-jo.clothes.collarOpen(ped,data)
+jo.component.collarOpen(ped,data)
 ```
 
-### jo.clothes.getCategoriesEquiped()
-Return the list of clothes categories equiped on the ped
+### jo.component.getCategoriesEquiped()
+Return the list of component categories equiped on the ped
 #### Syntax
 ```lua
-jo.clothes.getCategoriesEquiped(ped)
+jo.component.getCategoriesEquiped(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -168,16 +168,16 @@ Type: *object*
 #### Example
 ```lua
 local ped = PlayerPedId()
-local categories = jo.clothes.getCategoriesEquiped(ped)
+local categories = jo.component.getCategoriesEquiped(ped)
 print(json.encode(categories))
 --Expected output: categories = { 539411565 = {index = 1, category = "shirts_full"}, 491541130 = { index = 2, category = "pants"} }
 ```
 
-### jo.clothes.getCategoryTint()
+### jo.component.getCategoryTint()
 A function to get the tints of a category
 #### Syntax
 ```lua
-jo.clothes.getCategoryTint(ped, category)
+jo.component.getCategoryTint(ped, category)
 ```
 #### Parameters
 `ped` : *integer*
@@ -204,15 +204,15 @@ jo.clothes.getCategoryTint(ped, category)
 ```lua
 local ped = PlayerPedId()
 local category = "shirts_full"
-local palette, tint0, tint1, tint2 = jo.clothes.getCategoryTint(ped, category)
+local palette, tint0, tint1, tint2 = jo.component.getCategoryTint(ped, category)
 print(palette, tint0, tint1, tint2)
 ```
 
-### jo.clothes.getComponentCategory()
+### jo.component.getComponentCategory()
 Return the category hash of a component and if it's a MP component
 #### Syntax
 ```lua
-jo.clothes.getComponentCategory(ped,hash)
+jo.component.getComponentCategory(ped,hash)
 ```
 #### Parameters
 `ped` : *integer*
@@ -234,16 +234,16 @@ jo.clothes.getComponentCategory(ped,hash)
 ```lua
 local ped = PlayerPedId()
 local hash = joaat("CLOTHING_ITEM_F_HAT_241_PANTHER_VAR_001")
-local catHash,isMp = jo.clothes.getComponentCategory(ped,hash)
+local catHash,isMp = jo.component.getComponentCategory(ped,hash)
 print(catHash,isMp)
 --Expected output: -1725579161, true
 ```
 
-### jo.clothes.getComponentEquiped()
+### jo.component.getComponentEquiped()
 A function to get the hash of the component equiped in a category
 #### Syntax
 ```lua
-jo.clothes.getComponentEquiped(ped, category)
+jo.component.getComponentEquiped(ped, category)
 ```
 #### Parameters
 `ped` : *integer*
@@ -261,15 +261,15 @@ Type : *integer*
 ```lua
 local ped = PlayerPedId()
 local category = "hats"
-local component = jo.clothes.getComponentEquiped(ped, category)
+local component = jo.component.getComponentEquiped(ped, category)
 print(component)
 ```
 
-### jo.clothes.getComponentsEquiped()
+### jo.component.getComponentsEquiped()
 A function to get all components equiped
 #### Syntax
 ```lua
-jo.clothes.getComponentsEquiped(ped)
+jo.component.getComponentsEquiped(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -282,15 +282,15 @@ Type : *table*
 #### Example
 ```lua
 local ped = PlayerPedId()
-local components = jo.clothes.getComponentsEquiped(ped)
+local components = jo.component.getComponentsEquiped(ped)
 print(json.encode(components))
 ```
 
-### jo.clothes.getWearableState()
+### jo.component.getWearableState()
 Get the wearable state of a category  
 #### Syntax
 ```lua
-jo.clothes.getWearableState(ped, category)
+jo.component.getWearableState(ped, category)
 ```
 #### Parameters
 `ped` : *integer*
@@ -308,15 +308,15 @@ Type: *string*
 ```lua
 local ped = PlayerPedId()
 local category = "neckwear"
-local wearableState = jo.clothes.getWearableState(ped, category)
+local wearableState = jo.component.getWearableState(ped, category)
 print(wearableState)
 ```
 
-### jo.clothes.hairIsPomade()
+### jo.component.hairIsPomade()
 A function to know if the hair is pomaded
 #### Syntax
 ```lua
-jo.clothes.hairIsPomade(ped)
+jo.component.hairIsPomade(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -329,15 +329,15 @@ Type : *bolean*
 #### Example
 ```lua
 local ped = PlayerPedId()
-local isPomaded = jo.clothes.hairIsPomade(ped)
+local isPomaded = jo.component.hairIsPomade(ped)
 print(isPomaded)
 ```
 
-### jo.clothes.isCategoryEquiped()
+### jo.component.isCategoryEquiped()
 A function to know if a specific category is equiped on the ped
 #### Syntax
 ```lua
-jo.clothes.isCategoryEquiped(ped,category)
+jo.component.isCategoryEquiped(ped,category)
 ```
 #### Parameters
 `ped` : *integer*
@@ -358,15 +358,15 @@ jo.clothes.isCategoryEquiped(ped,category)
 ```lua
 local ped = PlayerPedId()
 local category = "pants"
-local isEquiped, index = jo.clothes.isCategoryEquiped(ped,category)
+local isEquiped, index = jo.component.isCategoryEquiped(ped,category)
 print(isEquiped, index)
 ```
 
-### jo.clothes.loadoutIsOnRight()
+### jo.component.loadoutIsOnRight()
 A function to know if the loadout is on the right
 #### Syntax
 ```lua
-jo.clothes.loadoutIsOnRight(ped)
+jo.component.loadoutIsOnRight(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -379,15 +379,15 @@ Type: *boolean*
 #### Example
 ```lua
 local ped = PlayerPedId()
-local isRight = jo.clothes.loadoutIsOnRight(ped)
+local isRight = jo.component.loadoutIsOnRight(ped)
 print(isRight)
 ```
 
-### jo.clothes.neckwearIsUp()
+### jo.component.neckwearIsUp()
 Return if the neckwear is on the face of the player or not
 #### Syntax
 ```lua
-jo.clothes.neckwearIsUp(ped)
+jo.component.neckwearIsUp(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -401,15 +401,15 @@ Type: *boolean*
 #### Example
 ```lua
 local ped = PlayerPedId()
-local isUp = jo.clothes.neckwearIsUp(ped)
+local isUp = jo.component.neckwearIsUp(ped)
 print(isUp)
 ```
 
-### jo.clothes.refreshPed()
-A function to refresh the clothes component
+### jo.component.refreshPed()
+A function to refresh the component component
 #### Syntax
 ```lua
-jo.clothes.refresh(ped)
+jo.component.refresh(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -419,36 +419,36 @@ jo.clothes.refresh(ped)
 #### Example
 ```lua
 local ped = PlayerPedId()
-jo.clothes.refreshPed(ped)
+jo.component.refreshPed(ped)
 ```
 
-### jo.clothes.remove()
-A function to remove a clothes component
+### jo.component.remove()
+A function to remove a component component
 #### Syntax
 ```lua
-jo.clothes.remove(ped,category)
+jo.component.remove(ped,category)
 ```
 #### Parameters
 `ped` : *integer*
 > The entity ID
 
 `category` : *string/integer*
-> The category of clothes to remove
+> The category of component to remove
   
 
 #### Example
 ```lua
 local ped = PlayerPedId()
 local category = "hats"
-jo.clothes.remove(ped,category)
+jo.component.remove(ped,category)
 ```
 
-### jo.clothes.setWearableState()
+### jo.component.setWearableState()
 
 A function to edit the wearable state of a category
 #### Syntax
 ```lua
-jo.clothes.setWearableState(ped,category,data,state)
+jo.component.setWearableState(ped,category,data,state)
 ```
 #### Parameters
 `ped` : *integer*
@@ -458,12 +458,12 @@ jo.clothes.setWearableState(ped,category,data,state)
 > The category of the component
   
 `data` : *object*
-> The clothes data  
-> see the structure in [jo.clothes.apply()](#jo-clothes-apply)
+> The component data  
+> see the structure in [jo.component.apply()](#jo-component-apply)
   
 `state` : *string/integer*
 > The wearable state to apply on the component  
-> The list of wearable state can be find in the `jo_libs>module>clothes>client.lua` file `line 76`
+> The list of wearable state can be find in the `jo_libs>module>component>client.lua` file `line 76`
   
 
 #### Example
@@ -471,16 +471,16 @@ jo.clothes.setWearableState(ped,category,data,state)
 local ped = PlayerPedId()
 local category = "neckwear"
 local data = {hash = joaat("CLOTHING_ITEM_F_NECKERCHIEF_000_TINT_001")}
-local state = jo.clothes.wearableStates.neckwear[1] --neckwear UP
-jo.clothes.setWearableState(ped,category,data,state)
+local state = jo.component.wearableStates.neckwear[1] --neckwear UP
+jo.component.setWearableState(ped,category,data,state)
 ```
 
 
-### jo.clothes.sleeveIsRolled()
+### jo.component.sleeveIsRolled()
 Return if the sleeve are rolled
 #### Syntax
 ```lua
-jo.clothes.sleeveIsRolled(ped)
+jo.component.sleeveIsRolled(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -493,57 +493,57 @@ Type: *boolean*
 #### Example
 ```lua
 local ped = PlayerPedId()
-local isRolled = jo.clothes.sleeveIsRolled(ped)
+local isRolled = jo.component.sleeveIsRolled(ped)
 print(isRolled)
 ```
 
-### jo.clothes.sleeveUnroll()
+### jo.component.sleeveUnroll()
 A function to unroll sleeve
 #### Syntax
 ```lua
-jo.clothes.sleeveUnroll(ped,data)
+jo.component.sleeveUnroll(ped,data)
 ```
 #### Parameters
 `ped` : *integer*
 > The entity ID
   
 `data` : *object*
-> The clothes data  
-> see the structure in [jo.clothes.apply()](#jo-clothes-apply)
+> The component data  
+> see the structure in [jo.component.apply()](#jo-component-apply)
 
 #### Example
 ```lua
 local ped = PlayerPedId()
 local data = {hash = joaat('CLOTHING_ITEM_M_SHIRT_209_TINT_005')}
-local jo.clothes.sleeveUnroll(ped,data)
+local jo.component.sleeveUnroll(ped,data)
 ```
 
-### jo.clothes.sleeveRoll()
+### jo.component.sleeveRoll()
 A function to roll sleeve
 #### Syntax
 ```lua
-jo.clothes.sleeveRoll(ped,data)
+jo.component.sleeveRoll(ped,data)
 ```
 #### Parameters
 `ped` : *integer*
 > The entity ID
   
 `data` : *object*
-> The clothes data  
-> see the structure in [jo.clothes.apply()](#jo-clothes-apply)
+> The component data  
+> see the structure in [jo.component.apply()](#jo-component-apply)
 
 #### Example
 ```lua
 local ped = PlayerPedId()
 local data = {hash = joaat('CLOTHING_ITEM_M_SHIRT_209_TINT_005')}
-local jo.clothes.sleeveRoll(ped,data)
+local jo.component.sleeveRoll(ped,data)
 ```
 
-### jo.clothes.vestIsUnderPant()
+### jo.component.vestIsUnderPant()
 A function to know if the vest is under the pant
 #### Syntax
 ```lua
-jo.clothes.vestIsUnderPant(ped)
+jo.component.vestIsUnderPant(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -557,15 +557,15 @@ Type: *boolean*
 #### Example
 ```lua
 local ped = PlayerPedId()
-local isIn = jo.clothes.vestIsUnderPant(ped)
+local isIn = jo.component.vestIsUnderPant(ped)
 print(isIn)
 ```
 
-### jo.clothes.waitPedLoaded()
+### jo.component.waitPedLoaded()
 A function to wait the refresh of ped
 #### Syntax
 ```lua
-jo.clothes.waitPedLoaded(ped)
+jo.component.waitPedLoaded(ped)
 ```
 #### Parameters
 `ped` : *integer*
@@ -574,5 +574,5 @@ jo.clothes.waitPedLoaded(ped)
 #### Example
 ```lua
 local ped = PlayerPedId()
-local isIn = jo.clothes.waitPedLoaded(ped)
+local isIn = jo.component.waitPedLoaded(ped)
 ```
