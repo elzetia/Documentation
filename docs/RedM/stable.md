@@ -337,7 +337,7 @@ Config.wagons = {
 ## 4. Add new activity
 You can add more activity to train your horse by edit the file : `overwriteActivities.lua`
 ```lua
-trainingTracks[#trainingTracks+1] = {
+table.intable.insert(trainingTracks,{
 	type = "handling", -- Type of training : "handling", "speed" or "acceleration"
 	start = vec4(-386.273, 788.489, 115.865, 93.648), -- location of the start
 	camPreview = { -- Camera for the trailer
@@ -366,7 +366,7 @@ trainingTracks[#trainingTracks+1] = {
 			distance = 3.0 -- optional : Distance to valid the checkpoint
 		},
 	}
-}
+})
 ```
 ## 5. For developers
 
