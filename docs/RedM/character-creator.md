@@ -5,7 +5,7 @@ Documentation relating to the jo_character_creator.
 The character creator works on all frameworks compatible with jo_libs ([the list](/jo_libs/)).
 
 To install jo_character_creator:
-- Download the library: [jo_libs](https://github.com/Jump-On-Studios/RedM-jo_libs/releases/latest/download/jo_libs.zip)
+- Download the library: [jo_libs](https://github.com/Jump-On-Studios/RedM-jo_libs/archive/refs/heads/main.zip)
 - Unzip the folder and drop it in your resource folder
 - Download jo_character_creator from your [keymaster](https://keymaster.fivem.net/asset-grants?search=jo_character_creator)
 - Unzip the folder and drop it in your resource folder
