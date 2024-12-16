@@ -140,7 +140,7 @@ Fires before open the MDT
 ```lua
 ---@param canOpen - boolean
 exports.jo_mdt:registerFilter('canOpenMDT', function(canOpen)
-	return canAccess
+	return canOpen
 end)
 ```
 #### <Badge type="client" text="Client" /> updateLangForNUI
