@@ -150,11 +150,11 @@ export default defineConfig({
   head: [
     [
       "link",
-      { rel: "icon", href: "https://raw.githubusercontent.com/Jump-On-Studios/Documentation/main/docs/public/logo.png" },
+      { rel: "icon", href: "https://raw.githubusercontent.com/Jump-On-Studios/Documentation/main/docs/public/logo.svg" },
     ],
   ],
   themeConfig: {
-    logo: "/logo.png",
+    logo: "/logo.svg",
     // https://vitepress.dev/reference/default-theme-config
     outline: {
       level: 'deep',
