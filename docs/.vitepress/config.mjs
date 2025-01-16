@@ -266,7 +266,7 @@ export default defineConfig({
       { icon: 'discord', link: 'https://discord.com/invite/8rqVHnSb2K' },
     ],
     footer: {
-      copyright: 'Copyright © 2024 Jump On'
+      copyright: 'Copyright © 2025 Jump On'
     },
     docFooter: {
       prev: false,
