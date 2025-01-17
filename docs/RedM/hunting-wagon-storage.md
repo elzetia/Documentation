@@ -25,24 +25,15 @@ Go back at the back to get out it when you are arrived where you want.
 ```lua
 Config = {}
 
--- Size of zone at the back of wagon where the prompt is display
+Config.Debug = false
+
 Config.SizeDropzone = 2.0
--- Max carcass in wagon
-Config.MaxCarcass = 5
--- Function to display tip message
-Config.DisplayTip = function(text,duration)
-  TriggerEvent('redem_roleplay:Tip', text, duration)
-end
+Config.MaxCarcass = 10
+Config.saveCarcassInDB = true --Need my stable script: https://shop.jumpon-studios.com/package/5705468
 
---------------
---SERVER SIDE
---------------
-
---@param wagonId is the networkID of the wagon
---@param carcass is an array of carcass datas
---carcass data structure :
-  -- carcass[1] = {model, outfit, damageCleanliness, fulloLooted, pedDamage}
-Config.updateWagonCarcass = function(wagonId, carcass)
-
-end
+Config.wagons = {             --list of compatible wagon (⚠ tarp is only available on huntercart01 ⚠)
+  [`huntercart01`] = true,
+  [`cart03`] = true,
+  [`supplywagon`] = true,
+}
 ```
