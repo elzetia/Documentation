@@ -395,12 +395,16 @@ Event to open the store
 ```lua
 --@param needInstance = true/false : Define if the wardrobe need personnal instance
 TriggerEvent('kd_clothingstore:openStore', needInstance)
+--Or
+exports['kd_clothingstore']:openStore(needInstance)
 ```
 #### <Badge type="client" text="Client" /> Open the wardrobe
 Event to open the wardrobe
 ```lua
 --@param needInstance = true/false : Define if the wardrobe need personnal instance
 TriggerEvent('kd_clothingstore:openWardrobe', needInstance)
+--Or
+exports['kd_clothingstore']:openWardrobe(needInstance)
 ```
 #### <Badge type="client" text="Client" /> Remove all clothes
 You can remove all clothes with this client event :
