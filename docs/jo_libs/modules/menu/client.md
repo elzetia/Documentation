@@ -446,8 +446,8 @@ To get the values of the slider, `.value` is a table with two arguments:
 #### Syntax
 ```lua
 {type = "grid", labels = {'left','right','up','down'}, values = {
-  {current = 0.5,max = 1.0, min = -1.0},
-  {current = 0.5,max = 10.0, min = 0.0}, --for two dimensions
+  {current = 0.5,max = 1.0, min = -1.0, gap = 0.01},
+  {current = 0.5,max = 10.0, min = 0.0, gap = 0.01}, --for two dimensions
 }}
 ```
 #### Keys
